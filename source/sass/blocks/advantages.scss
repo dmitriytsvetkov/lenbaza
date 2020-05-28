@@ -1,0 +1,206 @@
+.advantages {
+  @include mobile-wrapper-width();
+  margin: 0 auto;
+}
+
+.advantages__title {
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: 400;
+  color: #111111;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.advantages__list {
+  @include list-reset();
+  margin: 0 0 45px 0;
+}
+
+.advantages__item {
+  position: relative;
+  margin: 0 0 26px 0;
+}
+
+.advantages__item:last-child {
+  margin-bottom: 0;
+}
+
+.advantages__item::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #68b738;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.advantages__item--leaf::before {
+  background-image: url("../../img/advantage-leaf@1x.png");
+}
+
+.advantages__item--powder::before {
+  background-image: url("../../img/advantage-powder@1x.png");
+}
+
+.advantages__item--dining::before {
+  background-image: url("../../img/advantage-dining@1x.png");
+}
+
+.advantages__item--clock::before {
+  background-image: url("../../img/advantage-clock@1x.png");
+}
+
+.advantages__text {
+  width: 100%;
+  color: #444444;
+  padding: 0 0 0 80px;
+  margin: 0;
+}
+
+.advantages__text br {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .advantages {
+    @include tablet-wrapper-width();
+    min-height: 730px;
+  }
+
+  .advantages__title {
+    font-size: 60px;
+    margin-bottom: 68px;
+  }
+
+  .advantages__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .advantages__item {
+    width: 50%;
+    margin-bottom: 130px;
+  }
+
+  .advantages__item::before {
+    width: 80px;
+    height: 80px;
+    background-size: 50px auto;
+  }
+
+  .advantages__item::after {
+    position: absolute;
+    top: -40px;
+    left: 114px;
+    content: "";
+    font-family: "Oswald", "Arial", sans-serif;
+    font-weight: 400;
+    color: #f2f2f2;
+    font-size: 281px;
+    line-height: 281px;
+    z-index: -1;
+  }
+
+  .advantages__item--powder,
+  .advantages__item--clock {
+    width: calc(50% - 30px);
+    padding-left: 30px;
+  }
+
+  .advantages__item--dining {
+    margin-bottom: 0;
+  }
+
+  .advantages__item--leaf::before {
+    background-image: url("../../img/advantage-leaf@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/advantage-leaf@2x.png");
+    }
+  }
+
+  .advantages__item--powder::before {
+    background-image: url("../../img/advantage-powder@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/advantage-powder@2x.png");
+    }
+  }
+
+  .advantages__item--dining::before {
+    background-image: url("../../img/advantage-dining@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/advantage-dining@2x.png");
+    }
+  }
+
+  .advantages__item--clock::before {
+    background-image: url("../../img/advantage-clock@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/advantage-clock@2x.png");
+    }
+  }
+
+  .advantages__item--powder::after,
+  .advantages__item--clock::after {
+    left: 145px;
+  }
+
+  .advantages__item--powder::after {
+    content: "2";
+  }
+
+  .advantages__item--leaf::after {
+    content: "1";
+  }
+
+  .advantages__item--dining::after {
+    content: "3";
+  }
+
+  .advantages__item--clock::after {
+    content: "4";
+  }
+
+  .advantages__text {
+    width: 250px;
+    padding: 115px 0 0 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .advantages__text br {
+    display: inline-block;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .advantages {
+    @include desktop-wrapper-width();
+    min-height: 440px;
+  }
+
+  .advantages__list {
+    min-height: 0;
+    justify-content: space-between;
+  }
+
+  .advantages__item {
+    width: 245px;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .advantages__item--leaf::after,
+  .advantages__item--powder::after,
+  .advantages__item--dining::after,
+  .advantages__item--clock::after {
+    left: 113px;
+  }
+}

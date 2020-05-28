@@ -1,0 +1,136 @@
+.social {
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 22px 0;
+}
+
+.social__list {
+  @include list-reset();
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.social__link {
+  display: block;
+  font-size: 0;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.social__link:hover svg path {
+  fill: #68b738;
+}
+
+.social__link:active svg path {
+  fill: #68b738;
+  opacity: 0.3;
+}
+
+.social__link svg path {
+  fill: #666666;
+}
+
+.social__link--vk {
+  width: 22px;
+  height: 12px;
+  margin-left: 73px;
+}
+
+.social__link--inst {
+  width: 16px;
+  height: 16px;
+  margin-left: 37px;
+}
+
+.social__link--fb {
+  width: 10px;
+  height: 19px;
+  margin-left: 40px;
+}
+
+@media (min-width: $tablet-width) {
+  .social {
+    border: none;
+  }
+
+  .social__list {
+    justify-content: space-between;
+    min-width: 126px;
+    margin-left: -16px;
+  }
+
+  .social__link--vk {
+    margin-left: 0;
+  }
+
+  .social__link--vk,
+  .social__link--vk svg {
+    width: 30px;
+    height: 16px;
+  }
+
+  .social__link--inst {
+    margin-left: 0;
+  }
+
+  .social__link--inst,
+  .social__link--inst svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .social__link--fb {
+    margin-left: 0;
+  }
+
+  .social__link--fb,
+  .social__link--fb svg {
+    width: 14px;
+    height: 28px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .social__item .social__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  .social__link--vk {
+    padding-top: 0;
+    padding-right: 10px;
+    padding-bottom: 7px;
+  }
+
+  .social__link--vk svg {
+    width: 44px;
+    height: 18px;
+  }
+
+  .social__link--inst {
+    padding-bottom: 5px;
+  }
+
+  .social__link--inst,
+  .social__link--inst svg {
+    width: 25px;
+    height: 23px;
+  }
+
+  .social__link--fb {
+    padding-bottom: 10px;
+    padding-right: 5px;
+  }
+
+  .social__link--fb,
+  .social__link--fb svg {
+    width: 18px;
+    height: 29px;
+  }
+}

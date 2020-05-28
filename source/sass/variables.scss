@@ -1,0 +1,22 @@
+$tablet-width: 768px;
+$desktop-width: 1300px;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+@mixin list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin mobile-wrapper-width {
+  width: 280px;
+}
+
+@mixin tablet-wrapper-width {
+  width: 708px;
+}
+
+@mixin desktop-wrapper-width {
+  width: 1220px;
+}

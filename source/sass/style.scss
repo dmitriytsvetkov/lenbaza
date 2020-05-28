@@ -1,0 +1,52 @@
+@import "variables.scss";
+@import "fonts.scss";
+@import "visually-hidden.scss";
+@import "blocks/button.scss";
+@import "blocks/page-header.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/site-list.scss";
+@import "blocks/first-screen.scss";
+@import "blocks/categories.scss";
+@import "blocks/category.scss";
+@import "blocks/advantages.scss";
+@import "blocks/page-footer.scss";
+@import "blocks/social.scss";
+@import "blocks/copyright.scss";
+@import "blocks/catalog.scss";
+@import "blocks/product-card.scss";
+@import "blocks/show-more-block.scss";
+@import "blocks/example.scss";
+@import "blocks/commercial.scss";
+@import "blocks/example-slider.scss";
+@import "blocks/example-feature.scss";
+@import "blocks/additional-catalog.scss";
+@import "blocks/promo.scss";
+@import "blocks/main-form.scss";
+
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "Arial", sans-serif;
+  color: #444444;
+  font-weight: 500;
+
+  background-color: #ffffff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
