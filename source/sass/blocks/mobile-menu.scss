@@ -1,0 +1,54 @@
+.mobile-menu {
+  box-shadow: 1px 10px 7px -10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu--closed .mobile-menu__nav,
+.mobile-menu--closed .mobile-menu__btn-wrapper,
+.mobile-menu--closed .mobile-menu__links-wrapper {
+  display: none;
+}
+
+.mobile-menu__toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  width: 60px;
+  height: 72px;
+  cursor: pointer;
+  border: none;
+  background-color: #ffffff;
+}
+
+.mobile-menu--closed .mobile-menu__toggle::before {
+  position: absolute;
+  content: "";
+  top: 28px;
+  left: 16px;
+  width: 26px;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0 8px 0 0 #000000, 0 16px 0 0 #000000;
+}
+
+.mobile-menu--opened .mobile-menu__toggle::before,
+.mobile-menu--opened .mobile-menu__toggle::after {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: 16px;
+  width: 26px;
+  height: 2px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 2px;
+}
+
+.mobile-menu--opened .mobile-menu__toggle::before {
+  transform: rotate(45deg);
+}
+
+.mobile-menu--opened .mobile-menu__toggle::after {
+  transform: rotate(-45deg);
+}

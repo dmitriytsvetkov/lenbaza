@@ -1,0 +1,15 @@
+.contact-list {
+  padding: 0;
+  margin: 0 0 12px 0;
+  list-style: none;
+}
+
+.contact-list__item a {
+  display: block;
+  padding: 12px 16px;
+  font-size: 20px;
+  line-height: 125%;
+  font-weight: 600;
+  color: #0B0B0B;
+  text-decoration: none;
+}

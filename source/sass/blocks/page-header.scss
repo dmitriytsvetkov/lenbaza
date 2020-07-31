@@ -1,108 +1,61 @@
 .page-header {
-  background-color: #ffffff;
-}
-
-.page-header__logo-img {
-  display: block;
-  width: 190px;
-  height: 38px;
+  background-color: #fff;
 }
 
 .page-header__wrapper {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  min-height: 66px;
 }
 
-.page-header__top-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-  min-height: 66px;
-  border-bottom: 1px solid #e6e6e6;
-}
-
-.page-header__img-container {
+.page-header__logo-container {
   display: block;
-  width: 280px;
+  width: 178px;
+  padding: 21px 0;
   margin: 0 auto;
 }
 
-@media (min-width: $tablet-width) {
-  .page-header__wrapper {
-    @include tablet-wrapper-width();
-    min-height: 0;
-    display: flex;
-    justify-content: space-between;
-    margin: 22px auto 0 auto;
-    border: none;
-  }
-
-  .page-header__logo {
-    width: 192px;
-  }
-
-  .page-header__img-container {
-    width: 173px;
-    height: 60px;
-    padding: 0;
-    margin: 0;
-    display: block;
-    border: none;
-  }
-
-  .page-header__img-container:hover {
-    opacity: 0.8;
-  }
-
-  .page-header__img-container:active {
-    opacity: 0.6;
-  }
-
-  .page-header__logo-img img {
-    width: 173px;
-    height: 60px;
-  }
-
-  .page-header__top-wrapper {
-    min-height: 0;
-    width: 180px;
-    padding: 0;
-    border: none;
-  }
+.page-header__search-wrapper {
+  margin: 0 auto;
+  background-color: #F7F7F7;
 }
 
-@media (min-width: $desktop-width) {
-  .page-header__wrapper {
-    @include desktop-wrapper-width();
-    margin-top: 53px;
-  }
+.page-header__btn-wrapper {
+  margin: 0 16px;
+}
 
-  .page-header__wrapper--index {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
+.page-header__catalog-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0;
+  font-family: 'Gilroy', 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: #FFFFFF;
+  background-color: #EA6227;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  .page-header__logo {
-    width: 205px;
-  }
+.page-header__catalog-btn::before {
+  /*position: absolute;
+  top: 0;
+  left: 0;*/
+  display: inline-block;
+  padding: 0;
+  margin: 0 7px 0 0;
+  content: "";
+  width: 15px;
+  height: 14px;
+  background-image: url('../../img/btn-burger-closed.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
-  .page-header__top-wrapper {
-    width: 220px;
-  }
-
-  .page-header__img-container {
-    width: 202px;
-    height: 60px;
-  }
-
-  .page-header__img-container img {
-    width: 202px;
-  }
+.page-header__links-wrapper {
+  margin: 10px 16px 0 16px;
 }

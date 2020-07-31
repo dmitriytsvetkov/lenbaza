@@ -1,0 +1,54 @@
+.basket-icon {
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  height: 72px;
+}
+
+.basket-icon--mobile {
+  display: block;
+  height: 0;
+  width: 0;
+}
+
+.basket-icon--mobile .basket-icon__basket-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.basket-icon__basket-container {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.basket-icon--mobile .basket-icon__basket-container {
+  width: 70px;
+  height: 72px;
+}
+
+.basket-icon__basket-container svg {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+.basket-icon__basket-counter {
+  position: absolute;
+  top: 16px;
+  right: 17px;
+  width: 16px;
+  height: 16px;
+  color: #FFFFFF;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+  background-color: #EA6227;
+  border-radius: 50%;
+}

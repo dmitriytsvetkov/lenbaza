@@ -1,27 +1,17 @@
 @import "variables.scss";
 @import "fonts.scss";
 @import "visually-hidden.scss";
-@import "blocks/button.scss";
 @import "blocks/page-header.scss";
+@import "blocks/search-form.scss";
 @import "blocks/main-nav.scss";
-@import "blocks/site-list.scss";
-@import "blocks/first-screen.scss";
-@import "blocks/categories.scss";
-@import "blocks/category.scss";
-@import "blocks/advantages.scss";
-@import "blocks/page-footer.scss";
-@import "blocks/social.scss";
-@import "blocks/copyright.scss";
-@import "blocks/catalog.scss";
-@import "blocks/product-card.scss";
-@import "blocks/show-more-block.scss";
-@import "blocks/example.scss";
-@import "blocks/commercial.scss";
-@import "blocks/example-slider.scss";
-@import "blocks/example-feature.scss";
-@import "blocks/additional-catalog.scss";
-@import "blocks/promo.scss";
-@import "blocks/main-form.scss";
+@import "blocks/popular-list.scss";
+@import "blocks/contact-list.scss";
+@import "blocks/basket-icon.scss";
+@import "blocks/favorite-icon.scss";
+@import "blocks/login-icon.scss";
+@import "blocks/icon-links.scss";
+@import "blocks/mobile-menu.scss";
+@import "blocks/page-main.scss";
 
 
 *,
@@ -37,9 +27,10 @@ body {
 
   font-size: 14px;
   line-height: 18px;
-  font-family: "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   color: #444444;
   font-weight: 500;
+  font-style: normal;
 
   background-color: #ffffff;
   box-sizing: border-box;
