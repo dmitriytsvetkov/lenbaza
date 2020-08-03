@@ -1,0 +1,35 @@
+.page-footer__features-list {
+  padding: 80px 16px 110px 16px;
+}
+
+.page-footer__wrapper {
+  padding: 40px 16px;
+  background-color: #FCFCFC;
+}
+
+.page-footer__nav {
+  margin-bottom: 40px;
+}
+
+.page-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-footer__terms {
+  margin-bottom: 24px;
+}
+.page-footer__terms,
+.page-footer__copyright {
+  width: 100%;
+  font-size: 16px;
+  line-height: 125%;
+  font-family: inherit;
+  font-weight: 500;
+  color: rgba(11, 11, 11, 0.8);
+  text-decoration: none;
+}
+
+.page-footer__ymarket-logo {
+  display: none;
+}

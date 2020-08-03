@@ -12,6 +12,10 @@
 @import "blocks/icon-links.scss";
 @import "blocks/mobile-menu.scss";
 @import "blocks/page-main.scss";
+@import "blocks/page-footer.scss";
+@import "blocks/features.scss";
+@import "blocks/footer-nav.scss";
+@import "blocks/payment-icons.scss";
 
 
 *,
@@ -28,9 +32,9 @@ body {
   font-size: 14px;
   line-height: 18px;
   font-family: 'Gilroy', 'Arial', sans-serif;
-  color: #444444;
   font-weight: 500;
   font-style: normal;
+  color: #444444;
 
   background-color: #ffffff;
   box-sizing: border-box;
