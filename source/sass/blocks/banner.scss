@@ -1,0 +1,133 @@
+.banner {
+  position: relative;
+  padding: 40px 0;
+  background: radial-gradient(50.13% 165.41% at 71.78% 54.63%, #E0E1FF 0%, #E1EFFC 0.01%, #EEF2FF 100%);
+  border-radius: 10px;
+}
+
+.banner--slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.banner__wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.banner__item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.banner__text-wrapper {
+  margin: 0 17px 24px 17px;
+}
+
+.banner__title {
+  padding: 0;
+  margin: 0 0 16px 0;
+  font-size: 30px;
+  line-height: 38px;
+  font-family: inherit;
+  font-weight: 600;
+  color: $lbblack;
+}
+
+.banner__subtitle {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: inherit;
+  font-weight: 500;
+  color: $lbdgrey;
+}
+
+.banner__img-wrapper {
+  display: block;
+  width: 100%;
+  height: 214px;
+  margin: 0 0 24px 0;
+}
+
+.banner__bottom-wrapper {
+  margin: auto 17px 0 17px;
+}
+
+.banner__price {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.banner__actual-price,
+.banner__old-price {
+  padding: 0;
+  margin: 0;
+}
+
+.banner__actual-price {
+  margin-right: 8px;
+  font-size: 18px;
+  line-height: 23px;
+  font-family: inherit;
+  font-weight: bold;
+  color: $lbblack;
+}
+
+.banner__old-price {
+  font-size: 14px;
+  line-height: 18px;
+  font-family: inherit;
+  font-weight: 500;
+  color: $lbmgrey;
+  text-decoration: line-through;
+}
+
+.banner__link {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: inherit;
+  font-weight: 600;
+  color: $lbwhite;
+  text-decoration: none;
+  background-color: $lbblue;
+  border-radius: 5px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
+
+.banner__pagination {
+  width: 50%;
+  right: 0;
+  bottom: 52px;
+}
+
+.banner__bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 8px;
+  background-color: $lbwhite;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.banner__bullet--active {
+  background-color: $lbblue;
+}
+
+@media (min-width: $desktop-width) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: block;
+  }
+}

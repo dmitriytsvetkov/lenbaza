@@ -1,22 +1,17 @@
 $tablet-width: 768px;
-$desktop-width: 1300px;
+$desktop-width: 1024px;
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
+
+/* Site colors */
+$lbwhite: #ffffff;
+$lbblack: #0B0B0B;
+$lbdgrey: #686868;
+$lbmgrey: #9B9B9B;
+$lbblue: #342EAD;
 
 @mixin list-reset {
   padding: 0;
   margin: 0;
   list-style: none;
-}
-
-@mixin mobile-wrapper-width {
-  width: 280px;
-}
-
-@mixin tablet-wrapper-width {
-  width: 708px;
-}
-
-@mixin desktop-wrapper-width {
-  width: 1220px;
 }

@@ -1,19 +1,19 @@
 "use strict";
 
-var gulp = require("gulp");
-var plumber = require("gulp-plumber");
-var sourcemap = require("gulp-sourcemaps");
-var sass = require("gulp-sass");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var del = require("del");
-var csso = require("gulp-csso");
-var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
-var htmlmin = require("gulp-htmlmin");
-var jsmin = require("gulp-uglify");
+const gulp = require("gulp");
+const plumber = require("gulp-plumber");
+const sourcemap = require("gulp-sourcemaps");
+const sass = require("gulp-sass");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const del = require("del");
+const csso = require("gulp-csso");
+const rename = require("gulp-rename");
+const imagemin = require("gulp-imagemin");
+const htmlmin = require("gulp-htmlmin");
+const jsmin = require('gulp-uglify-es').default;
 
-var server = require("browser-sync").create();
+const server = require("browser-sync").create();
 
 gulp.task("clean", function() {
   return del("build");
