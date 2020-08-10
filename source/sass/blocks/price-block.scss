@@ -1,0 +1,32 @@
+.price-block {
+  display: flex;
+  align-items: center;
+}
+
+.price-block__actual-price,
+.price-block__old-price {
+  padding: 0;
+  margin: 0;
+}
+
+.price-block__actual-price {
+  @include lb-16semi();
+
+  margin-right: 8px;
+  color: $lbblack;
+}
+
+.price-block__old-price {
+  @include lb-12strike();
+
+  color: $lbmgrey;
+  text-decoration: line-through;
+}
+
+.price-block--bold .price-block__actual-price {
+  @include lb-18bold();
+}
+
+.price-block--bold .price-block__old-price {
+  @include lb-14strike();
+}

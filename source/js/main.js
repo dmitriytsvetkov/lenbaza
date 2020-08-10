@@ -21,7 +21,7 @@ menuToggle.addEventListener('click', function () {
   }
 })
 
-const mySwiper = new Swiper('.banner--slider', {
+const bannerSlider = new Swiper('.banner--slider', {
   // Optional parameters
   loop: true,
   slideClass: 'banner__item',
@@ -42,4 +42,30 @@ const mySwiper = new Swiper('.banner--slider', {
       }
     }
   }
+})
+
+const offersSlider = new Swiper('.multiple-slider', {
+  // Optional parameters
+  /*loop: true,*/
+  slidesPerView: 2,
+  slidesPerColumn: 2,
+  spaceBetween: 0,
+  slideClass: 'multiple-slider__item',
+  wrapperClass: 'multiple-slider__wrapper',
+  /*// If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    modifierClass: 'banner__pagination',
+    bulletClass: 'banner__bullet',
+    bulletActiveClass: 'banner__bullet--active',
+  },
+  breakpoints: {
+    1024: {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    }
+  }*/
 })

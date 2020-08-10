@@ -512,7 +512,7 @@
 .category__text br {
   display: none; }
 
-.category__link {
+.categories__link {
   position: relative;
   font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
@@ -522,7 +522,7 @@
   text-transform: uppercase;
   text-decoration: none; }
 
-.category__link::after {
+.categories__link::after {
   position: absolute;
   right: -36px;
   top: 7px;
@@ -532,12 +532,12 @@
   background-image: url("../../img/icon-right-arrow-long.svg");
   background-repeat: no-repeat; }
 
-.category__link:hover::after {
+.categories__link:hover::after {
   right: -57px;
   width: 34px;
   background-image: url("../../img/icon-right-arrow-verylong.svg"); }
 
-.category__link:active {
+.categories__link:active {
   opacity: 0.3; }
 
 @media (min-width: 768px) {
@@ -582,10 +582,10 @@
     width: 268px;
     height: 112px;
     background-image: url("../../img/icon-cat-pro.svg"); }
-  .category__link {
+  .categories__link {
     font-size: 20px;
     line-height: 20px; }
-  .category__link::after {
+  .categories__link::after {
     top: 5px;
     right: -47px; } }
 

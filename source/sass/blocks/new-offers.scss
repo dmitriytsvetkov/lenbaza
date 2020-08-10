@@ -1,0 +1,108 @@
+.new-offers {
+
+}
+
+.new-offers__title {
+  @include lb-h2();
+
+  padding: 0;
+  margin: 0 15px;
+  color: $lbblack;
+}
+
+.new-offers__list {
+  @include list-reset();
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  border-top: 1px solid #F7F7F7;
+}
+
+.new-offers__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  /*width: 50%;*/
+  border-right: 1px solid #F7F7F7;
+  border-bottom: 1px solid #F7F7F7;
+}
+
+.new-offers__img {
+  width: auto;
+  max-height: 140px;
+}
+
+.new-offers__price {
+  margin-bottom: 16px;
+}
+
+.new-offers__container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.new-offers__name {
+  @include lb-16med();
+
+  padding: 0;
+  margin: 0 0 16px 0;
+  color: $lbblack;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.new-offers__buy {
+  @include lb-16semi();
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  width: 100%;
+  padding: 8px;
+  color: $lbblue;
+  text-decoration: none;
+  border: 2px solid $lbblue;
+  border-radius: 5px;
+}
+
+.new-offers__buy::before {
+  display: inline-block;
+  padding: 0;
+  margin: 0 7px 0 0;
+  content: "";
+  width: 20px;
+  height: 18px;
+  background-image: url('../../img/basket-logo.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.new-offers__show-all {
+  @include lb-18semi();
+
+  position: relative;
+  padding-right: 20px;
+  margin-left: 16px;
+  color: $lbblue;
+  text-decoration: none;
+}
+
+.new-offers__show-all:after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  content: "";
+  width: 14px;
+  height: 11px;
+  background-image: url('../../img/next.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}

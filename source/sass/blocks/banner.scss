@@ -58,33 +58,7 @@
 }
 
 .banner__price {
-  display: flex;
-  align-items: center;
   margin-bottom: 24px;
-}
-
-.banner__actual-price,
-.banner__old-price {
-  padding: 0;
-  margin: 0;
-}
-
-.banner__actual-price {
-  margin-right: 8px;
-  font-size: 18px;
-  line-height: 23px;
-  font-family: inherit;
-  font-weight: bold;
-  color: $lbblack;
-}
-
-.banner__old-price {
-  font-size: 14px;
-  line-height: 18px;
-  font-family: inherit;
-  font-weight: 500;
-  color: $lbmgrey;
-  text-decoration: line-through;
 }
 
 .banner__link {

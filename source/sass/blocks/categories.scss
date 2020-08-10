@@ -1,0 +1,121 @@
+.categories__title {
+  @include lb-h2();
+
+  margin: 0 0 24px 0;
+  color: $lbblack;
+}
+
+.categories__item {
+  position: relative;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #DFDFDF;
+  border-radius: 10px;
+}
+
+.categories__item:last-child {
+  margin-bottom: 0;
+}
+
+.categories__item::before {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.categories__item--kinder-garden {
+  padding-top: 120px;
+}
+
+.categories__item--kinder-garden::before {
+  width: 100px;
+  height: 80px;
+  background-image: url('../../img/kinder-garden.png');
+}
+
+.categories__item--aids-equipment {
+  padding-top: 114px;
+}
+
+.categories__item--aids-equipment::before {
+  width: 99px;
+  height: 74px;
+  background-image: url('../../img/aids.png');
+}
+
+.categories__item--school {
+  padding-top: 177px;
+}
+
+.categories__item--school::before {
+  width: 99px;
+  height: 137px;
+  background-image: url('../../img/school.png');
+}
+
+.categories__item--related-products {
+  padding-top: 139px;
+}
+
+.categories__item--related-products::before {
+  width: 99px;
+  height: 99px;
+  background-image: url('../../img/related.png');
+}
+
+.categories__category-name {
+  @include lb-h3();
+
+  margin: 0 0 24px 0;
+  color: $lbblack;
+}
+
+.categories__category-list {
+  @include list-reset();
+
+  margin-bottom: 24px;
+}
+
+.categories__list-item {
+  margin-bottom: 16px;
+}
+
+.categories__list-item:last-child {
+  margin-bottom: 0;
+}
+
+.categories__list-item a {
+  @include lb-16med();
+
+  display: block;
+
+  color: $lbmgrey;
+  text-decoration: none;
+}
+
+.categories__show-all {
+  @include lb-16semi();
+
+  position: relative;
+  padding-right: 20px;
+  color: $lbblue;
+  text-decoration: none;
+}
+
+.categories__show-all:after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  content: "";
+  width: 14px;
+  height: 11px;
+  background-image: url('../../img/next.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
