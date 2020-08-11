@@ -44,7 +44,7 @@ const bannerSlider = new Swiper('.banner--slider', {
   }
 })
 
-const offersSlider = new Swiper('.multiple-slider', {
+const offersSlider = new Swiper('.multiple-slider__container', {
   // Optional parameters
   /*loop: true,*/
   slidesPerView: 2,

@@ -1,8 +1,4 @@
-.new-offers {
-
-}
-
-.new-offers__title {
+.multiple-slider__title {
   @include lb-h2();
 
   padding: 0;
@@ -10,7 +6,7 @@
   color: $lbblack;
 }
 
-.new-offers__list {
+.multiple-slider__list {
   @include list-reset();
 
   display: flex;
