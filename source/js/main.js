@@ -69,3 +69,13 @@ const offersSlider = new Swiper('.multiple-slider', {
     }
   }*/
 })
+
+const swiper = new Swiper('.promo__slider', {
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  containerModifierClass: 'new-swiper',
+  /*pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },*/
+});

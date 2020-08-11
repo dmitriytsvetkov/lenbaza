@@ -96,26 +96,4 @@
   text-decoration: none;
 }
 
-.categories__show-all {
-  @include lb-16semi();
-
-  position: relative;
-  padding-right: 20px;
-  color: $lbblue;
-  text-decoration: none;
-}
-
-.categories__show-all:after {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  content: "";
-  width: 14px;
-  height: 11px;
-  background-image: url('../../img/next.svg');
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
 
