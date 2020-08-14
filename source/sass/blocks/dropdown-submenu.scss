@@ -1,0 +1,14 @@
+.dropdown-submenu {
+  @include list-reset();
+}
+
+.dropdown-submenu__link {
+  @include lb-16med();
+
+  display: block;
+  padding-right: 27%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: $lbdgrey;
+  text-decoration: none;
+}
