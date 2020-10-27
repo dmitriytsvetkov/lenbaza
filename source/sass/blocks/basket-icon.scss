@@ -52,3 +52,9 @@
   background-color: #EA6227;
   border-radius: 50%;
 }
+
+@media screen and (min-width: $tablet-width) {
+  .basket-icon--mobile {
+    display: none;
+  }
+}

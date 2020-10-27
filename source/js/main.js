@@ -5,7 +5,11 @@ const menuToggle = document.querySelector('.mobile-menu__toggle');
 const catalogMenu = document.querySelector('.catalog-menu');
 const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
 const mainNav = document.querySelector('.main-nav');
-const catalogBackBtn = document.querySelector('.catalog__btn-back');
+const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');
+
+/*const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+const windowWidth = window.innerWidth - getScrollbarWidth();*/
+
 
 const initialMenu = () => {
   if (document.querySelector('.catalog-menu__link--opened')) {
@@ -19,7 +23,9 @@ const initialMenu = () => {
   }
 }
 
-mobileMenu.classList.remove('mobile-menu--nojs');
+if (mobileMenu) {
+  mobileMenu.classList.remove('mobile-menu--nojs');
+}
 
 if (mobileMenu.classList.contains('mobile-menu--opened')) {
   mobileMenu.classList.remove('mobile-menu--opened');
@@ -60,9 +66,11 @@ catalogMenu.addEventListener('click', function (e) {
 
   if (e.target.classList.contains('catalog-menu__link--drop')) {
     e.preventDefault();
+    initialMenu();
     e.target.classList.add('catalog-menu__link--opened');
     e.target.closest('.catalog-menu__item').classList.add('catalog-menu__item--opened');
     e.target.closest('.catalog-menu__list').classList.add('catalog-menu__list--active');
+    console.log(e.target) // сделать чтобы при клике по открытому элементу меню он закрывался в изначальное состояние
   }
 
   if (e.target.classList.contains('catalog__btn-back')) {
