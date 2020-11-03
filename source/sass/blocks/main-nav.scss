@@ -1,3 +1,7 @@
+.main-nav {
+  width: 100%;
+}
+
 .main-nav--opened {
   display: block;
 }
@@ -34,12 +38,13 @@
   .main-nav {
     position: absolute;
     top: 62px;
-    right: -25px;
+    right: calc((100% - 688px) / 2);
+    width: auto;
     padding-top: 10px;
     z-index: 99;
   }
 
-  .main-nav::after{
+  .main-nav::after {
     position: absolute;
     content: "";
     top: 3px;

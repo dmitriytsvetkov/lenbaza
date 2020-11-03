@@ -22,6 +22,10 @@
     margin-right: 0;
   }
 
+  .top-nav__list-item--desktop {
+    display: none;
+  }
+
   .top-nav__link {
     @include lb-16med();
 
@@ -42,4 +46,9 @@
   }
 }
 
+@media screen and (min-width: $desktop-width) {
+  .top-nav__list-item--desktop {
+    display: block;
+  }
+}
 

@@ -170,4 +170,13 @@
   }
 }
 
+@media screen and (min-width: $desktop-width) {
+  .catalog-menu--opened {
+    width: 460px;
+  }
 
+  .catalog-menu__item--opened .catalog-menu__dropdown-list {
+    right: -460px;
+    width: 460px;
+  }
+}

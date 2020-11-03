@@ -70,7 +70,7 @@ catalogMenu.addEventListener('click', function (e) {
     e.target.classList.add('catalog-menu__link--opened');
     e.target.closest('.catalog-menu__item').classList.add('catalog-menu__item--opened');
     e.target.closest('.catalog-menu__list').classList.add('catalog-menu__list--active');
-    console.log(e.target) // сделать чтобы при клике по открытому элементу меню он закрывался в изначальное состояние
+    // желательно сделать чтобы при клике по открытому элементу меню он закрывался в изначальное состояние
   }
 
   if (e.target.classList.contains('catalog__btn-back')) {

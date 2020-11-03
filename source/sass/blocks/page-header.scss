@@ -18,8 +18,9 @@
 }
 
 .page-header__search-wrapper {
+  width: 100%;
   margin: 0 auto;
-  background-color: #F7F7F7;
+  background-color: $lbbgrey;
 }
 
 .page-header__search-form {
@@ -72,6 +73,7 @@
   .page-header__wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .page-header__top-wrapper {
@@ -79,8 +81,15 @@
     width: 100%;
   }
 
+  .page-header__middle-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
   .page-header__search-wrapper {
-    order: 1;
+    position: absolute;
+    left: 0;
+    top: 72px;
     width: 100%;
   }
 
@@ -100,6 +109,7 @@
 
   .page-header__catalog-btn {
     padding: 10px 24px;
+    width: auto;
   }
 
   .page-header__logo-container {
@@ -111,6 +121,6 @@
   }
 
   .page-header__links-wrapper {
-    margin: 0 0 0 auto;
+    margin: 0 0 0 0;
   }
 }

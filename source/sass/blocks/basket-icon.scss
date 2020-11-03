@@ -1,4 +1,5 @@
 .basket-icon {
+  position: relative;
   display: flex;
   justify-content: center;
   width: 70px;
@@ -7,8 +8,6 @@
 
 .basket-icon--mobile {
   display: block;
-  height: 0;
-  width: 0;
 }
 
 .basket-icon--mobile .basket-icon__basket-container {

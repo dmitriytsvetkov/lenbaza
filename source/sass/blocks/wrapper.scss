@@ -4,3 +4,9 @@
     margin: 0 auto;
   }
 }
+
+@media screen and (min-width: $desktop-width) {
+  .wrapper {
+    width: 1320px;
+  }
+}
