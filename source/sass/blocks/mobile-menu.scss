@@ -107,7 +107,12 @@
 }
 
 @media screen and (min-width: $desktop-width) {
+  .mobile-menu {
+    width: 1320px;
+  }
+
   .mobile-menu__toggle {
     display: none;
   }
+
 }

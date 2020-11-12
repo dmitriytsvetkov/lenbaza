@@ -22,3 +22,21 @@
   right: 16px;
   transform: translateY(-50%);
 }
+
+@media screen and (min-width: $tablet-width) {
+  .search-form {
+    width: 688px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .search-form {
+    width: auto;
+    padding: 0;
+  }
+
+  .search-form__search-input {
+    background-color: $lblgrey;
+  }
+}

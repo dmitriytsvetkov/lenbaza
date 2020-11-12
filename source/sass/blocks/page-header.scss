@@ -124,3 +124,18 @@
     margin: 0 0 0 0;
   }
 }
+
+@media screen and (min-width: $desktop-width) {
+  .page-header__logo-container {
+    order: -2;
+  }
+
+  .page-header__btn-wrapper {
+    order: -1;
+  }
+
+  .page-header__search-wrapper {
+    position: static;
+    width: 406px;
+  }
+}
