@@ -49,6 +49,13 @@ $lblgrey: #F4F4F4;
   font-weight: 600;
 }
 
+@mixin lb-18med {
+  font-size: 18px;
+  line-height: 23px;
+  font-family: 'Gilroy', 'Arial', sans-serif;
+  font-weight: 500;
+}
+
 @mixin lb-16semi {
   font-size: 16px;
   line-height: 20px;

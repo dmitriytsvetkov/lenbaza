@@ -109,10 +109,15 @@
 @media screen and (min-width: $desktop-width) {
   .mobile-menu {
     width: 1320px;
+    justify-content: flex-start;
   }
 
   .mobile-menu__toggle {
     display: none;
+  }
+
+  .mobile-menu__btn-wrapper {
+    margin-right: 24px;
   }
 
 }

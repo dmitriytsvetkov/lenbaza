@@ -1,5 +1,5 @@
 .page-header {
-  background-color: #fff;
+  background-color: $lbwhite;
 }
 
 .page-header__wrapper {
@@ -127,6 +127,7 @@
 
 @media screen and (min-width: $desktop-width) {
   .page-header__logo-container {
+    margin-right: 75px;
     order: -2;
   }
 
@@ -137,5 +138,6 @@
   .page-header__search-wrapper {
     position: static;
     width: 406px;
+    margin: 0 auto 0 0;
   }
 }
