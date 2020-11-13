@@ -1,3 +1,26 @@
 .popular-list {
   display: none;
 }
+
+@media screen and (min-width: $desktop-width) {
+  .popular-list {
+    @include list-reset();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1320px;
+    padding-top: 15px;
+    border-top: 1px solid $lbmgrey;
+  }
+
+  .popular-list__link {
+    @include lb-16med();
+    color: $lbdgrey;
+    text-decoration: none;
+  }
+
+  .popular-list__link--black {
+    @include lb-16semi();
+    color: $lbblack;
+  }
+}
