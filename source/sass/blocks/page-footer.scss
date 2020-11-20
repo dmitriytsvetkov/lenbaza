@@ -16,20 +16,25 @@
   flex-wrap: wrap;
 }
 
-.page-footer__terms {
-  margin-bottom: 24px;
-}
-.page-footer__terms,
-.page-footer__copyright {
-  width: 100%;
-  font-size: 16px;
-  line-height: 125%;
-  font-family: inherit;
-  font-weight: 500;
-  color: rgba(11, 11, 11, 0.8);
-  text-decoration: none;
+@media screen and (min-width: $tablet-width) {
+  .page-footer__wrapper {
+    padding: 40px;
+  }
 }
 
-.page-footer__ymarket-logo {
-  display: none;
+@media screen and (min-width: $desktop-width) {
+  .page-footer__wrapper {
+    padding: 40px 0;
+  }
+
+  .page-footer__nav {
+    width: 1320px;
+    padding-bottom: 40px;
+    margin: 0 auto 43px auto;
+  }
+
+  .page-footer__bottom {
+    width: 1320px;
+    margin: 0 auto;
+  }
 }
