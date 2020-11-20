@@ -20,9 +20,19 @@
   .page-footer__wrapper {
     padding: 40px;
   }
+
+  .page-footer__features-list {
+    padding: 80px 40px 110px 40px;
+  }
 }
 
 @media screen and (min-width: $desktop-width) {
+  .page-footer__features-list {
+    width: 1320px;
+    padding: 120px 0 120px 0;
+    margin: 0 auto;
+  }
+
   .page-footer__wrapper {
     padding: 40px 0;
   }

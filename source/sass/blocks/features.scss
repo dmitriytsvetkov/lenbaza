@@ -1,19 +1,14 @@
 .features__title {
+  @include lb-h2();
   padding: 0;
   margin: 0 0 25px 0;
-  font-size: 30px;
-  line-height: 125%;
-  font-family: inherit;
-  font-weight: 600;
-  color: #0B0B0B;
+  color: $lbblack;
 }
 
 .features__list {
+  @include list-reset();
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
-  margin: 0 0 0 0;
-  list-style: none;
 }
 
 .features__item {
@@ -29,9 +24,7 @@
   margin-bottom: 0;
 }
 
-.features__item--offerts::before,
-.features__item--technical-task::before,
-.features__item--equipment::before {
+.features__item::before {
   position: absolute;
   top: 44px;
   left: 25px;
@@ -58,26 +51,84 @@
 }
 
 .features__description {
+  @include lb-h3();
   padding: 0;
   margin: 0 0 40px 0;
-  font-size: 20px;
-  line-height: 125%;
-  font-family: inherit;
-  font-weight: 600;
-  color: #0B0B0B;
+  color: $lbblack;
 }
 
 .features__submit {
+  @include lb-16semi();
   display: inline-block;
   padding: 10px 24px;
   margin: 0 0 15px 0;
-  border: 1px solid #EA6227;
+  border: 1px solid $lborange;
   border-radius: 10px;
-  font-size: 16px;
-  line-height: 125%;
-  font-family: inherit;
-  font-weight: 600;
-  color: #EA6227;
+  color: $lborange;
   text-decoration: none;
+}
 
+@media screen and (min-width: $tablet-width) {
+  .features__title {
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  .features__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 23px 23px 80px;
+  }
+
+  .features__item::before {
+    top: 24px;
+  }
+
+  .features__description {
+    margin: 0;
+  }
+
+  .features__item--offerts .features__description {
+    width: 261px;
+  }
+
+  .features__item--technical-task .features__description {
+    width: 312px;
+  }
+
+  .features__item--equipment .features__description {
+    width: 224px;
+  }
+
+  .features__submit {
+    margin: 0;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .features__list {
+    justify-content: space-between;
+  }
+
+  .features__item {
+    flex-basis: auto;
+    width: 424px;
+    padding: 104px 40px 40px 24px;
+    margin: 0;
+  }
+
+  .features__item::before {
+    top: 40px;
+  }
+
+  .features__item--equipment .features__description {
+    width: 298px;
+  }
+
+  .features__description {
+    margin-bottom: 40px;
+  }
 }
