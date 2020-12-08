@@ -103,7 +103,7 @@
   .catalog-menu--opened {
     position: absolute;
     top: 76px;
-    left: 0;
+    left: calc((100% - 688px) / 2);
     width: 345px;
     background-color: $lbwhite;
     z-index: 99;

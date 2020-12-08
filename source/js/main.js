@@ -86,6 +86,7 @@ const bannerSlider = new Swiper('.banner--slider', {
   loop: true,
   slideClass: 'banner__item',
   wrapperClass: 'banner__wrapper',
+  spaceBetween: 17,
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',

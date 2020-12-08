@@ -64,12 +64,12 @@
 
 @media screen and (min-width: $tablet-width) {
   .mobile-menu {
-    position: relative;
+    position: static;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 688px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 40px;
   }
 
   .mobile-menu--opened {
