@@ -30,3 +30,13 @@
 .price-block--bold .price-block__old-price {
   @include lb-14strike();
 }
+
+@media screen and (min-width: $tablet-width) {
+  .price-block__actual-price {
+    @include lb-18bold();
+  }
+
+  .price-block__old-price {
+    @include lb-14strike();
+  }
+}

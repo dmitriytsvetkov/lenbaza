@@ -120,15 +120,15 @@ const multipleSlider = new Swiper('.multiple-slider__container', {
     modifierClass: 'banner__pagination',
     bulletClass: 'banner__bullet',
     bulletActiveClass: 'banner__bullet--active',
-  },
+  },*/
   breakpoints: {
-    1024: {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
+    768: {
+      loop: false,
+      slidesPerView: 'auto',
+      slidesPerColumn: 1,
+      spaceBetween: 25,
     }
-  }*/
+  }
 })
 
 const promoSlider = new Swiper('.promo__slider', {

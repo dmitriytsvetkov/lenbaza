@@ -110,8 +110,9 @@
 @media screen and (min-width: $desktop-width) {
   .mobile-menu {
     position: relative;
-    width: 1320px;
     justify-content: flex-start;
+    width: 1320px;
+    margin: 0 auto;
   }
 
   .mobile-menu__toggle {
