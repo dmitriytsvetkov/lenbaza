@@ -96,4 +96,51 @@
   text-decoration: none;
 }
 
+@media screen and (min-width: $tablet-width) {
+  .categories__title {
+    @include lb-h1();
+  }
 
+  .categories__item {
+    padding: 24px 36px 24px 179px;
+  }
+
+  .categories__item::before {
+    top: 24px;
+    left: 28px;
+  }
+
+  .categories__category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .categories__list-item {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .categories__title {
+    width: 100%;
+  }
+
+  .categories__item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 647px;
+  }
+
+  .categories__item:last-child,
+  .categories__item:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+}

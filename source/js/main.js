@@ -6,10 +6,12 @@ const catalogMenu = document.querySelector('.catalog-menu');
 const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
 const mainNav = document.querySelector('.main-nav');
 const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');
+const promoSlider = document.querySelector('.promo__slider-container');
 
 /*const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 const windowWidth = window.innerWidth - getScrollbarWidth();*/
 
+let mySwiper;
 
 const initialMenu = () => {
   if (document.querySelector('.catalog-menu__link--opened')) {
@@ -113,6 +115,7 @@ const multipleSlider = new Swiper('.multiple-slider__container', {
   spaceBetween: 0,
   slideClass: 'multiple-slider__item',
   wrapperClass: 'multiple-slider__wrapper',
+
   /*// If we need pagination
   pagination: {
     el: '.swiper-pagination',
@@ -123,21 +126,50 @@ const multipleSlider = new Swiper('.multiple-slider__container', {
   },*/
   breakpoints: {
     768: {
-      loop: false,
-      slidesPerView: 'auto',
+      slidesPerView: 2.2,
       slidesPerColumn: 1,
       spaceBetween: 25,
+    },
+    1024: {
+      slidesPerView: 3.2,
+      slidesPerColumn: 1,
+      spaceBetween: 25,
+    },
+    1460: {
+      slidesPerView: 4,
+      slidesPerColumn: 1,
+      spaceBetween: 25,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
     }
   }
 })
 
-const promoSlider = new Swiper('.promo__slider', {
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-  containerModifierClass: 'new-swiper',
-  /*pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },*/
-});
+const mobileSliderInit = () => {
+  if (window.innerWidth < 768 && promoSlider.dataset.mobile === 'false') {
+    mySwiper = new Swiper(promoSlider, {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+      slideClass: 'promo__slider-item',
+      wrapperClass: 'promo__slider-wrapper',
+    });
 
+    promoSlider.dataset.mobile = 'true';
+  }
+
+  if (window.innerWidth >= 768) {
+    promoSlider.dataset.mobile = 'false';
+
+    if (promoSlider.classList.contains('swiper-container-initialized')) {
+      mySwiper.destroy();
+    }
+  }
+}
+
+mobileSliderInit();
+
+window.addEventListener('resize', () => {
+  mobileSliderInit();
+})
