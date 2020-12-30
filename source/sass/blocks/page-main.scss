@@ -23,6 +23,10 @@
   margin: 0 16px 80px 16px;
 }
 
+.page-main__breadcrumbs {
+  margin: 0 16px 24px 16px;
+}
+
 @media screen and (min-width: $tablet-width) {
   .page-main {
     padding-top: 80px;
@@ -50,6 +54,10 @@
 
   .page-main__viewed {
     margin-left: 35px;
+  }
+
+  .page-main__breadcrumbs {
+    margin: 0 40px 24px 40px;
   }
 }
 
@@ -86,5 +94,10 @@
   .page-main__viewed {
     width: 1320px;
     margin: 0 auto 120px auto;
+  }
+
+  .page-main__breadcrumbs {
+    width: 1320px;
+    margin: 0 auto 24px auto;
   }
 }

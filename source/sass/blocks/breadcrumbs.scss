@@ -1,6 +1,5 @@
 .breadcrumbs {
-  margin: 0 16px;
-
+  display: table;
 }
 
 .breadcrumbs__list {
@@ -43,14 +42,15 @@
 }
 
 @media screen and (min-width: $tablet-width) {
-  .breadcrumbs {
-    margin: 0 40px;
-  }
+
 }
 
 @media screen and (min-width: $desktop-width) {
-  .breadcrumbs {
-    width: 1320px;
-    margin: 0 auto 24px auto;
+  .breadcrumbs__list {
+    display: table;
+  }
+
+  .breadcrumbs__item {
+    display: inline-block;
   }
 }
