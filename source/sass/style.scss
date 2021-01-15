@@ -27,6 +27,7 @@
 @import "blocks/top-nav.scss";
 @import "blocks/breadcrumbs.scss";
 @import "blocks/catalog.scss";
+@import "blocks/catalog-filter.scss";
 @import "blocks/sorting-list.scss";
 
 *,
@@ -55,4 +56,8 @@ body {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.modalEnabled {
+  overflow: hidden;
 }

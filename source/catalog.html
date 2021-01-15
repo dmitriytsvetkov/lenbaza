@@ -9,7 +9,7 @@
   <script src="js/picturefill.min.js" async></script>
   <script src="js/swiper-bundle.min.js"></script>
 </head>
-<body>
+<body class="modalEnabled">
 <header class="page-header">
   <div class="page-header__wrapper">
     <div class="page-header__top-wrapper top-nav">
@@ -316,6 +316,68 @@
         </svg>
         <span class="catalog__control-name">Сортировка</span>
       </a>
+    </div>
+    <div class="catalog__filter-wrapper catalog-filter">
+      <h4 class="catalog-filter__title">Фильтр</h4>
+      <button class="catalog-filter__close">Закрыть</button>
+      <form class="catalog-filter__form" action="#" method="GET">
+        <div class="catalog-filter__column">
+          <div class="catalog-filter__item">
+            <p class="catalog-filter__item-title">Цена</p>
+            <fieldset class="catalog-filter__range range-filter">
+              <div class="range-filter__price-controls">
+                <label for="min-price">
+                  <input class="catalog-filter__range" type="text" id="min-price" value="0">
+                </label>
+                <label for="max-price">
+                  <input class="catalog-filter__range" type="text" id="max-price" value="0">
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="catalog-filter__item">
+            <p class="catalog-filter__item-title">Производитель</p>
+            <fieldset class="catalog-filter__list">
+              <div class="catalog-filter__checkbox-option">
+                <input type="checkbox" class="catalog-filter__option-checkbox" id="detskiyMir">
+                <label for="detskiyMir">Детский мир</label>
+              </div>
+              <div class="catalog-filter__checkbox-option">
+                <input type="checkbox" class="catalog-filter__option-checkbox" id="shkolniyGorod">
+                <label for="shkolniyGorod">Школьный город</label>
+              </div>
+              <div class="catalog-filter__checkbox-option">
+                <input type="checkbox" class="catalog-filter__option-checkbox" id="superigrushki">
+                <label for="superigrushki">Суперигрушки</label>
+              </div>
+              <div class="catalog-filter__checkbox-option">
+                <input type="checkbox" class="catalog-filter__option-checkbox" id="posobiyaRf">
+                <label for="posobiyaRf">Пособия.рф</label>
+              </div>
+              <div class="catalog-filter__checkbox-option">
+                <input type="checkbox" class="catalog-filter__option-checkbox" id="germaniya">
+                <label for="germaniya">Германия</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="catalog-filter__item">
+            <p class="catalog-filter__item-title">Для кого</p>
+            <fieldset class="catalog-filter__radio">
+              <div class="catalog-filter__radio-option">
+                <input type="radio" id="male">
+                <label for="male">Мужской</label>
+              </div>
+              <div class="catalog-filter__radio-option">
+                <input type="radio" id="female">
+                <label for="female" >Женский</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="catalog-filter__submit-section">
+          <button class="catalog-filter__submit" type="button">Показать</button>
+        </div>
+      </form>
     </div>
     <div class="catalog__sort-wrapper">
       <p class="catalog__items-count">Найдено 345 товаров</p>
