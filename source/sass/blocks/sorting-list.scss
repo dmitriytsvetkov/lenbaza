@@ -1,0 +1,40 @@
+@media screen and (min-width: $desktop-width) {
+  .sorting-list {
+    @include list-reset();
+    display: flex;
+  }
+
+  .sorting-list__link {
+    @include lb-16med();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6.5px 15px;
+    border: 1px solid $lblgrey;
+    text-decoration: none;
+    color: $lbmgrey;
+  }
+
+  .sorting-list__link:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .sorting-list__link:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .sorting-list__link--active {
+    background-color: $lborange;
+    color: $lbwhite;
+  }
+
+  .sorting-list__link--active .sorting-list__icon path {
+    stroke: $lbwhite;
+  }
+
+  .sorting-list__icon {
+    margin-right: 8px;
+  }
+}

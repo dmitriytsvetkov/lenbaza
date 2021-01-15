@@ -18,6 +18,10 @@
   margin: 0 16px 24px 16px;
 }
 
+.catalog__sort-wrapper {
+  display: none;
+}
+
 .catalog__control-btn {
   @include lb-16med();
   display: flex;
@@ -81,6 +85,8 @@
 
 .catalog__old-price {
   @include lb-12strike();
+  color: $lbmgrey;
+  text-decoration: line-through;
 }
 
 .catalog__name {
@@ -142,13 +148,112 @@
     margin: 0 40px 16px 40px;
   }
 
+  .catalog__catalog-list {
+    justify-content: space-between;
+    margin: 0 40px;
+    border: none;
+  }
+
+  .catalog__item {
+    width: 49%;
+    margin-bottom: 24px;
+    border: none;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
   .catalog__buttons-wrapper {
     margin: 0 40px 24px 40px;
+  }
+
+  .catalog__sort-wrapper {
+    display: none;
+  }
+
+  .catalog__img-wrapper {
+    width: 100%;
+    height: 266px;
+  }
+
+  .catalog__img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  .catalog__name {
+    @include lb-18med();
+  }
+
+  .catalog__new-price {
+    @include lb-18bold();
+  }
+
+  .catalog__old-price {
+    @include lb-14strike();
+  }
+
+  .catalog__buy-btn {
+    border-width: 1px;
+  }
+
+  .catalog__show-more {
+    margin: 0 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .catalog__item {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .catalog__item {
+    width: 24%;
   }
 }
 
 @media screen and (min-width: $desktop-width) {
+  .catalog__title {
+    margin: 0 0 32px 335px;
+  }
+
   .catalog__buttons-wrapper {
     display: none;
+  }
+
+  .catalog__sort-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 984px;
+    margin: 0 0 25px 335px;
+  }
+
+  .catalog__items-count {
+    @include lb-16med();
+    margin: 0;
+    padding: 0;
+    color: $lbmgrey;
+  }
+
+  .catalog__catalog-list {
+    width: 985px;
+    margin: 0 0 0 auto;
+  }
+
+  .catalog__item {
+    width: 310px;
+  }
+
+  .catalog__img-wrapper {
+    height: 240px;
+  }
+
+  .catalog__show-more {
+    width: 984px;
+    margin: 0 0 0 auto;
   }
 }

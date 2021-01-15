@@ -148,22 +148,24 @@ const multipleSlider = new Swiper('.multiple-slider__container', {
 })
 
 const mobileSliderInit = () => {
-  if (window.innerWidth < 768 && promoSlider.dataset.mobile === 'false') {
-    mySwiper = new Swiper(promoSlider, {
-      slidesPerView: 1.2,
-      spaceBetween: 16,
-      slideClass: 'promo__slider-item',
-      wrapperClass: 'promo__slider-wrapper',
-    });
+  if (promoSlider) {
+    if (window.innerWidth < 768 && promoSlider.dataset.mobile === 'false') {
+      mySwiper = new Swiper(promoSlider, {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        slideClass: 'promo__slider-item',
+        wrapperClass: 'promo__slider-wrapper',
+      });
 
-    promoSlider.dataset.mobile = 'true';
-  }
+      promoSlider.dataset.mobile = 'true';
+    }
 
-  if (window.innerWidth >= 768) {
-    promoSlider.dataset.mobile = 'false';
+    if (window.innerWidth >= 768) {
+      promoSlider.dataset.mobile = 'false';
 
-    if (promoSlider.classList.contains('swiper-container-initialized')) {
-      mySwiper.destroy();
+      if (promoSlider.classList.contains('swiper-container-initialized')) {
+        mySwiper.destroy();
+      }
     }
   }
 }
