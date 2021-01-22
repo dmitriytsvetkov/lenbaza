@@ -7,6 +7,8 @@ const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
 const mainNav = document.querySelector('.main-nav');
 const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');
 const promoSlider = document.querySelector('.promo__slider-container');
+const controlButtons = document.querySelectorAll('.catalog__control-btn');
+const modals = document.querySelectorAll('.modal');
 
 /*const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 const windowWidth = window.innerWidth - getScrollbarWidth();*/
@@ -167,6 +169,28 @@ const mobileSliderInit = () => {
     }
   }
 }
+
+controlButtons.forEach((el) => {
+  el.addEventListener('click', (e) => {
+    const path = e.currentTarget.getAttribute('data-path');
+
+    modals.forEach((el) => {
+      el.classList.remove('modal--visible')
+    })
+
+    document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
+    document.body.classList.add('modalEnabled');
+  })
+})
+
+modals.forEach((el) => {
+  el.addEventListener('click', (e) => {
+    if (e.target === el.querySelector('.modal__close-btn')) {
+      el.classList.remove('modal--visible')
+      document.body.classList.remove('modalEnabled');
+    }
+  })
+})
 
 if (promoSlider) {
   mobileSliderInit();

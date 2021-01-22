@@ -1,0 +1,39 @@
+.range-filter {
+  display: flex;
+}
+
+.range-filter__price-controls {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.range-filter__label {
+  display: block;
+  width: 42%;
+}
+
+.range-filter__label:last-child::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 1px;
+  transform: translate(-50%, -50%);
+  background-color: $lbblack;
+}
+
+.range-filter__range {
+  @include lb-16med();
+  display: block;
+  width: 100%;
+  padding: 11px 0;
+  margin: 0;
+  text-align: center;
+  color: $lbdgrey;
+  border: none;
+  border-radius: 5px;
+  background-color: $lblgrey;
+}

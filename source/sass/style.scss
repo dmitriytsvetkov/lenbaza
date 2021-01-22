@@ -3,6 +3,7 @@
 @import "visually-hidden.scss";
 @import "blocks/swiper.scss";
 @import "blocks/wrapper.scss";
+@import "blocks/modal.scss";
 @import "blocks/page-header.scss";
 @import "blocks/search-form.scss";
 @import "blocks/main-nav.scss";
@@ -28,7 +29,9 @@
 @import "blocks/breadcrumbs.scss";
 @import "blocks/catalog.scss";
 @import "blocks/catalog-filter.scss";
+@import "blocks/catalog-sort.scss";
 @import "blocks/sorting-list.scss";
+@import "blocks/range-filter.scss";
 
 *,
 *::after,

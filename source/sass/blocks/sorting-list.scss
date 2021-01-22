@@ -1,40 +1,93 @@
+.sorting-list {
+  @include list-reset();
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sorting-list__item {
+  width: 100%;
+}
+
+.sorting-list__link {
+  @include lb-18med();
+  display: flex;
+  align-items: center;
+  padding: 13.5px 15px;
+  border: none;
+  text-decoration: none;
+  color: $lbmgrey;
+}
+
+.sorting-list__link--active {
+  background-color: $lborange;
+  color: $lbwhite;
+}
+
+.sorting-list__link--active .sorting-list__icon path {
+  stroke: $lbwhite;
+}
+
+.sorting-list__icon {
+  margin-right: 16px;
+}
+
+.sorting-list__icon--asc,
+.sorting-list__icon--desc {
+  width: 24px;
+  height: 16px;
+}
+
+.sorting-list__icon--thumbs-up,
+.sorting-list__icon--rating {
+  width: 18px;
+  height: 18px;
+}
+
+@media screen and (min-width: $tablet-width) {
+  .sorting-list__link {
+    padding: 21.5px 40px;
+  }
+
+  .sorting-list__icon--asc,
+  .sorting-list__icon--desc {
+    width: 36px;
+    height: 24px;
+  }
+
+  .sorting-list__icon--thumbs-up,
+  .sorting-list__icon--rating {
+    width: 28px;
+    height: 28px;
+  }
+}
+
 @media screen and (min-width: $desktop-width) {
-  .sorting-list {
-    @include list-reset();
-    display: flex;
+  .sorting-list__item {
+    width: auto;
+  }
+
+  .sorting-list__item--rating {
+    display: none;
   }
 
   .sorting-list__link {
-    @include lb-16med();
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6.5px 15px;
-    border: 1px solid $lblgrey;
-    text-decoration: none;
-    color: $lbmgrey;
-  }
-
-  .sorting-list__link:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-
-  .sorting-list__link:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    padding: 7.5px 16px;
+    border: 1px solid #F4F4F4;
   }
 
   .sorting-list__link--active {
-    background-color: $lborange;
-    color: $lbwhite;
+    border-color: $lborange;
   }
 
-  .sorting-list__link--active .sorting-list__icon path {
-    stroke: $lbwhite;
+  .sorting-list__icon--asc,
+  .sorting-list__icon--desc {
+    width: 17px;
+    height: 13px;
   }
 
-  .sorting-list__icon {
-    margin-right: 8px;
+  .sorting-list__icon--thumbs-up,
+  .sorting-list__icon--rating {
+    width: 17px;
+    height: 17px;
   }
 }
