@@ -1,0 +1,65 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "vendor";
+@import "settings";
+
+// CUSTOM COMPONENTS STYLES
+/*
+@import "./components/modal";
+@import "./components/page-header";
+@import "./components/search-form";
+@import "./components/main-nav";
+@import "./components/popular-list";
+@import "./components/contact-list";
+@import "./components/icon-links";
+@import "./components/mobile-menu";
+@import "./components/page-main";
+@import "./components/page-footer";
+@import "./components/features";
+@import "./components/footer-nav";
+@import "./components/top-nav";
+@import "./components/payment-icons";
+@import "./components/banner";
+@import "./components/articles";
+@import "./components/breadcrumbs";
+@import "./components/catalog-menu";
+@import "./components/catalog";
+@import "./components/categories";
+@import "./components/dropdown-submenu";
+@import "./components/multiple-slider";
+@import "./components/price-block";
+@import "./components/promo";
+@import "./components/range-filter";
+@import "./components/show-all";
+@import "./components/sorting-list";
+@import "./components/swiper";
+*/
+
+@import "./components/modal";
+@import "./components/page-header";
+@import "./components/search-form";
+@import "./components/main-nav";
+@import "./components/popular-list";
+@import "./components/contact-list";
+@import "./components/icon-links";
+@import "./components/mobile-menu";
+@import "./components/page-main";
+@import "./components/page-footer";
+@import "./components/features";
+@import "./components/footer-nav";
+@import "./components/payment-icons";
+@import "./components/price-block";
+@import "./components/banner";
+@import "./components/multiple-slider";
+@import "./components/categories";
+@import "./components/promo";
+@import "./components/show-all";
+@import "./components/articles";
+@import "./components/catalog-menu";
+@import "./components/dropdown-submenu";
+@import "./components/top-nav";
+@import "./components/breadcrumbs";
+@import "./components/catalog";
+@import "./components/sorting-list";
+@import "./components/range-filter";

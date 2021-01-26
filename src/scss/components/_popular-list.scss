@@ -1,0 +1,27 @@
+.popular-list {
+  display: none;
+}
+
+@include desktop {
+  .popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid var(--color-mid-grey);
+    padding-top: 15px;
+    width: 1320px;
+  }
+
+  .popular-list__link {
+    @include lb-16med;
+
+    text-decoration: none;
+    color: var(--color-dark-grey);
+  }
+
+  .popular-list__link--black {
+    @include lb-16semi;
+
+    color: var(--color-black);
+  }
+}

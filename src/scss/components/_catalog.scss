@@ -1,0 +1,254 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.catalog__title {
+  @include lb-h2;
+
+  margin: 0 16px 16px;
+  width: 100%;
+  color: var(--color-black);
+}
+
+.catalog__buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 16px 24px;
+  width: 100%;
+}
+
+.catalog__control-btn {
+  @include lb-16med;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: 1px solid var(--color-super-light-grey);
+  border-radius: 5px;
+  padding: 11px 0;
+  width: 46%;
+  text-decoration: none;
+  color: var(--color-dark-grey);
+}
+
+.catalog__svg-icon {
+  margin-right: 8px;
+}
+
+.catalog__catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 24px;
+  border-top: 1px solid #f6f6f6;
+  border-left: 1px solid #f6f6f6;
+}
+
+.catalog__item {
+  display: flex;
+  flex-wrap: wrap;
+  border-right: 1px solid #f6f6f6;
+  border-bottom: 1px solid #f6f6f6;
+  width: 50%;
+}
+
+.catalog__content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.catalog__price-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.catalog__new-price,
+.catalog__old-price {
+  margin: 0;
+  padding: 0;
+}
+
+.catalog__new-price {
+  @include lb-16semi;
+
+  margin-right: 8px;
+  line-height: 21px;
+  color: var(--color-black);
+}
+
+.catalog__old-price {
+  @include lb-12strike;
+
+  text-decoration: line-through;
+  color: var(--color-mid-grey);
+}
+
+.catalog__name {
+  @include lb-16med;
+
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0 0 16px;
+  padding: 0;
+  text-overflow: ellipsis;
+  color: var(--color-black);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.catalog__buy-btn {
+  @include lb-16semi;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  justify-content: center;
+  border: 2px solid var(--color-blue);
+  border-radius: 5px;
+  padding: 8px;
+  width: 100%;
+  text-decoration: none;
+  color: var(--color-blue);
+}
+
+.catalog__buy-btn::before {
+  content: "";
+  display: inline-block;
+  margin: 0 7px 0 0;
+  padding: 0;
+  width: 20px;
+  height: 18px;
+  background-image: url("../../img/basket-logo.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.catalog__show-more {
+  @include lb-16semi;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16px;
+  border-radius: 5px;
+  padding: 15px 0;
+  width: 100%;
+  text-decoration: none;
+  color: var(--color-dark-grey);
+  background-color: var(--color-super-light-grey);
+}
+
+@include tablet {
+  .catalog__title {
+    margin: 0 40px 16px;
+  }
+
+  .catalog__catalog-list {
+    justify-content: space-between;
+    margin: 0 40px;
+    border: none;
+  }
+
+  .catalog__item {
+    margin-bottom: 24px;
+    border: none;
+    border-radius: 10px;
+    width: 49%;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .catalog__buttons-wrapper {
+    margin: 0 40px 24px;
+  }
+
+  .catalog__img-wrapper {
+    width: 100%;
+    height: 266px;
+  }
+
+  .catalog__img-wrapper img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .catalog__name {
+    @include lb-18med;
+  }
+
+  .catalog__new-price {
+    @include lb-18bold;
+  }
+
+  .catalog__old-price {
+    @include lb-14strike;
+  }
+
+  .catalog__buy-btn {
+    border-width: 1px;
+  }
+
+  .catalog__show-more {
+    margin: 0 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .catalog__item {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .catalog__item {
+    width: 24%;
+  }
+}
+
+@include desktop {
+  .catalog {
+    position: relative;
+  }
+
+  .catalog__title {
+    margin: 0 0 32px 335px;
+  }
+
+  .catalog__buttons-wrapper {
+    display: none;
+  }
+
+  .catalog__sort-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 25px 335px;
+    width: 984px;
+  }
+
+  .catalog__catalog-list {
+    margin: 0 0 0 auto;
+    width: 985px;
+  }
+
+  .catalog__item {
+    width: 310px;
+  }
+
+  .catalog__img-wrapper {
+    height: 240px;
+  }
+
+  .catalog__show-more {
+    margin: 0 0 0 auto;
+    width: 984px;
+  }
+}

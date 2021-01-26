@@ -1,0 +1,143 @@
+.categories__title {
+  @include lb-h2;
+
+  margin: 0 0 24px;
+  color: var(--color-black);
+}
+
+.categories__item {
+  position: relative;
+  margin-bottom: 24px;
+  border: 1px solid #dfdfdf;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.categories__item:last-child {
+  margin-bottom: 0;
+}
+
+.categories__item::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.categories__item--kinder-garden {
+  padding-top: 120px;
+}
+
+.categories__item--kinder-garden::before {
+  width: 100px;
+  height: 80px;
+  background-image: url("../../img/kinder-garden.png");
+}
+
+.categories__item--aids-equipment {
+  padding-top: 114px;
+}
+
+.categories__item--aids-equipment::before {
+  width: 99px;
+  height: 74px;
+  background-image: url("../../img/aids.png");
+}
+
+.categories__item--school {
+  padding-top: 177px;
+}
+
+.categories__item--school::before {
+  width: 99px;
+  height: 137px;
+  background-image: url("../../img/school.png");
+}
+
+.categories__item--related-products {
+  padding-top: 139px;
+}
+
+.categories__item--related-products::before {
+  width: 99px;
+  height: 99px;
+  background-image: url("../../img/related.png");
+}
+
+.categories__category-name {
+  @include lb-h3;
+
+  margin: 0 0 24px;
+  color: var(--color-black);
+}
+
+.categories__category-list {
+  margin-bottom: 24px;
+}
+
+.categories__list-item {
+  margin-bottom: 16px;
+}
+
+.categories__list-item:last-child {
+  margin-bottom: 0;
+}
+
+.categories__list-item a {
+  @include lb-16med;
+
+  display: block;
+  text-decoration: none;
+  color: var(--color-mid-grey);
+}
+
+@include tablet {
+  .categories__title {
+    @include lb-h1;
+  }
+
+  .categories__item {
+    padding: 24px 36px 24px 179px;
+  }
+
+  .categories__item::before {
+    left: 28px;
+    top: 24px;
+  }
+
+  .categories__category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .categories__list-item {
+    width: 45%;
+  }
+}
+
+@include desktop {
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .categories__title {
+    width: 100%;
+  }
+
+  .categories__item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 647px;
+  }
+
+  .categories__item:last-child,
+  .categories__item:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+}

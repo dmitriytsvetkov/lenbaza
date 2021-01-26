@@ -1,0 +1,42 @@
+.price-block {
+  display: flex;
+  align-items: center;
+}
+
+.price-block__actual-price,
+.price-block__old-price {
+  margin: 0;
+  padding: 0;
+}
+
+.price-block__actual-price {
+  @include lb-16semi;
+
+  margin-right: 8px;
+  color: var(--color-black);
+}
+
+.price-block__old-price {
+  @include lb-12strike;
+
+  text-decoration: line-through;
+  color: var(--color-mid-grey);
+}
+
+.price-block--bold .price-block__actual-price {
+  @include lb-18bold;
+}
+
+.price-block--bold .price-block__old-price {
+  @include lb-14strike;
+}
+
+@include tablet {
+  .price-block__actual-price {
+    @include lb-18bold;
+  }
+
+  .price-block__old-price {
+    @include lb-14strike;
+  }
+}

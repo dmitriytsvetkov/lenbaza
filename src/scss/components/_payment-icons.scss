@@ -1,0 +1,57 @@
+.payment-icons {
+  display: none;
+}
+
+@include desktop {
+  .payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 197px;
+  }
+
+  .payment-icons__item--mastercard {
+    width: 39px;
+    height: 32px;
+  }
+
+  .payment-icons__item--visa {
+    width: 53px;
+    height: 16px;
+  }
+
+  .payment-icons__item--mir {
+    width: 57px;
+    height: 16px;
+  }
+
+  .payment-icons__link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+  }
+
+  .payment-icons__link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .payment-icons__item--mastercard .payment-icons__link::before {
+    background-image: url("../../img/mastercard-logo.svg");
+  }
+
+  .payment-icons__item--visa .payment-icons__link::before {
+    background-image: url("../../img/visa-logo.svg");
+  }
+
+  .payment-icons__item--mir .payment-icons__link::before {
+    background-image: url("../../img/mir-logo.svg");
+  }
+}

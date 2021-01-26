@@ -1,12 +1,4 @@
-.DS_Store
+# Project exclude paths
+/node_modules/
+/app/
 .idea
-.vscode
-*.ai
-*.log
-*.pdf
-*.psd
-*.sublime*
-build/
-node_modules/
-npm-debug.*
-Thumbs.db

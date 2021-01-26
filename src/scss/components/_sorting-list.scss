@@ -1,0 +1,93 @@
+.sorting-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sorting-list__item {
+  width: 100%;
+}
+
+.sorting-list__link {
+  @include lb-18med;
+
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 13.5px 15px;
+  text-decoration: none;
+  color: var(--color-mid-grey);
+}
+
+.sorting-list__link--active {
+  color: var(--color-white);
+  background-color: var(--color-orange);
+}
+
+.sorting-list__link--active .sorting-list__icon path {
+  stroke: var(--color-white);
+}
+
+.sorting-list__icon {
+  margin-right: 16px;
+}
+
+.sorting-list__icon--asc,
+.sorting-list__icon--desc {
+  width: 24px;
+  height: 16px;
+}
+
+.sorting-list__icon--thumbs-up,
+.sorting-list__icon--rating {
+  width: 18px;
+  height: 18px;
+}
+
+@include tablet {
+  .sorting-list__link {
+    padding: 21.5px 40px;
+  }
+
+  .sorting-list__icon--asc,
+  .sorting-list__icon--desc {
+    width: 36px;
+    height: 24px;
+  }
+
+  .sorting-list__icon--thumbs-up,
+  .sorting-list__icon--rating {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@include desktop {
+  .sorting-list__item {
+    width: auto;
+  }
+
+  .sorting-list__item--rating {
+    display: none;
+  }
+
+  .sorting-list__link {
+    border: 1px solid #f4f4f4;
+    padding: 7.5px 16px;
+  }
+
+  .sorting-list__link--active {
+    border-color: var(--color-orange);
+  }
+
+  .sorting-list__icon--asc,
+  .sorting-list__icon--desc {
+    width: 17px;
+    height: 13px;
+  }
+
+  .sorting-list__icon--thumbs-up,
+  .sorting-list__icon--rating {
+    width: 17px;
+    height: 17px;
+  }
+}

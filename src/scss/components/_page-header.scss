@@ -1,0 +1,136 @@
+.page-header {
+  background-color: var(--color-white);
+}
+
+.page-header__wrapper {
+  position: relative;
+}
+
+.page-header__top-wrapper {
+  display: none;
+}
+
+.page-header__logo-container {
+  display: block;
+  margin: 0 auto;
+  padding: 21px 0;
+  width: 178px;
+}
+
+.page-header__search-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  background-color: var(--color-grey);
+}
+
+.page-header__search-form {
+  margin: 0 16px;
+}
+
+.page-header__btn-wrapper {
+  margin: 0 16px;
+}
+
+.page-header__catalog-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  width: 100%;
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  cursor: pointer;
+}
+
+.page-header__catalog-btn::before {
+  content: "";
+  display: inline-block;
+  margin: 0 7px 0 0;
+  padding: 0;
+  width: 15px;
+  height: 14px;
+  background-image: url("../../img/btn-burger-closed.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.page-header__links-wrapper {
+  margin: 10px 16px 0;
+}
+
+@include tablet {
+  .page-header__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-header__top-wrapper {
+    display: block;
+    width: 100%;
+  }
+
+  .page-header__middle-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .page-header__search-wrapper {
+    position: absolute;
+    left: 0;
+    top: 72px;
+    width: 100%;
+  }
+
+  .page-header__search-form {
+    margin: 0;
+  }
+
+  .page-header__btn-wrapper {
+    margin: 0;
+  }
+
+  .page-header__catalog-btn {
+    padding: 10px 24px;
+    width: auto;
+  }
+
+  .page-header__logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 35px 0 0;
+    width: 180px;
+  }
+
+  .page-header__links-wrapper {
+    margin: 0;
+  }
+}
+
+@include desktop {
+  .page-header__logo-container {
+    order: -2;
+    margin-right: 75px;
+  }
+
+  .page-header__btn-wrapper {
+    order: -1;
+  }
+
+  .page-header__search-wrapper {
+    position: static;
+    margin: 0 auto 0 0;
+    width: 406px;
+  }
+}
