@@ -1,0 +1,12 @@
+.card-info__container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 16px;
+}
+
+.card-info__title {
+  @include lb-h2;
+
+  margin: 0 0 16px 0;
+  color: var(--color-black);
+}

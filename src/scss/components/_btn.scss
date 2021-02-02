@@ -1,0 +1,22 @@
+.btn--to-basket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 18px 0;
+  width: 100%;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+}
+
+.btn__logo {
+  margin-right: 8px;
+}
+
+.btn__logo path {
+  fill: var(--color-white);
+}
+
+.btn__text--full-width {
+  @include lb-18bold;
+}
