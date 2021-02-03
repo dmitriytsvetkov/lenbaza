@@ -7,6 +7,42 @@
 .card-info__title {
   @include lb-h2;
 
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
   color: var(--color-black);
+}
+
+.card-info__to-fav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.card-info__to-fav-icon {
+  margin-right: 8px;
+}
+
+.card-info__to-fav-text {
+  @include lb-18med;
+
+  color: var(--color-mid-grey);
+}
+
+.card-info__to-basket {
+  margin-bottom: 24px;
+}
+
+.card-info__description {
+  margin-bottom: 24px;
+  border-top: 1px solid var(--color-grey);
+  border-bottom: 1px solid var(--color-grey);
+}
+
+.card-info__options {
+  margin-bottom: 80px;
+}
+
+.card-info__pickup-point {
+  margin-bottom: 80px;
 }

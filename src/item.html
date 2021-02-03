@@ -308,12 +308,18 @@
             <img src="img/multi-slider-img3.png" alt="img3">
           </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
     <div class="catalog-detail__card-info card-info">
       <div class="card-info__container">
         <h1 class="card-info__title">Касса цифр и счетного материала "Учись считать"</h1>
-        <a class="card-info__to-fav" href="#">В избранное</a>
+        <a class="card-info__to-fav" href="#">
+          <svg class="card-info__to-fav-icon" width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.9298 2.41452C17.4815 1.96607 16.9493 1.61034 16.3636 1.36763C15.7778 1.12492 15.15 1 14.516 1C13.8819 1 13.2541 1.12492 12.6683 1.36763C12.0826 1.61034 11.5504 1.96607 11.1022 2.41452L10.1719 3.34476L9.24167 2.41452C8.33627 1.50912 7.10829 1.00047 5.82786 1.00047C4.54743 1.00047 3.31945 1.50912 2.41405 2.41452C1.50865 3.31992 1 4.5479 1 5.82833C1 7.10875 1.50865 8.33674 2.41405 9.24214L3.34429 10.1724L10.1719 17L16.9995 10.1724L17.9298 9.24214C18.3782 8.79391 18.734 8.26171 18.9767 7.67596C19.2194 7.0902 19.3443 6.46237 19.3443 5.82833C19.3443 5.19428 19.2194 4.56645 18.9767 3.9807C18.734 3.39494 18.3782 2.86275 17.9298 2.41452V2.41452Z" stroke="#9B9B9B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="card-info__to-fav-text">В избранное</span>
+        </a>
         <div class="card-info__price price-block price-block--card">
           <p class="price-block__actual-price">1500 руб</p>
           <p class="price-block__old-price">3500 руб</p>
@@ -357,13 +363,19 @@
           <div class="pickup-point__item">
             <div class="pickup-point__header">
               <p class="pickup-point__type">Самовывоз</p>
-              <p class="pickup-point__metro">м. «Московские ворота»</p>
+              <p class="pickup-point__metro">
+                <svg class="pickup-point__metro-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="12" fill="#496DC8"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3991 6.62783C16.0056 5.38431 14.6807 5 14.6807 5L12.008 14.0096H11.9851L9.28959 5C9.28959 5 7.96465 5.37303 6.57119 6.62783C5.08634 7.9617 3.80711 10.0078 4.02412 13.2521C4.19546 15.8182 6.11433 18 6.11433 18L9.82644 17.9886C9.82644 17.9886 6.63974 16.3156 5.87448 13.6817C4.96072 10.573 6.38845 8.41386 7.48495 7.38517C7.93042 7.00081 8.58145 6.91037 8.82129 7.7356C9.64367 10.3695 11.9966 17.9095 11.9966 17.9095L12.008 17.9095C12.008 17.9095 14.3495 10.3696 15.1833 7.73564C15.4345 6.91041 16.0856 7.00086 16.5196 7.38521C17.6161 8.4139 19.0438 10.573 18.1301 13.6817C17.3648 16.3156 14.1781 17.9887 14.1781 17.9887L17.8902 18C17.8902 18 19.8205 15.807 19.9804 13.2522C20.1746 10.0078 18.8953 7.9617 17.3991 6.62783Z" fill="white"/>
+                </svg>
+                <span class="pickup-point__metro-name">м. «Московские ворота»</span>
+              </p>
               <p class="pickup-point__address">г. Санкт-Петербург, Московский пр., 93, склад 59</p>
             </div>
             <div class="pickup-point__footer">
               <p class="pickup-point__pickup-time">
-                <span>Забрать: </span>
-                <a href="#">Сейчас</a>
+                <span class="pickup-point__time-text">Забрать: </span>
+                <a href="#" class="pickup-point__time-day">Сейчас</a>
               </p>
               <p class="pickup-point__timetable">Режим работы:<span>Пн-Вс: 10:00 - 20:00</span></p>
             </div>

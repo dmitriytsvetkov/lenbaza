@@ -3,6 +3,10 @@
   align-items: center;
 }
 
+.price-block--card {
+  margin-bottom: 24px;
+}
+
 .price-block__actual-price,
 .price-block__old-price {
   margin: 0;
@@ -16,6 +20,14 @@
   color: var(--color-black);
 }
 
+.price-block--bold .price-block__actual-price {
+  @include lb-18bold;
+}
+
+.price-block--card .price-block__actual-price {
+  @include lb-h2;
+}
+
 .price-block__old-price {
   @include lb-12strike;
 
@@ -23,12 +35,12 @@
   color: var(--color-mid-grey);
 }
 
-.price-block--bold .price-block__actual-price {
-  @include lb-18bold;
-}
-
 .price-block--bold .price-block__old-price {
   @include lb-14strike;
+}
+
+.price-block--card .price-block__old-price {
+  @include lb-18med;
 }
 
 @include tablet {

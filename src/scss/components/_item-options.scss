@@ -1,0 +1,29 @@
+.item-options__item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.item-options__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.item-options__icon {
+  margin-right: 8px;
+}
+
+.item-options__title {
+  @include lb-16semi;
+
+  margin: 0;
+  color: var(--color-black);
+}
+
+.item-options__text {
+  @include lb-16med;
+
+  margin: 0;
+  width: 100%;
+  color: var(--color-dark-grey);
+}

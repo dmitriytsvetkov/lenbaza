@@ -200,6 +200,12 @@ modals.forEach((el) => {
   })
 })
 
+const sliderBlock = new Swiper('.slider-block', {
+  pagination: {
+    el: '.swiper-pagination',
+  },
+})
+
 if (promoSlider) {
   mobileSliderInit();
   window.addEventListener('resize', () => {
