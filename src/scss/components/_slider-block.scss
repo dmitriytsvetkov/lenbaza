@@ -1,6 +1,30 @@
+.slider-block {
+  position: relative;
+  overflow: hidden;
+}
+
 .slider-block .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 360px;
+}
+
+.slider-block__img {
+  width: 100%;
+}
+
+.slider-block .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-grey);
+  opacity: 1;
+}
+
+.slider-block .swiper-pagination-bullet-active {
+  background-color: var(--color-blue);
+}
+
+.slider-block.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 8px;
 }
