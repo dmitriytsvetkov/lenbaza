@@ -1,3 +1,9 @@
 .catalog-detail__slider {
   margin-bottom: 16px;
 }
+
+@include tablet {
+  .catalog-detail__slider {
+    margin: 0 40px;
+  }
+}

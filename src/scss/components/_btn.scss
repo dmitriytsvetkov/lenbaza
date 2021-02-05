@@ -22,6 +22,8 @@
 }
 
 .btn--pickup-point {
+  @include lb-16semi;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -29,4 +31,12 @@
   border-radius: 5px;
   padding: 7px 24px;
   color: var(--color-blue);
+}
+
+@include tablet {
+  .btn--to-basket {
+    order: -1;
+    margin-right: 40px;
+    max-width: 332px;
+  }
 }

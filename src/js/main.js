@@ -18,6 +18,7 @@ const promoSlider = document.querySelector('.promo__slider-container');
 const controlButtons = document.querySelectorAll('.catalog__control-btn');
 const modals = document.querySelectorAll('.modal');
 
+
 /*const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 const windowWidth = window.innerWidth - getScrollbarWidth();*/
 
@@ -200,11 +201,67 @@ modals.forEach((el) => {
   })
 })
 
-const sliderBlock = new Swiper('.slider-block', {
+// SLIDER BLOCK
+const sliderBlockDOM = document.querySelector('.slider-block');
+
+const sliderBlock = new Swiper(sliderBlockDOM, {
   pagination: {
     el: '.swiper-pagination',
   },
+  breakpoints: {
+    // when window width is >= 640px
+    768: {
+      noSwiping: true
+    }
+  }
 })
+
+const sliderNavItems = document.querySelectorAll('.slider-nav__item');
+
+sliderNavItems.forEach((el, index) => {
+  el.addEventListener('click', (e) => {
+    const currentIndex = parseInt(e.currentTarget.dataset.index);
+    console.log(e.currentTarget);
+    e.currentTarget.classList.add('slider-nav__item--active')
+    sliderBlock.slideTo(currentIndex)
+  })
+})
+
+if (sliderBlockDOM) {
+  const sliderBlockSlides = sliderBlockDOM.querySelectorAll('.swiper-slide');
+
+  if (window.innerWidth < 768 && sliderBlockDOM.dataset.mobile === 'false') {
+    sliderBlockDOM.dataset.mobile = 'true';
+  }
+
+  if (window.innerWidth >= 768) {
+    sliderBlockSlides.forEach((e) => {
+      e.classList.add('swiper-no-swiping')
+    })
+
+    sliderBlockDOM.dataset.mobile = 'false';
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 768 && sliderBlockDOM.dataset.mobile === 'false') {
+      sliderBlockSlides.forEach((e) => {
+        e.classList.remove('swiper-no-swiping')
+      })
+
+      sliderBlockDOM.dataset.mobile = 'true';
+    }
+
+    if (window.innerWidth >= 768) {
+      sliderBlockSlides.forEach((e) => {
+        e.classList.add('swiper-no-swiping')
+      })
+
+      sliderBlockDOM.dataset.mobile = 'false';
+    }
+  })
+}
+
+// END SLIDER BLOCK
 
 if (promoSlider) {
   mobileSliderInit();

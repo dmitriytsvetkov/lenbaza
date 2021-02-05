@@ -57,3 +57,26 @@
 .pickup-point__timetable {
   margin: 0;
 }
+
+@include tablet {
+  .pickup-point {
+    position: relative;
+    padding: 24px;
+    width: 100%;
+  }
+
+  .pickup-point__choose {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+  }
+
+  .pickup-point__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pickup-point__pickup-time {
+    margin-bottom: 0;
+  }
+}

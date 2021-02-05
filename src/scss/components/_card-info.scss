@@ -46,3 +46,23 @@
 .card-info__pickup-point {
   margin-bottom: 80px;
 }
+
+@include tablet {
+  .card-info__container {
+    margin: 0 40px;
+  }
+
+  .card-info__title {
+    margin-bottom: 24px;
+    width: 450px;
+  }
+
+  .card-info__wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .card-info__description {
+    border-top: none;
+  }
+}

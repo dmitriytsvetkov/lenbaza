@@ -27,3 +27,20 @@
   width: 100%;
   color: var(--color-dark-grey);
 }
+
+@include tablet {
+  .item-options__item {
+    display: flex;
+    align-items: center;
+  }
+
+  .item-options__header {
+    flex-wrap: nowrap;
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+
+  .item-options__title {
+    line-height: 21px;
+  }
+}

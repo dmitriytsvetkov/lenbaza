@@ -48,6 +48,10 @@
     @include lb-18bold;
   }
 
+  .price-block--card .price-block__actual-price {
+    margin-right: 16px;
+  }
+
   .price-block__old-price {
     @include lb-14strike;
   }
