@@ -1,0 +1,28 @@
+.about-slider {
+  position: relative;
+  width: 100%;
+}
+
+.about-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-slider img {
+  width: 100%;
+}
+
+.about-slider .swiper-pagination {
+  bottom: 8px;
+}
+
+.about-slider .swiper-pagination-bullet {
+  background-color: var(--color-white);
+  opacity: 1;
+  margin: 0 8px;
+}
+
+.about-slider .swiper-pagination-bullet-active {
+  background-color: var(--color-blue);
+}

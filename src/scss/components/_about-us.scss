@@ -1,0 +1,16 @@
+.about-us__container {
+  margin: 0 16px;
+}
+
+.about-us__title {
+  @include lb-h2;
+
+  margin: 0 0 16px;
+}
+
+.about-us__legend {
+  @include lb-16med-wide;
+
+  color: var(--color-dark-grey);
+  margin: 0 0 40px;
+}

@@ -269,6 +269,20 @@ if (sliderBlockDOM) {
 
 // END SLIDER BLOCK
 
+// ABOUT US SLIDER
+
+const aboutUsSliderDOM = document.querySelector('.about-us__slider');
+
+if (aboutUsSliderDOM) {
+  const aboutUsSlider = new Swiper(aboutUsSliderDOM, {
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  })
+}
+
+// END ABOUT IS SLIDER
+
 if (promoSlider) {
   mobileSliderInit();
   window.addEventListener('resize', () => {
