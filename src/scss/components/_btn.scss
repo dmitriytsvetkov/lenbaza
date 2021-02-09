@@ -40,3 +40,9 @@
     max-width: 332px;
   }
 }
+
+@include desktop {
+  .btn--to-basket {
+    width: 240px;
+  }
+}

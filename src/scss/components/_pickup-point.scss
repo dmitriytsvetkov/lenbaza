@@ -1,11 +1,16 @@
 .pickup-point {
   @include lb-16med;
 
-  border-radius: 5px;
-  padding: 24px 16px;
-  box-shadow: 1px 2px 30px rgba(0, 0, 0, 0.05);
   color: var(--color-black);
   background-color: var(--color-white);
+}
+
+.pickup-point__item {
+  position: relative;
+  border-radius: 5px;
+  padding: 24px 16px;
+  width: 100%;
+  box-shadow: 1px 2px 30px rgba(0, 0, 0, 0.05);
 }
 
 .pickup-point__header {
@@ -58,11 +63,13 @@
   margin: 0;
 }
 
+.pickup-point__work-time {
+  color: var(--color-dark-grey);
+}
+
 @include tablet {
-  .pickup-point {
-    position: relative;
+  .pickup-point__item {
     padding: 24px;
-    width: 100%;
   }
 
   .pickup-point__choose {
@@ -78,5 +85,17 @@
 
   .pickup-point__pickup-time {
     margin-bottom: 0;
+  }
+}
+
+@include desktop {
+  .pickup-point {
+    display: flex;
+    flex-wrap: wrap;
+    order: 999;
+  }
+
+  .pickup-point__item {
+    align-self: flex-start;
   }
 }

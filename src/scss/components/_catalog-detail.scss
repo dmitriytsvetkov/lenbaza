@@ -2,8 +2,54 @@
   margin-bottom: 16px;
 }
 
+.catalog-detail__pickup-point {
+  margin: 0 16px 80px;
+}
+
+.catalog-detail__full-description {
+  margin: 0 16px 80px;
+  padding: 0;
+}
+
 @include tablet {
   .catalog-detail__slider {
     margin: 0 40px;
+  }
+
+  .catalog-detail__pickup-point {
+    margin: 0 40px 80px;
+  }
+
+  .catalog-detail__full-description {
+    margin: 0 40px 80px;
+  }
+}
+
+@include desktop {
+  .catalog-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .catalog-detail__slider {
+    margin: 0;
+    width: 760px;
+  }
+
+  .catalog-detail__card-info {
+    margin: 0;
+    width: 536px;
+  }
+
+  .catalog-detail__pickup-point {
+    margin: 0;
+    width: 536px;
+  }
+
+  .catalog-detail__full-description {
+    margin: 0;
+    padding: 0;
+    width: 760px;
   }
 }

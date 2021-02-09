@@ -29,6 +29,10 @@
   color: var(--color-mid-grey);
 }
 
+.card-info__wrapper {
+  width: 100%;
+}
+
 .card-info__to-basket {
   margin-bottom: 24px;
 }
@@ -59,10 +63,17 @@
 
   .card-info__wrapper {
     display: flex;
+    margin-bottom: 24px;
     width: 100%;
   }
 
-  .card-info__description {
-    border-top: none;
+  .card-info__to-basket {
+    margin-bottom: 0;
+  }
+}
+
+@include desktop {
+  .card-info__container {
+    margin: 0;
   }
 }

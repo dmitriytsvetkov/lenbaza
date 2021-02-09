@@ -26,6 +26,8 @@
 
 .price-block--card .price-block__actual-price {
   @include lb-h2;
+
+  margin-right: 16px;
 }
 
 .price-block__old-price {
@@ -44,12 +46,13 @@
 }
 
 @include tablet {
-  .price-block__actual-price {
-    @include lb-18bold;
+
+  .price-block--card {
+    margin-bottom: 0;
   }
 
-  .price-block--card .price-block__actual-price {
-    margin-right: 16px;
+  .price-block__actual-price {
+    @include lb-18bold;
   }
 
   .price-block__old-price {

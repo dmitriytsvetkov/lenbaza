@@ -221,9 +221,15 @@ const sliderNavItems = document.querySelectorAll('.slider-nav__item');
 sliderNavItems.forEach((el, index) => {
   el.addEventListener('click', (e) => {
     const currentIndex = parseInt(e.currentTarget.dataset.index);
-    console.log(e.currentTarget);
-    e.currentTarget.classList.add('slider-nav__item--active')
-    sliderBlock.slideTo(currentIndex)
+
+    sliderBlock.slideTo(currentIndex);
+    e.currentTarget.classList.add('slider-nav__item--active');
+
+    sliderNavItems.forEach((el, index) => { // удаляем класс slider-nav__item---active
+      if (index !== currentIndex) {
+        el.classList.remove('slider-nav__item--active')
+      }
+    })
   })
 })
 
