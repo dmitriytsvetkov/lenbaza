@@ -11,6 +11,57 @@
 .about-us__legend {
   @include lb-16med-wide;
 
-  color: var(--color-dark-grey);
   margin: 0 0 40px;
+  color: var(--color-dark-grey);
+}
+
+.about-us__slider {
+  margin-bottom: 40px;
+}
+
+.about-us__slogan {
+  @include lb-18bold;
+
+  margin: 0 0 24px;
+  color: var(--color-black);
+}
+
+.about-us__list {
+  margin-bottom: 40px;
+}
+
+@include tablet {
+  .about-us__container {
+    margin: 0 40px;
+  }
+
+  .about-us__title {
+    margin: 0 0 24px;
+  }
+
+  .about-us__legend {
+    margin: 0 0 24px;
+  }
+
+  .about-us__slider {
+    margin: 0 40px 40px;
+  }
+}
+
+@include desktop {
+  .about-us__container {
+    margin: 0;
+  }
+
+  .about-us__title {
+    @include lb-h1;
+  }
+
+  .about-us__slider {
+    margin: 0 0 80px;
+  }
+
+  .about-us__slogan {
+    width: 620px;
+  }
 }

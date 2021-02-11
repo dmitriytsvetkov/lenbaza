@@ -1,0 +1,45 @@
+.awards__item {
+  border: 1px solid #dfdfdf;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.awards__icon-wrapper {
+  margin-bottom: 16px;
+  width: 68px;
+  height: 64px;
+}
+
+.awards__item-title {
+  @include lb-18bold;
+
+  margin: 0 0 16px;
+  color: var(--color-black);
+}
+
+.awards__item-text {
+  @include lb-16med-wide;
+
+  margin: 0;
+  color: var(--color-dark-grey);
+}
+
+@include tablet {
+  .awards__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 24px;
+    width: 599px;
+  }
+
+  .awards__icon-wrapper {
+    margin: 0;
+    width: 119px;
+    height: 112px;
+  }
+
+  .awards__body {
+    width: 385px;
+  }
+}

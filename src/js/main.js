@@ -271,13 +271,17 @@ if (sliderBlockDOM) {
 
 // ABOUT US SLIDER
 
-const aboutUsSliderDOM = document.querySelector('.about-us__slider');
+const aboutUsSliderDOM = document.querySelector('.about-slider');
 
 if (aboutUsSliderDOM) {
   const aboutUsSlider = new Swiper(aboutUsSliderDOM, {
     pagination: {
       el: '.swiper-pagination',
     },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
   })
 }
 
