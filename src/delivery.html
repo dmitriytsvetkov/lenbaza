@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#111111">
+	<title>Ленбаза Главная</title>
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+	<div class="site-container">
+		@include('html/header.html')
+    <main class="page-main">
+      <div class="page-main__breadcrumbs breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <p class="breadcrumbs__current">Каталог</p>
+          </li>
+        </ul>
+      </div>
+      <h1 class="page-main__title">Доставка и оплата</h1>
+      <div class="page-main__methods methods">
+        <div class="methods__item methods__item--payment">
+          <h3 class="methods__title">Способы оплаты</h3>
+          <div class="methods__links">
+            <p class="methods__requisites-text">Реквизиты</p>
+            <a href="#" class="methods__requisites methods__requisites--doc">DOC</a>
+            <a href="#" class="methods__requisites methods__requisites--pdf">PDF</a>
+          </div>
+        </div>
+      </div>
+    </main>
+		@include('html/footer.html')
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>
