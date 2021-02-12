@@ -27,6 +27,17 @@
   margin: 0 16px 24px;
 }
 
+.page-main__methods {
+  margin: 0 16px;
+}
+
+.page-main__title {
+  @include lb-h2;
+
+  margin: 0 16px 24px;
+  color: var(--color-black);
+}
+
 @include tablet {
   .page-main {
     padding-top: 80px;
@@ -57,6 +68,14 @@
   }
 
   .page-main__breadcrumbs {
+    margin: 0 40px 24px;
+  }
+
+  .page-main__methods {
+    margin: 0 40px;
+  }
+
+  .page-main__title {
     margin: 0 40px 24px;
   }
 }
@@ -113,6 +132,18 @@
 
   .page-main__about-us {
     margin: 0 auto 120px;
+    width: 1320px;
+  }
+
+  .page-main__methods {
+    margin: 0 auto 120px;
+    width: 1320px;
+  }
+
+  .page-main__title {
+    @include lb-h1;
+
+    margin: 0 auto 64px;
     width: 1320px;
   }
 }

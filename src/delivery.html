@@ -25,13 +25,76 @@
       </div>
       <h1 class="page-main__title">Доставка и оплата</h1>
       <div class="page-main__methods methods">
-        <div class="methods__item methods__item--payment">
-          <h3 class="methods__title">Способы оплаты</h3>
-          <div class="methods__links">
-            <p class="methods__requisites-text">Реквизиты</p>
-            <a href="#" class="methods__requisites methods__requisites--doc">DOC</a>
-            <a href="#" class="methods__requisites methods__requisites--pdf">PDF</a>
+        <div class="methods__mobile-tabs">
+          <div class="methods__mobile-tab">
+            <button class="methods__mobile-btn btn-reset methods__mobile-btn--active" data-tabs-path="payment">Об оплате</button>
           </div>
+          <div class="methods__mobile-tab">
+            <button class="methods__mobile-btn btn-reset" data-tabs-path="delivery">О доставке</button>
+          </div>
+        </div>
+        <div class="methods__item methods__item--payment methods__item--active" data-tabs-target="payment">
+          <div class="methods__header">
+            <h3 class="methods__title">Способы оплаты</h3>
+            <div class="methods__links">
+              <p class="methods__requisites-text">Реквизиты</p>
+              <a href="#" class="methods__requisites methods__requisites--doc">DOC</a>
+              <a href="#" class="methods__requisites methods__requisites--pdf">PDF</a>
+            </div>
+          </div>
+          <h4 class="methods__subtitle">Наличный расчет:</h4>
+          <p class="methods__text">
+            <span>В магазине при складе через кассу</span>
+            <span>Оплата водителю по факту доставки товара в черте Санкт-Петербурга и области (по предварительной договоренности с менеджером)</span>
+          </p>
+          <h4 class="methods__subtitle">Безналичный расчет:</h4>
+          <p class="methods__text">
+            <span>Через любое отделение банка РФ после выставления счета</span>
+            <span>Через интернет-банк (в назначении платежа указать номер счета)</span>
+          </p>
+          <p class="methods__text">
+            <span>Для выставления счета и оформления заказа просим Вас предоставить следующую информацию по факсу или e-mail: info@lenbaza.ru</span>
+          </p>
+          <div class="methods__line"></div>
+          <h4 class="methods__subtitle">Для юридического лица:</h4>
+          <ul class="methods__list">
+            <li class="methods__list-item">• Реквизиты с Ф.И.О. директора.</li>
+            <li class="methods__list-item">• Перечень необходимых документов для оплаты (счет, договор поставки и т.п.)</li>
+            <li class="methods__list-item">• Контактное лицо с координатами для связи.</li>
+          </ul>
+          <h4 class="methods__subtitle">Для физического лица:</h4>
+          <ul class="methods__list">
+            <li class="methods__list-item">• Ф.И.О.</li>
+            <li class="methods__list-item">• Контактный телефон</li>
+            <li class="methods__list-item">• Точный адрес с индексом.</li>
+          </ul>
+          <p class="methods__text methods__text--last">
+            <span>Обязательно согласовать наличие товара и комплект необходимых документов с менеджером.</span>
+          </p>
+        </div>
+        <div class="methods__item methods__item--delivery" data-tabs-target="delivery">
+          <div class="methods__header">
+            <h3 class="methods__title">Доставка</h3>
+          </div>
+          <h4 class="methods__subtitle">По Санкт-Петербургу и Ленинградской области:</h4>
+          <p class="methods__text">
+            <span>1. Самовывоз со склада по адресу Московский пр., 93, склад 59 - на буднях с 9:30 до 16:30</span>
+            <span>2. Автофургоном ГАЗель или легковым автомобилем (при малом объеме и весе груза), по ценам приведенным в таблице</span>
+            <span>3. Транспортной компанией по Вашему выбору, терминал которой находится в черте Санкт-Петербурга. Мелкие заказы бесплатно возим в ТК СДЭК, Энергия, Деловые линии, ПЭК, доставка до других ТК - 500 руб.</span>
+          </p>
+          <div class="methods__line"></div>
+          <h4 class="methods__subtitle">По России:</h4>
+          <p class="methods__text">
+            <span>1. Почтой России, при небольшом объеме заказа, по цене тарифа почты + 100%</span>
+            <span>2. Транспортной компанией по Вашему выбору, терминал которой находится в черте Санкт-Петербурга. Мелкие заказы бесплатно возим в ТК СДЭК, Энергия, Деловые линии, ПЭК, доставка до других ТК - 500 руб.</span>
+          </p>
+          <div class="methods__line"></div>
+          <p class="methods__text">
+            <span>Срок поставки товара по Санкт-Петербургу, после поступления оплаты, при наличии товара, от 1 до 3х рабочих дней.</span>
+            <span>Дата поставки по Ленинградской области оговаривается с менеджером индивидуально.</span>
+            <span>При необходимости стоимость доставки можем включить в цену товара.</span>
+          </p>
+          <a href="#" class="methods__btn">Расчитать доставку</a>
         </div>
       </div>
     </main>

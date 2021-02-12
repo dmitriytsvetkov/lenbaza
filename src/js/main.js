@@ -287,6 +287,30 @@ if (aboutUsSliderDOM) {
 
 // END ABOUT IS SLIDER
 
+// DELIVERY & PAYMENT MOBILE BUTTONS
+
+const methods = document.querySelector('.methods');
+const tabsBtn = document.querySelectorAll('.methods__mobile-btn');
+const tabsContent = document.querySelectorAll('.methods__item');
+
+if (methods) {
+  methods.addEventListener('click', (e) => {
+    if (e.target.classList.contains('methods__mobile-btn')) {
+      const tabsPath = e.target.dataset.tabsPath;
+      tabsHandler(tabsPath)
+    }
+  })
+  const tabsHandler = (path) => {
+    tabsBtn.forEach(el => { el.classList.remove('methods__mobile-btn--active') });
+    document.querySelector(`[data-tabs-path="${path}"]`).classList.add('methods__mobile-btn--active')
+
+    tabsContent.forEach(el => { el.classList.remove('methods__item--active') });
+    document.querySelector(`[data-tabs-target="${path}"]`).classList.add('methods__item--active')
+  }
+}
+
+// END DELIVERY & PAYMENT MOBILE BUTTONS
+
 if (promoSlider) {
   mobileSliderInit();
   window.addEventListener('resize', () => {
