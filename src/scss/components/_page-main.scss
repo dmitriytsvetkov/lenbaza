@@ -78,6 +78,10 @@
   .page-main__title {
     margin: 0 40px 24px;
   }
+
+  .page-main__contacts {
+    margin: 0 40px;
+  }
 }
 
 @include desktop {
@@ -144,6 +148,11 @@
     @include lb-h1;
 
     margin: 0 auto 64px;
+    width: 1320px;
+  }
+
+  .page-main__contacts {
+    margin: 0 auto 120px;
     width: 1320px;
   }
 }

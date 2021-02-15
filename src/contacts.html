@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#111111">
+	<title>Ленбаза Главная</title>
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+	<div class="site-container">
+		@include('html/header.html')
+    <main class="page-main">
+      <div class="page-main__breadcrumbs breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a href="/" class="breadcrumbs__link">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <p class="breadcrumbs__current">Каталог</p>
+          </li>
+        </ul>
+      </div>
+      <h1 class="page-main__title">Контакты</h1>
+      <div class="page-main__contacts contacts">
+        <div class="contacts__map-wrapper"></div>
+        <div class="contacts__list">
+          <div class="contacts__list-item">
+            <h3 class="contacts__list-item-title">Почтовый адрес / Фактический адрес</h3>
+            <p class="contacts__list-item-text">196084, г. Санкт-Петербург, Московский проспект д.93</p>
+          </div>
+          <div class="contacts__list-item">
+            <h3 class="contacts__list-item-title">Режим работы</h3>
+            <p class="contacts__list-item-text">
+              <span>Пн-Пт — с 9:00 до 17:00</span>
+              <span>Сб, Вс — выходной</span>
+            </p>
+          </div>
+          <div class="contacts__list-item">
+            <h3 class="contacts__list-item-title">Контактные телефоны</h3>
+            <p class="contacts__list-item-text">+7 (812) 388-15-91</p>
+          </div>
+          <div class="contacts__list-item">
+            <h3 class="contacts__list-item-title">E-mail</h3>
+            <p class="contacts__list-item-text">info@lenbaza.ru</p>
+          </div>
+        </div>
+      </div>
+    </main>
+		@include('html/footer.html')
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>
