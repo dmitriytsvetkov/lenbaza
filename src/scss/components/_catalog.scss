@@ -54,6 +54,11 @@
   width: 50%;
 }
 
+.catalog__item-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .catalog__content-wrapper {
   display: flex;
   flex-wrap: wrap;
