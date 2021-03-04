@@ -110,6 +110,11 @@
 .catalog__item-buttons {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.catalog__item-button-container {
   width: 100%;
 }
 
