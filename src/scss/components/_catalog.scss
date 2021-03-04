@@ -107,6 +107,12 @@
   -webkit-line-clamp: 4;
 }
 
+.catalog__item-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .catalog__buy-btn {
   @include lb-16semi;
 
