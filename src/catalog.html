@@ -327,12 +327,14 @@
               <p class="modal__item-title">Цена</p>
               <fieldset class="modal__range range-filter">
                 <div class="range-filter__price-controls">
-                  <label class="range-filter__label" for="min-price">
+                  <div class="range-filter__min-price-wrapper">
+                    <label class="range-filter__label" for="min-price">от</label>
                     <input class="range-filter__range" type="text" id="min-price" value="0">
-                  </label>
-                  <label class="range-filter__label" for="max-price">
+                  </div>
+                  <div class="range-filter__max-price-wrapper">
+                    <label class="range-filter__label" for="max-price">до</label>
                     <input class="range-filter__range" type="text" id="max-price" value="0">
-                  </label>
+                  </div>
                 </div>
               </fieldset>
             </div>

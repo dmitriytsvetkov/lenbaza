@@ -1,4 +1,6 @@
 .range-filter {
+  @include lb-16med;
+
   display: flex;
 }
 
@@ -9,12 +11,13 @@
   width: 100%;
 }
 
-.range-filter__label {
-  display: block;
+.range-filter__min-price-wrapper,
+.range-filter__max-price-wrapper {
+  position: relative;
   width: 42%;
 }
 
-.range-filter__label:last-child::before {
+.range-filter__price-controls::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -25,6 +28,15 @@
   transform: translate(-50%, -50%);
 }
 
+.range-filter__label {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: var(--color-mid-grey);
+}
+
 .range-filter__range {
   @include lb-16med;
 
@@ -32,7 +44,7 @@
   margin: 0;
   border: none;
   border-radius: 5px;
-  padding: 11px 0;
+  padding: 11px 25px;
   width: 100%;
   text-align: center;
   color: var(--color-dark-grey);
