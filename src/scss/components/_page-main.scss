@@ -38,6 +38,10 @@
   color: var(--color-black);
 }
 
+.page-main__auth-modal {
+  margin: 0 16px;
+}
+
 @include tablet {
   .page-main {
     padding-top: 80px;
@@ -81,6 +85,10 @@
 
   .page-main__contacts {
     margin: 0 40px;
+  }
+
+  .page-main__auth-modal {
+    margin: 40px auto 60px;
   }
 }
 

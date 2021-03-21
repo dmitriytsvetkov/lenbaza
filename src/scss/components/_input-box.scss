@@ -1,0 +1,33 @@
+.input-box__container {
+  @include lb-16med;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.input-box__label {
+  margin-bottom: 8px;
+  color: #898989;
+}
+
+.input-box__input {
+  @include lb-16med;
+
+  border: 1px solid var(--color-super-light-grey);
+  border-radius: 5px;
+  padding: 14px;
+  width: 100%;
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.input-box__forgot-password {
+  color: var(--color-blue);
+}
+
+@include tablet {
+  .input-box__label {
+    color: var(--color-mid-grey);
+  }
+}
