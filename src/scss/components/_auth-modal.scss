@@ -1,0 +1,77 @@
+.auth-modal {
+  border-radius: 10px;
+  padding: 40px 0;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-white);
+}
+
+.auth-modal__container {
+  margin: 0 16px;
+}
+
+.auth-modal__header {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.auth-modal__title {
+  @include lb-h3;
+
+  margin: 0;
+  color: var(--color-black);
+}
+
+.auth-modal__title--link {
+  margin-left: 24px;
+  color: var(--color-mid-grey);
+}
+
+.auth-modal__input-wrapper {
+  margin-bottom: 40px;
+}
+
+.auth-modal__input-box:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.auth-modal__actions {
+  margin-bottom: 24px;
+}
+
+.auth-modal__submit {
+  @include lb-16semi;
+
+  border: 1px solid var(--color-blue);
+  border-radius: 5px;
+  padding: 19px 0;
+  width: 100%;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  cursor: pointer;
+}
+
+.auth-modal__text {
+  @include lb-16med;
+
+  margin: 0;
+  padding: 0;
+  color: var(--color-mid-grey);
+}
+
+.auth-modal__link {
+  color: var(--color-blue);
+}
+
+@include tablet {
+  .auth-modal {
+    width: 472px;
+  }
+
+  .auth-modal__container {
+    margin: 0 24px;
+  }
+
+  .auth-modal__title {
+    @include lb-h2;
+  }
+}
