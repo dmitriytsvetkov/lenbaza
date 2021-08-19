@@ -1,3 +1,8 @@
+.search-form__wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .search-form {
   position: relative;
   display: flex;
@@ -16,11 +21,104 @@
   color: var(--color-dark-grey);
 }
 
-.search-form__svg-wrapper {
+.search-form__button {
   position: absolute;
-  right: 16px;
+  right: 0;
   top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: 60px;
+  height: 100%;
+  background-color: transparent;
   transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.search-dropdown {
+  @include lb-14strike;
+
+  position: absolute;
+  z-index: 999;
+  border-right: 1px solid var(--color-super-light-grey);
+  border-bottom: 1px solid var(--color-super-light-grey);
+  border-left: 1px solid var(--color-super-light-grey);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 16px;
+  width: 406px;
+  background-color: var(--color-white);
+}
+
+.search-dropdown__item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-dropdown__img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+}
+
+.search-dropdown__item-wrapper:not(:last-child) {
+  border-bottom: 1px solid var(--color-super-light-grey);
+  padding-bottom: 16px;
+}
+
+.search-dropdown__item-wrapper:not(:first-child) {
+  padding-top: 16px;
+}
+
+.search-dropdown__element {
+  padding-left: 15px;
+  width: 85%;
+}
+
+.search-dropdown__title {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-black);
+}
+
+.search-dropdown__price {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.search-dropdown__price--actual {
+  font-weight: 700;
+}
+
+.search-dropdown__price--old {
+  margin-left: 16px;
+  font-size: 12px;
+  text-decoration: line-through;
+  color: var(--color-mid-grey);
+}
+
+.search-dropdown__all-result .search-dropdown__element {
+  padding-left: 0;
+  width: 100%;
+}
+
+.search-dropdown__all-result .search-dropdown__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  color: var(--color-blue);
+}
+
+.search-dropdown__icon {
+  margin-left: 8px;
 }
 
 @include tablet {
@@ -31,6 +129,7 @@
 
 @include desktop {
   .search-form {
+    margin: 0;
     padding: 0;
     width: auto;
   }
