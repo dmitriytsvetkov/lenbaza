@@ -1,0 +1,25 @@
+.profile-menu {
+  border-radius: 5px;
+  width: 220px;
+}
+
+.profile-menu__item {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: var(--color-super-light-grey);
+}
+
+.profile-menu__link {
+  @include lb-16med;
+
+  display: block;
+  padding: 11px 31px 13px 17px;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--color-dark-grey);
+}
+
+.profile-menu__item--current .profile-menu__link {
+  color: var(--color-white);
+  background-color: var(--color-orange);
+}

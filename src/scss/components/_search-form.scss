@@ -41,6 +41,7 @@
 .search-dropdown {
   @include lb-14strike;
 
+  display: none;
   position: absolute;
   z-index: 999;
   border-right: 1px solid var(--color-super-light-grey);
