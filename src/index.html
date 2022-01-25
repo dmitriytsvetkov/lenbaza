@@ -1,17 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#111111">
-	<title>Ленбаза Главная</title>
-	<link rel="stylesheet" href="css/main.min.css">
-</head>
-<body>
-	<div class="site-container">
-		@include('html/header.html')
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
     <main class="page-main">
       <section class="page-main__slider-banner banner">
         <div class="banner--slider">
@@ -212,7 +206,7 @@
         <h2 class="categories__title">Категории</h2>
         <div class="categories__item categories__item--kinder-garden">
           <h3 class="categories__category-name">Детский сад</h3>
-          <ul class="categories__category-list">
+          <ul class="categories__category-list list-reset">
             <li class="categories__list-item">
               <a href="#" class="categories__link">Игрушки из дерева</a>
             </li>
@@ -242,7 +236,7 @@
         </div>
         <div class="categories__item categories__item--aids-equipment">
           <h3 class="categories__category-name">Технические средства обучения и оборудование</h3>
-          <ul class="categories__category-list">
+          <ul class="categories__category-list list-reset">
             <li class="categories__list-item">
               <a href="#" class="categories__link">Мебель школьная и игровая</a>
             </li>
@@ -266,7 +260,7 @@
         </div>
         <div class="categories__item categories__item--school">
           <h3 class="categories__category-name">Школа</h3>
-          <ul class="categories__category-list">
+          <ul class="categories__category-list list-reset">
             <li class="categories__list-item">
               <a href="#" class="categories__link">Кабинет начальных классов</a>
             </li>
@@ -290,7 +284,7 @@
         </div>
         <div class="categories__item categories__item--related-products">
           <h3 class="categories__category-name">Сопутствующие товары</h3>
-          <ul class="categories__category-list">
+          <ul class="categories__category-list list-reset">
             <li class="categories__list-item">
               <a href="#" class="categories__link">Плакаты и таблицы</a>
             </li>
@@ -496,8 +490,8 @@
         </div>
       </section>
     </main>
-		@include('html/footer.html')
-	</div>
-	<script src="js/main.js"></script>
+    @include('partials/footer.html')
+  </div>
 </body>
+
 </html>

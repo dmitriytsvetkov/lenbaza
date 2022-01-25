@@ -1,338 +1,335 @@
-const {src, dest, parallel, series, watch} = require('gulp');
+const {
+  src,
+  dest,
+  series,
+  watch
+} = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-const uglify = require('gulp-uglify-es').default;
 const del = require('del');
 const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass');
-const rename = require('gulp-rename');
-const fileinclude = require('gulp-file-include');
-const gutil = require('gulp-util');
-const ftp = require('vinyl-ftp');
-const sourcemaps = require('gulp-sourcemaps');
-const notify = require('gulp-notify');
+const sass = require('sass');
+const gulpSass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
-const webpack = require('webpack');
-const webpackStream = require('webpack-stream');
-const ttf2woff2 = require('gulp-ttf2woff2');
-const fs = require('fs');
-const tiny = require('gulp-tinypng-compress');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
+const fileInclude = require('gulp-file-include');
 const rev = require('gulp-rev');
 const revRewrite = require('gulp-rev-rewrite');
-const revdel = require('gulp-rev-delete-original');
+const revDel = require('gulp-rev-delete-original');
 const htmlmin = require('gulp-htmlmin');
+const gulpif = require('gulp-if');
+const notify = require('gulp-notify');
+const image = require('gulp-imagemin');
+const {
+  readFileSync
+} = require('fs');
+const typograf = require('gulp-typograf');
+const webp = require('gulp-webp');
+const avif = require('gulp-avif');
+const mainSass = gulpSass(sass);
+const webpackStream = require('webpack-stream');
+const plumber = require('gulp-plumber');
+const path = require('path');
+const zip = require('gulp-zip');
+const rootFolder = path.basename(path.resolve());
 
-// DEV
+// paths
+const srcFolder = './src';
+const buildFolder = './app';
+const paths = {
+  srcSvg: `${srcFolder}/img/svg/**.svg`,
+  srcImgFolder: `${srcFolder}/img`,
+  buildImgFolder: `${buildFolder}/img`,
+  srcScss: `${srcFolder}/scss/**/*.scss`,
+  buildCssFolder: `${buildFolder}/css`,
+  srcFullJs: `${srcFolder}/js/**/*.js`,
+  srcMainJs: `${srcFolder}/js/main.js`,
+  buildJsFolder: `${buildFolder}/js`,
+  srcPartialsFolder: `${srcFolder}/partials`,
+  resourcesFolder: `${srcFolder}/resources`,
+};
+
+let isProd = false; // dev by default
+
+const clean = () => {
+  return del([buildFolder])
+}
+
 //svg sprite
 const svgSprites = () => {
-  return src('./src/img/svg/**.svg')
+  return src(paths.srcSvg)
+    .pipe(
+      svgmin({
+        js2svg: {
+          pretty: true,
+        },
+      })
+    )
+    .pipe(
+      cheerio({
+        run: function ($) {
+          $('[fill]').removeAttr('fill');
+          $('[stroke]').removeAttr('stroke');
+          $('[style]').removeAttr('style');
+        },
+        parserOptions: {
+          xmlMode: true
+        },
+      })
+    )
+    .pipe(replace('&gt;', '>'))
     .pipe(svgSprite({
       mode: {
         stack: {
-          sprite: "../sprite.svg" //sprite file name
+          sprite: "../sprite.svg"
         }
       },
     }))
-    .pipe(dest('./app/img'));
+    .pipe(dest(paths.buildImgFolder));
+}
+
+// scss styles
+const styles = () => {
+  return src(paths.srcScss, { sourcemaps: !isProd })
+    .pipe(plumber(
+      notify.onError({
+        title: "SCSS",
+        message: "Error: <%= error.message %>"
+      })
+    ))
+    .pipe(mainSass())
+    .pipe(autoprefixer({
+      cascade: false,
+      grid: true,
+      overrideBrowserslist: ["last 5 versions"]
+    }))
+    .pipe(gulpif(isProd, cleanCSS({
+      level: 2
+    })))
+    .pipe(dest(paths.buildCssFolder, { sourcemaps: '.' }))
+    .pipe(browserSync.stream());
+};
+
+// styles backend
+const stylesBackend = () => {
+  return src(paths.srcScss)
+    .pipe(plumber(
+      notify.onError({
+        title: "SCSS",
+        message: "Error: <%= error.message %>"
+      })
+    ))
+    .pipe(mainSass())
+    .pipe(autoprefixer({
+      cascade: false,
+      grid: true,
+      overrideBrowserslist: ["last 5 versions"]
+    }))
+    .pipe(dest(paths.buildCssFolder))
+    .pipe(browserSync.stream());
+};
+
+// scripts
+const scripts = () => {
+  return src(paths.srcMainJs)
+    .pipe(plumber(
+      notify.onError({
+        title: "JS",
+        message: "Error: <%= error.message %>"
+      })
+    ))
+    .pipe(webpackStream({
+      mode: isProd ? 'production' : 'development',
+      output: {
+        filename: 'main.js',
+      },
+      module: {
+        rules: [{
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', {
+                  targets: "defaults"
+                }]
+              ]
+            }
+          }
+        }]
+      },
+      devtool: !isProd ? 'source-map' : false
+    }))
+    .on('error', function (err) {
+      console.error('WEBPACK ERROR', err);
+      this.emit('end');
+    })
+    .pipe(dest(paths.buildJsFolder))
+    .pipe(browserSync.stream());
+}
+
+// scripts backend
+const scriptsBackend = () => {
+  return src(paths.srcMainJs)
+    .pipe(plumber(
+      notify.onError({
+        title: "JS",
+        message: "Error: <%= error.message %>"
+      })
+    ))
+    .pipe(webpackStream({
+      mode: 'development',
+      output: {
+        filename: 'main.js',
+      },
+      module: {
+        rules: [{
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', {
+                  targets: "defaults"
+                }]
+              ]
+            }
+          }
+        }]
+      },
+      devtool: false
+    }))
+    .on('error', function (err) {
+      console.error('WEBPACK ERROR', err);
+      this.emit('end');
+    })
+    .pipe(dest(paths.buildJsFolder))
+    .pipe(browserSync.stream());
 }
 
 const resources = () => {
-  return src('./src/resources/**')
-    .pipe(dest('./app'))
+  return src(`${paths.resourcesFolder}/**`)
+    .pipe(dest(buildFolder))
 }
 
-const imgToApp = () => {
-	return src(['./src/img/**.jpg', './src/img/**.png', './src/img/**.jpeg', './src/img/*.svg'])
-    .pipe(dest('./app/img'))
-}
+const images = () => {
+  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`])
+    .pipe(gulpif(isProd, image([
+      image.mozjpeg({
+        quality: 80,
+        progressive: true
+      }),
+      image.optipng({
+        optimizationLevel: 2
+      }),
+    ])))
+    .pipe(dest(paths.buildImgFolder))
+};
+
+const webpImages = () => {
+  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
+    .pipe(webp())
+    .pipe(dest(paths.buildImgFolder))
+};
+
+const avifImages = () => {
+  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
+    .pipe(avif())
+    .pipe(dest(paths.buildImgFolder))
+};
 
 const htmlInclude = () => {
-  return src(['./src/*.html'])
-    .pipe(fileinclude({
+  return src([`${srcFolder}/*.html`])
+    .pipe(fileInclude({
       prefix: '@',
       basepath: '@file'
     }))
-    .pipe(dest('./app'))
-    .pipe(browserSync.stream());
-}
-
-const fonts = () => {
-  return src('./src/fonts/**.ttf')
-    .pipe(ttf2woff2())
-    .pipe(dest('./app/fonts/'));
-}
-
-const checkWeight = (fontname) => {
-  let weight = 400;
-  switch (true) {
-    case /Thin/.test(fontname):
-      weight = 100;
-      break;
-    case /ExtraLight/.test(fontname):
-      weight = 200;
-      break;
-    case /Light/.test(fontname):
-      weight = 300;
-      break;
-    case /Regular/.test(fontname):
-      weight = 400;
-      break;
-    case /Medium/.test(fontname):
-      weight = 500;
-      break;
-    case /SemiBold/.test(fontname):
-      weight = 600;
-      break;
-    case /Semi/.test(fontname):
-      weight = 600;
-      break;
-    case /Bold/.test(fontname):
-      weight = 700;
-      break;
-    case /ExtraBold/.test(fontname):
-      weight = 800;
-      break;
-    case /Heavy/.test(fontname):
-      weight = 700;
-      break;
-    case /Black/.test(fontname):
-      weight = 900;
-      break;
-    default:
-      weight = 400;
-  }
-  return weight;
-}
-
-const cb = () => {}
-
-let srcFonts = './src/scss/_fonts.scss';
-let appFonts = './app/fonts/';
-
-const fontsStyle = (done) => {
-  let file_content = fs.readFileSync(srcFonts);
-
-  fs.writeFile(srcFonts, '', cb);
-  fs.readdir(appFonts, function (err, items) {
-    if (items) {
-      let c_fontname;
-      for (var i = 0; i < items.length; i++) {
-				let fontname = items[i].split('.');
-				fontname = fontname[0];
-        let font = fontname.split('-')[0];
-        let weight = checkWeight(fontname);
-
-        if (c_fontname != fontname) {
-          fs.appendFile(srcFonts, '@include font-face("' + font + '", "' + fontname + '", ' + weight +');\r\n', cb);
-        }
-        c_fontname = fontname;
-      }
-    }
-  })
-
-  done();
-}
-
-const styles = () => {
-  return src('./src/scss/**/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: 'expanded'
-    }).on("error", notify.onError()))
-    .pipe(rename({
-      suffix: '.min'
+    .pipe(typograf({
+      locale: ['ru', 'en-US']
     }))
-    .pipe(autoprefixer({
-      cascade: false,
-    }))
-    .pipe(cleanCSS({
-      level: 2
-    }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(dest('./app/css/'))
-    .pipe(browserSync.stream());
-}
-
-const scripts = () => {
-  return src('./src/js/main.js')
-    .pipe(webpackStream(
-      {
-        mode: 'development',
-        output: {
-          filename: 'main.js',
-        },
-        module: {
-          rules: [{
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: ['@babel/preset-env']
-              }
-            }
-          }]
-        },
-      }
-    ))
-    .on('error', function (err) {
-      console.error('WEBPACK ERROR', err);
-      this.emit('end'); // Don't stop the rest of the task
-    })
-
-    .pipe(sourcemaps.init())
-    .pipe(uglify().on("error", notify.onError()))
-    .pipe(sourcemaps.write('.'))
-    .pipe(dest('./app/js'))
+    .pipe(dest(buildFolder))
     .pipe(browserSync.stream());
 }
 
 const watchFiles = () => {
   browserSync.init({
     server: {
-      baseDir: "./app"
+      baseDir: `${buildFolder}`
     },
   });
 
-  watch('./src/scss/**/*.scss', styles);
-  watch('./src/js/**/*.js', scripts);
-  watch('./src/html/*.html', htmlInclude);
-  watch('./src/*.html', htmlInclude);
-  watch('./src/resources/**', resources);
-  watch('./src/img/**.jpg', imgToApp);
-  watch('./src/img/**.jpeg', imgToApp);
-  watch('./src/img/**.png', imgToApp);
-  watch('./src/img/svg/**.svg', svgSprites);
-  watch('./src/fonts/**', fonts);
-  watch('./src/fonts/**', fontsStyle);
-}
-
-const clean = () => {
-	return del(['app/*'])
-}
-
-exports.fileinclude = htmlInclude;
-exports.styles = styles;
-exports.scripts = scripts;
-exports.watchFiles = watchFiles;
-exports.fonts = fonts;
-exports.fontsStyle = fontsStyle;
-
-exports.default = series(clean, parallel(htmlInclude, scripts, fonts, resources, imgToApp, svgSprites), fontsStyle, styles, watchFiles);
-
-// BUILD
-const tinypng = () => {
-  return src(['./src/img/**.jpg', './src/img/**.png', './src/img/**.jpeg'])
-    .pipe(tiny({
-      key: '7kXSC5Lnt09N9ll4R8fCSfbJjdbXZtLT',
-      sigFile: './app/img/.tinypng-sigs',
-      parallel: true,
-      parallelMax: 50,
-      log: true,
-    }))
-    .pipe(dest('./app/img'))
-}
-
-const stylesBuild = () => {
-  return src('./src/scss/**/*.scss')
-    .pipe(sass({
-      outputStyle: 'expanded'
-    }).on("error", notify.onError()))
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(autoprefixer({
-      cascade: false,
-    }))
-    .pipe(cleanCSS({
-      level: 2
-    }))
-    .pipe(dest('./app/css/'))
-}
-
-const scriptsBuild = () => {
-  return src('./src/js/main.js')
-    .pipe(webpackStream(
-
-        {
-          mode: 'development',
-          output: {
-            filename: 'main.js',
-          },
-          module: {
-            rules: [{
-              test: /\.m?js$/,
-              exclude: /(node_modules|bower_components)/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: ['@babel/preset-env']
-                }
-              }
-            }]
-          },
-        }))
-      .on('error', function (err) {
-        console.error('WEBPACK ERROR', err);
-        this.emit('end'); // Don't stop the rest of the task
-      })
-    .pipe(uglify().on("error", notify.onError()))
-    .pipe(dest('./app/js'))
+  watch(paths.srcScss, styles);
+  watch(paths.srcFullJs, scripts);
+  watch(`${paths.srcPartialsFolder}/*.html`, htmlInclude);
+  watch(`${srcFolder}/*.html`, htmlInclude);
+  watch(`${paths.resourcesFolder}/**`, resources);
+  watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`, images);
+  watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, webpImages);
+  watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, avifImages);
+  watch(paths.srcSvg, svgSprites);
 }
 
 const cache = () => {
-  return src('app/**/*.{css,js,svg,png,jpg,jpeg,woff2}', {
-    base: 'app'})
+  return src(`${buildFolder}/**/*.{css,js,svg,png,jpg,jpeg,webp,avif,woff2}`, {
+      base: buildFolder
+    })
     .pipe(rev())
-    .pipe(revdel())
-    .pipe(dest('app'))
+    .pipe(revDel())
+    .pipe(dest(buildFolder))
     .pipe(rev.manifest('rev.json'))
-    .pipe(dest('app'));
+    .pipe(dest(buildFolder));
 };
 
 const rewrite = () => {
-  const manifest = src('app/rev.json');
-
-  return src('app/**/*.html')
+  const manifest = readFileSync('app/rev.json');
+  src(`${paths.buildCssFolder}/*.css`)
     .pipe(revRewrite({
       manifest
     }))
-    .pipe(dest('app'));
+    .pipe(dest(paths.buildCssFolder));
+  return src(`${buildFolder}/**/*.html`)
+    .pipe(revRewrite({
+      manifest
+    }))
+    .pipe(dest(buildFolder));
 }
 
 const htmlMinify = () => {
-	return src('app/**/*.html')
-		.pipe(htmlmin({
-			collapseWhitespace: true
-		}))
-		.pipe(dest('app'));
+  return src(`${buildFolder}/**/*.html`)
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
+    .pipe(dest(buildFolder));
 }
+
+const zipFiles = () => {
+  del.sync([`${buildFolder}/*.zip`]);
+  return src(`${buildFolder}/**/*.*`, {})
+    .pipe(plumber(
+      notify.onError({
+        title: "ZIP",
+        message: "Error: <%= error.message %>"
+      })
+    ))
+    .pipe(zip(`${rootFolder}.zip`))
+    .pipe(dest(buildFolder));
+}
+
+const toProd = (done) => {
+  isProd = true;
+  done();
+};
+
+exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, watchFiles);
+
+exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, avifImages, svgSprites)
+
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, htmlMinify);
 
 exports.cache = series(cache, rewrite);
 
-exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, resources, imgToApp, svgSprites), fontsStyle, stylesBuild, htmlMinify, tinypng);
-
-
-// deploy
-const deploy = () => {
-  let conn = ftp.create({
-    host: '',
-    user: '',
-    password: '',
-    parallel: 10,
-    log: gutil.log
-  });
-
-  let globs = [
-    'app/**',
-  ];
-
-  return src(globs, {
-      base: './app',
-      buffer: false
-    })
-    .pipe(conn.newer('')) // only upload newer files
-    .pipe(conn.dest(''));
-}
-
-exports.deploy = deploy;
+exports.zip = zipFiles;

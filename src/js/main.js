@@ -1,23 +1,19 @@
-import './vendor/focus-visible.min.js';
+"use strict";
+import './_vendor';
+import './_functions';
+import './_components';
+
 import Swiper from './vendor/swiper-bundle.min.js';
 import './_vars';
-import {resizeContent} from './functions/resize';
-import {scrollTo} from './functions/smooth-scroll';
-import {disableScroll, enableScroll} from './functions/stop-scroll';
-
-//disableScroll(fix) // fix -> class of element with position: fixed
-"use strict";
 
 const mobileMenu = document.querySelector('.mobile-menu');
 const menuToggle = document.querySelector('.mobile-menu__toggle');
 const catalogMenu = document.querySelector('.catalog-menu');
 const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
 const mainNav = document.querySelector('.main-nav');
-const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');
 const promoSlider = document.querySelector('.promo__slider-container');
 const controlButtons = document.querySelectorAll('.catalog__control-btn');
 const modals = document.querySelectorAll('.modal');
-
 
 /*const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 const windowWidth = window.innerWidth - getScrollbarWidth();*/
@@ -38,61 +34,69 @@ const initialMenu = () => {
 
 if (mobileMenu) {
   mobileMenu.classList.remove('mobile-menu--nojs');
-}
 
-if (mobileMenu.classList.contains('mobile-menu--opened')) {
-  mobileMenu.classList.remove('mobile-menu--opened');
-  mobileMenu.classList.add('mobile-menu--closed');
-}
-
-menuToggle.addEventListener('click', function () {
   if (mobileMenu.classList.contains('mobile-menu--opened')) {
     mobileMenu.classList.remove('mobile-menu--opened');
     mobileMenu.classList.add('mobile-menu--closed');
-    catalogMenu.classList.remove('catalog-menu--opened');
-    catalogMenu.classList.add('catalog-menu--closed');
-  } else {
-    mobileMenu.classList.remove('mobile-menu--closed');
-    mobileMenu.classList.add('mobile-menu--opened');
-    mainNav.classList.remove('main-nav--closed');
   }
-})
+}
 
-catalogMenuToggle.addEventListener('click', function () {
-  if (catalogMenu.classList.contains('catalog-menu--opened')) {
-    catalogMenu.classList.remove('catalog-menu--opened');
-    catalogMenu.classList.add('catalog-menu--closed');
-    mainNav.classList.remove('main-nav--closed');
-    mainNav.classList.add('main-nav--opened');
-    initialMenu();
-  } else {
-    catalogMenu.classList.remove('catalog-menu--closed');
-    catalogMenu.classList.add('catalog-menu--opened');
-    mainNav.classList.remove('main-nav--opened');
-    mainNav.classList.add('main-nav--closed');
-    initialMenu();
-  }
-})
+if (menuToggle) {
+  menuToggle.addEventListener('click', function () {
+    if (mobileMenu.classList.contains('mobile-menu--opened')) {
+      mobileMenu.classList.remove('mobile-menu--opened');
+      mobileMenu.classList.add('mobile-menu--closed');
+      catalogMenu.classList.remove('catalog-menu--opened');
+      catalogMenu.classList.add('catalog-menu--closed');
+    } else {
+      mobileMenu.classList.remove('mobile-menu--closed');
+      mobileMenu.classList.add('mobile-menu--opened');
+      mainNav.classList.remove('main-nav--closed');
+    }
+  })
+}
 
-catalogMenu.addEventListener('click', function (e) {
-  e.preventDefault();
+if (catalogMenuToggle) {
+  catalogMenuToggle.addEventListener('click', function () {
+    if (catalogMenu.classList.contains('catalog-menu--opened')) {
+      catalogMenu.classList.remove('catalog-menu--opened');
+      catalogMenu.classList.add('catalog-menu--closed');
+      mainNav.classList.remove('main-nav--closed');
+      mainNav.classList.add('main-nav--opened');
+      initialMenu();
+    } else {
+      catalogMenu.classList.remove('catalog-menu--closed');
+      catalogMenu.classList.add('catalog-menu--opened');
+      mainNav.classList.remove('main-nav--opened');
+      mainNav.classList.add('main-nav--closed');
+      initialMenu();
+    }
+  })
+}
 
-  if (e.target.classList.contains('catalog-menu__link--drop')) {
+if (catalogMenu) {
+  catalogMenu.addEventListener('click', function (e) {
     e.preventDefault();
-    initialMenu();
-    e.target.classList.add('catalog-menu__link--opened');
-    e.target.closest('.catalog-menu__item').classList.add('catalog-menu__item--opened');
-    e.target.closest('.catalog-menu__list').classList.add('catalog-menu__list--active');
-    // желательно сделать чтобы при клике по открытому элементу меню он закрывался в изначальное состояние
-  }
 
-  if (e.target.classList.contains('catalog__btn-back')) {
-    e.preventDefault();
-    document.querySelector('.catalog-menu__link--opened') ? document.querySelector('.catalog-menu__link--opened').classList.remove('catalog-menu__link--opened') : null;
-    document.querySelector('.catalog-menu__item--opened') ? document.querySelector('.catalog-menu__item--opened').classList.remove('catalog-menu__item--opened') : null;
-    document.querySelector('.catalog-menu__list--active') ? document.querySelector('.catalog-menu__list--active').classList.remove('catalog-menu__list--active') : null;
-  }
-})
+    if (e.target.classList.contains('catalog-menu__link--drop')) {
+      e.preventDefault();
+      initialMenu();
+      e.target.classList.add('catalog-menu__link--opened');
+      e.target.closest('.catalog-menu__item').classList.add('catalog-menu__item--opened');
+      e.target.closest('.catalog-menu__list').classList.add('catalog-menu__list--active');
+      // желательно сделать чтобы при клике по открытому элементу меню он закрывался в изначальное состояние
+    }
+
+    if (e.target.classList.contains('catalog__btn-back')) {
+      e.preventDefault();
+      document.querySelector('.catalog-menu__link--opened') ? document.querySelector('.catalog-menu__link--opened').classList.remove('catalog-menu__link--opened') : null;
+      document.querySelector('.catalog-menu__item--opened') ? document.querySelector('.catalog-menu__item--opened').classList.remove('catalog-menu__item--opened') : null;
+      document.querySelector('.catalog-menu__list--active') ? document.querySelector('.catalog-menu__list--active').classList.remove('catalog-menu__list--active') : null;
+    }
+  })
+}
+
+
 
 const bannerSlider = new Swiper('.banner--slider', {
   // Optional parameters
@@ -218,7 +222,7 @@ const sliderBlock = new Swiper(sliderBlockDOM, {
 
 const sliderNavItems = document.querySelectorAll('.slider-nav__item');
 
-sliderNavItems.forEach((el, index) => {
+sliderNavItems.forEach((el) => {
   el.addEventListener('click', (e) => {
     const currentIndex = parseInt(e.currentTarget.dataset.index);
 
@@ -317,5 +321,6 @@ if (promoSlider) {
     mobileSliderInit();
   })
 }
+
 
 

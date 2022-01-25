@@ -1,11 +1,11 @@
+// базовые подключения
 @import "vars";
 @import "mixins";
 @import "fonts";
-@import "vendor";
 @import "settings";
 
-// CUSTOM COMPONENTS STYLES
-
+// подключения компонентов страницы
+@import "./components/header";
 @import "./components/modal";
 @import "./components/auth-modal";
 @import "./components/auth-form";

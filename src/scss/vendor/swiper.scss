@@ -160,11 +160,10 @@
 }
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  font-family: swiper-icons;
+  font-family: swiper-icons, serif;
   font-size: var(--swiper-navigation-size);
   text-transform: none !important;
   letter-spacing: 0;
-  text-transform: none;
   font-variant: initial;
   line-height: 1;
 }
@@ -497,7 +496,7 @@ button.swiper-pagination-bullet {
 .swiper-container-cube .swiper-cube-shadow {
   position: absolute;
   left: 0;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background: #000;

@@ -1,6 +1,6 @@
 export default {
-  $window: window,
-  $document: document,
-  $html: document.documentElement,
-  $body: document.body,
+  windowEl: window,
+  documentEl: document,
+  htmlEl: document.documentElement,
+  bodyEl: document.body,
 }

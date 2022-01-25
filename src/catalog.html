@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#111111">
-  <title>Ленбаза Каталог</title>
-  <link rel="stylesheet" href="css/main.min.css">
-</head>
+@include('partials/head.html')
 <body>
 <header class="page-header">
   <div class="page-header__wrapper">
@@ -420,7 +412,7 @@
           </li>
           <li class="sorting-list__item sorting-list__item--rating">
             <a href="#" class="sorting-list__link sorting-list__link--rating">
-              <svg class="sorting-list__icon sorting-list__icon--rating"width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="sorting-list__icon sorting-list__icon--rating" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.4637 1L13.388 6.92429L19.9274 7.88013L15.1956 12.489L16.3123 19L10.4637 15.9243L4.61514 19L5.73186 12.489L1 7.88013L7.53943 6.92429L10.4637 1Z" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span>Высокий рейтинг</span>
@@ -618,6 +610,5 @@
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
 </body>
 </html>

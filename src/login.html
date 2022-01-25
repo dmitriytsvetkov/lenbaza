@@ -1,17 +1,9 @@
 <!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#111111">
-  <title>Ленбаза Главная</title>
-  <link rel="stylesheet" href="css/main.min.css">
-</head>
+@include('partials/header.html')
 <body>
   <div class="site-container">
-    @include('html/header.html')
+    @include('partials/header.html')
     <main class="page-main">
       <div class="page-main__auth-modal auth-modal auth-modal--login">
         <div class="auth-modal__container">
@@ -49,8 +41,7 @@
         </div>
       </div>
     </main>
-    @include('html/footer.html')
+    @include('partials/footer.html')
   </div>
-  <script src="js/main.js"></script>
 </body>
 </html>
