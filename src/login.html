@@ -1,47 +1,47 @@
 <!doctype html>
 <html lang="ru">
-@include('partials/header.html')
-<body>
-  <div class="site-container">
-    @include('partials/header.html')
-    <main class="page-main">
-      <div class="page-main__auth-modal auth-modal auth-modal--login">
-        <div class="auth-modal__container">
-          <div class="auth-modal__header">
-            <h2 class="auth-modal__title">Вход</h2>
-            <a href="#" class="auth-modal__title auth-modal__title--link">Регистрация</a>
+  @include('partials/head.html')
+  <body>
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="page-main">
+        <div class="page-main__auth-modal auth-modal auth-modal--login">
+          <div class="auth-modal__container">
+            <div class="auth-modal__header">
+              <h2 class="auth-modal__title">Вход</h2>
+              <a href="#" class="auth-modal__title auth-modal__title--link">Регистрация</a>
+            </div>
+            <form class="auth-modal__form auth-form auth-form--login">
+              <div class="auth-modal__input-wrapper">
+                <div class="auth-modal__input-box input-box">
+                  <label class="input-box__container">
+                    <span class="input-box__label">E-mail</span>
+                    <input class="input-box__input" name="user_login" type="email">
+                  </label>
+                </div>
+                <div class="auth-modal__input-box input-box">
+                  <label class="input-box__container">
+                    <span class="input-box__label">Пароль</span>
+                    <a class="input-box__forgot-password" href="#">Забыли пароль?</a>
+                    <input class="input-box__input" name="user_password" type="password">
+                  </label>
+                </div>
+              </div>
+              <div class="auth-modal__actions">
+                <div class="auth-modal__action">
+                  <input class="auth-modal__submit" type="submit" name="Login" value="Войти">
+                </div>
+              </div>
+              <div class="auth-modal__footer">
+                <div class="auth-modal__footer-row">
+                  <p class="auth-modal__text">Нет аккаунта? <a href="#" class="auth-modal__link">Зарегистрируйтесь</a></p>
+                </div>
+              </div>
+            </form>
           </div>
-          <form class="auth-modal__form auth-form auth-form--login">
-            <div class="auth-modal__input-wrapper">
-              <div class="auth-modal__input-box input-box">
-                <label class="input-box__container">
-                  <span class="input-box__label">E-mail</span>
-                  <input class="input-box__input" name="user_login" type="email">
-                </label>
-              </div>
-              <div class="auth-modal__input-box input-box">
-                <label class="input-box__container">
-                  <span class="input-box__label">Пароль</span>
-                  <a class="input-box__forgot-password" href="#">Забыли пароль?</a>
-                  <input class="input-box__input" name="user_password" type="password">
-                </label>
-              </div>
-            </div>
-            <div class="auth-modal__actions">
-              <div class="auth-modal__action">
-                <input class="auth-modal__submit" type="submit" name="Login" value="Войти">
-              </div>
-            </div>
-            <div class="auth-modal__footer">
-              <div class="auth-modal__footer-row">
-                <p class="auth-modal__text">Нет аккаунта? <a href="#" class="auth-modal__link">Зарегистрируйтесь</a></p>
-              </div>
-            </div>
-          </form>
         </div>
-      </div>
-    </main>
-    @include('partials/footer.html')
-  </div>
-</body>
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
 </html>

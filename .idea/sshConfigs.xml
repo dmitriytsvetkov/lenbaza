@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="lenbaza.beget.tech" id="41957aaf-b36e-48e6-aaf2-b57800526182" port="22" nameFormat="DESCRIPTIVE" username="lenbaza_admin" />
+    </configs>
+  </component>
+</project>

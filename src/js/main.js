@@ -1,5 +1,6 @@
 "use strict";
 import './_vendor';
+import vars from './_vars';
 import './_functions';
 import './_components';
 
@@ -11,6 +12,7 @@ const menuToggle = document.querySelector('.mobile-menu__toggle');
 const catalogMenu = document.querySelector('.catalog-menu');
 const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
 const mainNav = document.querySelector('.main-nav');
+const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');
 const promoSlider = document.querySelector('.promo__slider-container');
 const controlButtons = document.querySelectorAll('.catalog__control-btn');
 const modals = document.querySelectorAll('.modal');
@@ -222,7 +224,7 @@ const sliderBlock = new Swiper(sliderBlockDOM, {
 
 const sliderNavItems = document.querySelectorAll('.slider-nav__item');
 
-sliderNavItems.forEach((el) => {
+sliderNavItems.forEach((el, index) => {
   el.addEventListener('click', (e) => {
     const currentIndex = parseInt(e.currentTarget.dataset.index);
 

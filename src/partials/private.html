@@ -1,0 +1,67 @@
+<div class="profile__private private form__container card">
+  <form method="post" name="form1" action="" enctype="multipart/form-data" role="form">
+    <input type="hidden" name="lang"/>
+    <input type="hidden" name="ID"/>
+    <input type="hidden" name="LOGIN"/>
+    <div class="main-profile-block-shown" id="user_div_reg">
+      <div class="form__block">
+        <div class="col-sm-9 col-md-offset-3 small">
+          <strong>Дата обновления:</strong>
+          <strong>26.01.2022 11:57:10</strong>
+        </div>
+        <div class="col-sm-9 col-md-offset-3 small">
+          <strong>Последняя авторизация:</strong>
+          <strong>01.02.2022 13:15:39</strong>
+        </div>
+      </div>
+      <div class="form__block">
+        <div class="form__input-box input-box">
+          <label class="input-box__container" for="main-profile-name">
+            <span class="input-box__label">Имя:</span>
+            <input class="input-box__input" type="text" name="NAME" maxlength="50" id="main-profile-name" value="Дмитрий" />
+          </label>
+        </div>
+        <div class="form__input-box input-box">
+          <label class="input-box__container" for="main-profile-last-name">
+            <span class="input-box__label">Фамилия:</span>
+            <input class="input-box__input" type="text" name="LAST_NAME" maxlength="50" id="main-profile-last-name" value="Цветков" />
+          </label>
+        </div>
+        <div class="form__input-box input-box">
+          <label class="input-box__container" for="main-profile-second-name">
+            <span class="input-box__label">Отчество:</span>
+            <input class="input-box__input" type="text" name="SECOND_NAME" maxlength="50" id="main-profile-second-name" value="Викторович" />
+          </label>
+        </div>
+        <div class="form__input-box-box input-box">
+          <label class="input-box__container" for="main-profile-email">
+            <span class="input-box__label">E-Mail</span>
+            <input class="input-box__input" type="text" name="EMAIL" maxlength="50" id="main-profile-email" value="qmast3r@gmail.com" />
+          </label>
+        </div>
+      </div>
+      <div class="form__title-block form__block">
+        <h2 class="form__title">Пароль</h2>
+      </div>
+      <div class="form__block">
+        <div class="form__input-box input-box">
+          <label class="input-box__container" for="main-profile-password">
+            <span class="input-box__label">Новый пароль:</span>
+            <input class="bx-auth-input input-box__input" type="password" name="NEW_PASSWORD" maxlength="50" id="main-profile-password" value="" autocomplete="off"/>
+          </label>
+        </div>
+        <div class="form__input-box input-box">
+          <label class="input-box__container" for="main-profile-password-confirm">
+            <span class="input-box__label">Подтверждение нового пароля:</span>
+            <input class="input-box__input" type="password" name="NEW_PASSWORD_CONFIRM" maxlength="50" value="" id="main-profile-password-confirm" autocomplete="off" />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form__controls">
+      <input type="submit" name="save" class="btn btn-themes btn-default btn-md main-profile-submit form__btn form__btn--blue" value="Сохранить">
+      <input type="submit" class="btn btn-themes btn-default btn-md form__btn form__btn-grey visually-hidden" name="reset" value="Отмена">
+    </div>
+  </form>
+</div>

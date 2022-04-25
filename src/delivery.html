@@ -5,16 +5,7 @@
 	<div class="site-container">
 		@include('partials/header.html')
     <main class="page-main">
-      <div class="page-main__breadcrumbs breadcrumbs">
-        <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item">
-            <a href="/" class="breadcrumbs__link">Главная</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <p class="breadcrumbs__current">Каталог</p>
-          </li>
-        </ul>
-      </div>
+      @include('partials/breadcrumbs.html')
       <h1 class="page-main__title">Доставка и оплата</h1>
       <div class="page-main__methods methods">
         <div class="methods__mobile-tabs">

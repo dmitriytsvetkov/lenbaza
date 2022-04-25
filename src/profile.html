@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
-@include('partials/head.html')
-<body>
-<div class="site-container">
-  @include('partials/header.html')
-  <main class="page-main">
-    <div class="page-main__profile">
-      @include('partials/profile-menu.html')
-      @include('partials/profile-content.html')
+  @include('partials/head.html')
+  <body>
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="page-main">
+        @include('partials/breadcrumbs.html')
+        <h1 class="page-main__title">Личный кабинет</h1>
+        <div class="page-main__profile profile">
+          <!--@include('partials/profile-list.html')-->
+          @include('partials/private.html')
+        </div>
+      </main>
+      @include('partials/footer.html')
     </div>
-  </main>
-  @include('partials/footer.html')
-</div>
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
