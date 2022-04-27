@@ -51,13 +51,13 @@
 .multiple-slider__name {
   @include lb-16med;
 
-  display: -webkit-box;
+  display: box;
   overflow: hidden;
   margin: 0 0 16px;
   padding: 0;
   text-overflow: ellipsis;
   color: var(--color-black);
-  -webkit-box-orient: vertical;
+  box-orient: vertical;
   -webkit-line-clamp: 4;
 }
 

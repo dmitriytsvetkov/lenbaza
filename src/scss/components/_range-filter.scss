@@ -2,6 +2,7 @@
   @include lb-16med;
 
   display: flex;
+  box-sizing: border-box;
 }
 
 .range-filter__price-controls {
@@ -29,12 +30,12 @@
 }
 
 .range-filter__label {
-  position: absolute;
   content: "";
-  top: 50%;
+  position: absolute;
   left: 5px;
-  transform: translateY(-50%);
+  top: 50%;
   color: var(--color-mid-grey);
+  transform: translateY(-50%);
 }
 
 .range-filter__range {
