@@ -51,7 +51,7 @@
 .multiple-slider__name {
   @include lb-16med;
 
-  display: box;
+  display: block;
   overflow: hidden;
   margin: 0 0 16px;
   padding: 0;
