@@ -96,16 +96,21 @@
 @include tablet {
   .catalog-menu {
     z-index: 111;
-    padding: 19px 24px 24px;
+    padding: 0;
   }
 
   .catalog-menu--opened {
     position: absolute;
-    left: calc((100% - 688px) / 2);
+    left: 50%;
     top: 76px;
     z-index: 99;
-    width: 345px;
+    margin-left: -50vw;
+    width: 100vw;
     background-color: var(--color-white);
+  }
+
+  .catalog-menu__wrapper {
+    margin: 0 40px;
   }
 
   .catalog-menu__item {
@@ -171,10 +176,13 @@
 
 @include desktop {
   .catalog-menu--opened {
-    left: 255px;
     border-radius: 10px;
-    width: 460px;
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .catalog-menu__wrapper {
+    margin: 0 auto;
+    width: 1320px;
   }
 
   .catalog-menu__item--opened .catalog-menu__dropdown-list {
