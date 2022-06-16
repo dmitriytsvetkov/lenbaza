@@ -116,6 +116,16 @@
   .page-header__links-wrapper {
     margin: 0;
   }
+
+  .page-header__catalog-menu {
+    position: absolute;
+    left: 50%;
+    top: 68px;
+    z-index: 999;
+    margin-left: -50vw;
+    width: 100vw;
+    background-color: var(--color-white);
+  }
 }
 
 @include desktop {
