@@ -27,6 +27,7 @@
 .catalog-menu-new__left-area {
   border-right: 1px solid var(--color-alto);
   padding: 12px 0;
+  min-width: 400px;
 }
 
 .catalog-menu-new__right-area {
@@ -44,6 +45,10 @@
   background-repeat: no-repeat;
   background-color: var(--color-white);
   cursor: pointer;
+}
+
+.catalog-menu-new-main-list__button:focus {
+  outline: none;
 }
 
 .catalog-menu-new-submenu {
