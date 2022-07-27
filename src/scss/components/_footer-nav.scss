@@ -165,4 +165,23 @@
     height: 40px;
     background-image: url("../../img/ymarket-logo.svg");
   }
+
+  .footer-bottom__item--ozon-logo {
+    position: relative;
+    display: block;
+    width: 114px;
+    height: 40px;
+    font-size: 0;
+  }
+
+  .footer-bottom__item--ozon-logo::before {
+    content: "";
+    position: absolute;
+    width: 114px;
+    height: 40px;
+    background-image: url("../../img/ozon-logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
 }

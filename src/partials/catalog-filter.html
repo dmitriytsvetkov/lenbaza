@@ -1,0 +1,110 @@
+<div class="catalog__filter-wrapper modal modal--filter" data-target="filterBtn">
+    <h4 class="modal__title">Фильтр</h4>
+    <button class="modal__close-btn">Закрыть</button>
+    <div class="modal__body">
+        <div class="modal__nav">
+            <h3 class="modal__nav-title">Категория</h3>
+            <div class="modal__nav-parents">
+                <div class="modal__nav-item">
+                    <svg class="modal__nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                        <path fill="black" d="M5.293 12.293a1 1 0 1 0 1.414 1.414l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L9.586 8l-4.293 4.293Z"></path>
+                    </svg>
+                    <a href="#" class="modal__nav-link">Спорттовары</a>
+                </div>
+                <div class="modal__nav-item modal__nav-item--active">
+                    <a href="#" class="modal__nav-link">Спорттовары</a>
+                </div>
+            </div>
+            <div class="modal__nav-children">
+                <div class="modal__nav-item">
+                    <a href="#" class="modal__nav-link">Массажеры</a>
+                </div>
+                <div class="modal__nav-item">
+                    <a href="#" class="modal__nav-link">Мячи</a>
+                </div>
+            </div>
+        </div>
+        <form class="modal__form" action="#" method="GET">
+            <div class="modal__column">
+                <div class="modal__item">
+                    <div class="modal__item-text-container">
+                        <div class="modal__item-arrow-wrapper modal__item-arrow--up">
+                            <span class="modal__item-arrow"></span>
+                        </div>
+                        <p class="modal__item-title">Цена</p>
+                    </div>
+
+                    <fieldset class="modal__range range-filter">
+                        <div class="range-filter__price-controls">
+                            <div class="range-filter__min-price-wrapper">
+                                <label class="range-filter__label" for="min-price">от</label>
+                                <input class="range-filter__range" type="text" id="min-price" value="0">
+                            </div>
+                            <div class="range-filter__max-price-wrapper">
+                                <label class="range-filter__label" for="max-price">до</label>
+                                <input class="range-filter__range" type="text" id="max-price" value="0">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal__item">
+                    <div class="modal__item-text-container">
+                        <div class="modal__item-arrow-wrapper modal__item-arrow--down">
+                            <span class="modal__item-arrow"></span>
+                        </div>
+                        <p class="modal__item-title">Производитель</p>
+                    </div>
+                    <fieldset class="modal__list">
+                        <div class="modal__checkbox-wrapper">
+                            <input type="checkbox" class="modal__checkbox-input" id="detskiyMir">
+                            <label class="modal__checkbox-label" for="detskiyMir">Детский мир</label>
+                        </div>
+                        <div class="modal__checkbox-wrapper">
+                            <input type="checkbox" class="modal__checkbox-input" id="shkolniyGorod">
+                            <label class="modal__checkbox-label" for="shkolniyGorod">Школьный город</label>
+                        </div>
+                        <div class="modal__checkbox-wrapper">
+                            <input type="checkbox" class="modal__checkbox-input" id="superigrushki">
+                            <label class="modal__checkbox-label" for="superigrushki">Суперигрушки</label>
+                        </div>
+                        <div class="modal__checkbox-wrapper">
+                            <input type="checkbox" class="modal__checkbox-input" id="posobiyaRf">
+                            <label class="modal__checkbox-label" for="posobiyaRf">Пособия.рф</label>
+                        </div>
+                        <div class="modal__checkbox-wrapper">
+                            <input type="checkbox" class="modal__checkbox-input" id="germaniya">
+                            <label class="modal__checkbox-label" for="germaniya">Германия</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal__item">
+                    <div class="modal__item-text-container">
+                        <div class="modal__item-arrow-wrapper">
+                            <span class="modal__item-arrow"></span>
+                        </div>
+                        <p class="modal__item-title">Для кого</p>
+                    </div>
+                    <fieldset class="modal__radio">
+                        <div class="modal__radio-option">
+                            <input class="modal__radio-input" type="radio" id="male" name="gender">
+                            <label class="modal__radio-label" for="male">Мужской</label>
+                        </div>
+                        <div class="modal__radio-option">
+                            <input class="modal__radio-input" type="radio" id="female" name="gender">
+                            <label class="modal__radio-label" for="female">Женский</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="modal__submit-section">
+                <a href="#" class="smart-filter-container-modef modal__btn modal__btn--submit">
+                    <div class="smart-filter-popup-result" id="modef">
+                        <span>Показать</span>
+                        <span id="modef_num">12</span>
+                    </div>
+                </a>
+                <a class="modal__btn modal__btn--clear" type="button">Очистить фильтр</a>
+            </div>
+        </form>
+    </div>
+</div>
