@@ -1,0 +1,107 @@
+.quantity-block {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0;
+}
+
+.product-item-amount-field-btn-plus, .product-item-amount-field-btn-minus {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 2px;
+  background-color: #f2f2f2;
+  color: #fff;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  transition: background 300ms ease, opacity 300ms ease;
+}
+
+.product-item-amount-field-btn-plus:hover, .product-item-amount-field-btn-minus:hover {
+   background: #d3d3d3;
+}
+
+.product-item-amount-field-block {
+  width: 60px;
+  border-top: 1px solid var(--color-super-light-grey);
+  border-bottom: 1px solid var(--color-super-light-grey);
+}
+
+.product-item-amount-field {
+  display: block;
+  padding: 0;
+  width: 100%;
+  height: 58px;
+  border: none;
+  background: transparent !important;
+  color: #000;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: bold;
+  transition: border 300ms ease;
+}
+
+.product-item-amount-field::-webkit-outer-spin-button,
+.product-item-amount-field::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.product-item-amount-field-block input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.product-item-amount-description-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  color: #a5a5a5;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.product-item-amount-field-btn-plus:after, .product-item-amount-field-btn-minus:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  opacity: .8;
+  transition: opacity 300ms ease, background 300ms ease;
+}
+
+.product-item-amount-field-btn-minus:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 2px;
+  background-color: #9B9B9B;
+}
+
+.product-item-amount-field-btn-plus:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 2px;
+  background-color: #9B9B9B;
+}
+
+.product-item-amount-field-btn-plus:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 24px;
+  width: 2px;
+  background-color: #9B9B9B;
+}

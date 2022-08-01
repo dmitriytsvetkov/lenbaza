@@ -11,12 +11,18 @@
   color: var(--color-black);
 }
 
+.card-info__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
 .card-info__to-fav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 40px;
-  width: 100%;
 }
 
 .card-info__to-fav-icon {
@@ -26,6 +32,18 @@
 .card-info__to-fav-text {
   @include lb-18med;
 
+  color: var(--color-mid-grey);
+}
+
+.card-info__remaining {
+  @include lb-18med;
+
+  padding: 0;
+  margin: 0;
+  color: var(--color-black);
+}
+
+.card-info__remaining span {
   color: var(--color-mid-grey);
 }
 
@@ -63,13 +81,15 @@
   }
 
   .card-info__wrapper {
-    display: flex;
     margin-bottom: 24px;
     width: 100%;
   }
 
+  .card-info__price {
+    margin-bottom: 24px;
+  }
+
   .card-info__buttons-container {
-    order: -1;
     margin-right: 40px;
     margin-bottom: 0;
     width: 332px;

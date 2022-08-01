@@ -10,14 +10,9 @@ const catalogMenu = document.querySelector('.catalog-menu');
 const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
 const mainNav = document.querySelector('.main-nav');
 const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');*/
-const promoSlider = document.querySelector('.promo__slider-container');
-const controlButtons = document.querySelectorAll('.catalog__control-btn');
-const modals = document.querySelectorAll('.modal');
-
 /*const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 const windowWidth = window.innerWidth - getScrollbarWidth();*/
 
-let mySwiper;
 
 /*
 const initialMenu = () => {
@@ -95,239 +90,176 @@ if (catalogMenuToggle) {
     }
   })
 }*/
+document.addEventListener('DOMContentLoaded', () => {
 
+  const promoSlider = document.querySelector('.promo__slider-container');
+  const controlButtons = document.querySelectorAll('.catalog__control-btn');
+  const modals = document.querySelectorAll('.modal');
 
-const bannerSlider = new Swiper('.banner--slider', {
-  // Optional parameters
-  loop: true,
-  slideClass: 'banner__item',
-  wrapperClass: 'banner__wrapper',
-  spaceBetween: 17,
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    modifierClass: 'banner__pagination',
-    bulletClass: 'banner__bullet',
-    bulletActiveClass: 'banner__bullet--active',
-  },
-  breakpoints: {
-    1024: {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
-    }
-  }
-})
+  let mySwiper;
 
-const multipleSlider = new Swiper('.multiple-slider__container', {
-  // Optional parameters
-  /*loop: true,*/
-  slidesPerView: 2,
-  slidesPerColumn: 2,
-  spaceBetween: 0,
-  slideClass: 'multiple-slider__item',
-  wrapperClass: 'multiple-slider__wrapper',
-
-  /*// If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    modifierClass: 'banner__pagination',
-    bulletClass: 'banner__bullet',
-    bulletActiveClass: 'banner__bullet--active',
-  },*/
-  breakpoints: {
-    768: {
-      slidesPerView: 2.2,
-      slidesPerColumn: 1,
-      spaceBetween: 25,
+  const bannerSlider = new Swiper('.banner--slider', {
+    // Optional parameters
+    loop: true,
+    slideClass: 'banner__item',
+    wrapperClass: 'banner__wrapper',
+    spaceBetween: 17,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      modifierClass: 'banner__pagination',
+      bulletClass: 'banner__bullet',
+      bulletActiveClass: 'banner__bullet--active',
     },
-    1024: {
-      slidesPerView: 3.2,
-      slidesPerColumn: 1,
-      spaceBetween: 25,
-    },
-    1460: {
-      slidesPerView: 4,
-      slidesPerColumn: 1,
-      spaceBetween: 25,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+    breakpoints: {
+      1024: {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
       }
     }
-  }
-})
-
-const mobileSliderInit = () => {
-  if (window.innerWidth < 768 && promoSlider.dataset.mobile === 'false') {
-    mySwiper = new Swiper(promoSlider, {
-      slidesPerView: 1.2,
-      spaceBetween: 16,
-      slideClass: 'promo__slider-item',
-      wrapperClass: 'promo__slider-wrapper',
-    });
-
-    promoSlider.dataset.mobile = 'true';
-  }
-
-  if (window.innerWidth >= 768) {
-    promoSlider.dataset.mobile = 'false';
-
-    if (promoSlider.classList.contains('swiper-container-initialized')) {
-      mySwiper.destroy();
-    }
-  }
-}
-
-controlButtons.forEach((el) => {
-  el.addEventListener('click', (e) => {
-    const path = e.currentTarget.getAttribute('data-path');
-
-    modals.forEach((el) => {
-      el.classList.remove('modal--visible')
-    })
-
-    document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
-    document.body.classList.add('modalEnabled');
   })
-})
 
-modals.forEach((el) => {
-  el.addEventListener('click', (e) => {
-    if (e.target === el.querySelector('.modal__close-btn')) {
-      el.classList.remove('modal--visible')
-      document.body.classList.remove('modalEnabled');
-    }
-  })
-})
+  const multipleSlider = new Swiper('.multiple-slider__container', {
+    // Optional parameters
+    /*loop: true,*/
+    slidesPerView: 2,
+    slidesPerColumn: 2,
+    spaceBetween: 0,
+    slideClass: 'multiple-slider__item',
+    wrapperClass: 'multiple-slider__wrapper',
 
-// SLIDER BLOCK
-const sliderBlockDOM = document.querySelector('.slider-block');
-
-const sliderBlock = new Swiper(sliderBlockDOM, {
-  pagination: {
-    el: '.swiper-pagination',
-  },
-  breakpoints: {
-    // when window width is >= 640px
-    768: {
-      noSwiping: true
-    }
-  }
-})
-
-const sliderNavItems = document.querySelectorAll('.slider-nav__item');
-
-sliderNavItems.forEach((el, index) => {
-  el.addEventListener('click', (e) => {
-    const currentIndex = parseInt(e.currentTarget.dataset.index);
-
-    sliderBlock.slideTo(currentIndex);
-    e.currentTarget.classList.add('slider-nav__item--active');
-
-    sliderNavItems.forEach((el, index) => { // удаляем класс slider-nav__item---active
-      if (index !== currentIndex) {
-        el.classList.remove('slider-nav__item--active')
+    /*// If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      modifierClass: 'banner__pagination',
+      bulletClass: 'banner__bullet',
+      bulletActiveClass: 'banner__bullet--active',
+    },*/
+    breakpoints: {
+      768: {
+        slidesPerView: 2.2,
+        slidesPerColumn: 1,
+        spaceBetween: 25,
+      },
+      1024: {
+        slidesPerView: 3.2,
+        slidesPerColumn: 1,
+        spaceBetween: 25,
+      },
+      1460: {
+        slidesPerView: 4,
+        slidesPerColumn: 1,
+        spaceBetween: 25,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
       }
-    })
+    }
   })
-})
 
-if (sliderBlockDOM) {
-  const sliderBlockSlides = sliderBlockDOM.querySelectorAll('.swiper-slide');
+  const mobileSliderInit = () => {
+    if (window.innerWidth < 768 && promoSlider.dataset.mobile === 'false') {
+      mySwiper = new Swiper(promoSlider, {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        slideClass: 'promo__slider-item',
+        wrapperClass: 'promo__slider-wrapper',
+      });
 
-  if (window.innerWidth < 768 && sliderBlockDOM.dataset.mobile === 'false') {
-    sliderBlockDOM.dataset.mobile = 'true';
-  }
-
-  if (window.innerWidth >= 768) {
-    sliderBlockSlides.forEach((e) => {
-      e.classList.add('swiper-no-swiping')
-    })
-
-    sliderBlockDOM.dataset.mobile = 'false';
-  }
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth < 768 && sliderBlockDOM.dataset.mobile === 'false') {
-      sliderBlockSlides.forEach((e) => {
-        e.classList.remove('swiper-no-swiping')
-      })
-
-      sliderBlockDOM.dataset.mobile = 'true';
+      promoSlider.dataset.mobile = 'true';
     }
 
     if (window.innerWidth >= 768) {
-      sliderBlockSlides.forEach((e) => {
-        e.classList.add('swiper-no-swiping')
+      promoSlider.dataset.mobile = 'false';
+
+      if (promoSlider.classList.contains('swiper-container-initialized')) {
+        mySwiper.destroy();
+      }
+    }
+  }
+
+  controlButtons.forEach((el) => {
+    el.addEventListener('click', (e) => {
+      const path = e.currentTarget.getAttribute('data-path');
+
+      modals.forEach((el) => {
+        el.classList.remove('modal--visible')
       })
 
-      sliderBlockDOM.dataset.mobile = 'false';
-    }
+      document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
+      document.body.classList.add('modalEnabled');
+    })
   })
-}
 
-// END SLIDER BLOCK
+  modals.forEach((el) => {
+    el.addEventListener('click', (e) => {
+      if (e.target === el.querySelector('.modal__close-btn')) {
+        el.classList.remove('modal--visible')
+        document.body.classList.remove('modalEnabled');
+      }
+    })
+  })
 
 // ABOUT US SLIDER
 
-const aboutUsSliderDOM = document.querySelector('.about-slider');
+  const aboutUsSliderDOM = document.querySelector('.about-slider');
 
-if (aboutUsSliderDOM) {
-  const aboutUsSlider = new Swiper(aboutUsSliderDOM, {
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-  })
-}
+  if (aboutUsSliderDOM) {
+    const aboutUsSlider = new Swiper(aboutUsSliderDOM, {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    })
+  }
 
 // END ABOUT IS SLIDER
 
 // DELIVERY & PAYMENT MOBILE BUTTONS
 
-const methods = document.querySelector('.methods');
-const tabsBtn = document.querySelectorAll('.methods__mobile-btn');
-const tabsContent = document.querySelectorAll('.methods__item');
+  const methods = document.querySelector('.methods');
+  const tabsBtn = document.querySelectorAll('.methods__mobile-btn');
+  const tabsContent = document.querySelectorAll('.methods__item');
 
-if (methods) {
-  methods.addEventListener('click', (e) => {
-    if (e.target.classList.contains('methods__mobile-btn')) {
-      const tabsPath = e.target.dataset.tabsPath;
-      tabsHandler(tabsPath)
+  if (methods) {
+    methods.addEventListener('click', (e) => {
+      if (e.target.classList.contains('methods__mobile-btn')) {
+        const tabsPath = e.target.dataset.tabsPath;
+        tabsHandler(tabsPath)
+      }
+    })
+    const tabsHandler = (path) => {
+      tabsBtn.forEach(el => {
+        el.classList.remove('methods__mobile-btn--active')
+      });
+      document.querySelector(`[data-tabs-path="${path}"]`).classList.add('methods__mobile-btn--active')
+
+      tabsContent.forEach(el => {
+        el.classList.remove('methods__item--active')
+      });
+      document.querySelector(`[data-tabs-target="${path}"]`).classList.add('methods__item--active')
     }
-  })
-  const tabsHandler = (path) => {
-    tabsBtn.forEach(el => {
-      el.classList.remove('methods__mobile-btn--active')
-    });
-    document.querySelector(`[data-tabs-path="${path}"]`).classList.add('methods__mobile-btn--active')
-
-    tabsContent.forEach(el => {
-      el.classList.remove('methods__item--active')
-    });
-    document.querySelector(`[data-tabs-target="${path}"]`).classList.add('methods__item--active')
   }
-}
 
 // END DELIVERY & PAYMENT MOBILE BUTTONS
 
-if (promoSlider) {
-  mobileSliderInit();
-  window.addEventListener('resize', () => {
+  if (promoSlider) {
     mobileSliderInit();
-  })
-}
+    window.addEventListener('resize', () => {
+      mobileSliderInit();
+    })
+  }
 
-/* CATALOG MENU */
+  /* CATALOG MENU */
 
-document.addEventListener('DOMContentLoaded', () => {
 
   const menuButton = document.querySelector('.page-header__catalog-btn');
   const catalogMenu = document.querySelector('.catalog-menu-new');
@@ -377,8 +309,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       })
     })
-
-
   })
 
   document.addEventListener('click', (e) => {
@@ -386,8 +316,67 @@ document.addEventListener('DOMContentLoaded', () => {
       catalogMenu.classList.remove('catalog-menu-new--active');
     }
   })
+
+  /* END CATALOG MENU*/
+
+  /* CATALOG DETAIL SLIDER */
+
+  // Инициализация превью слайдера
+
+  const slidersCount = document.querySelectorAll('.catalog-detail-slider .slider__col .swiper-slide');
+
+  if (slidersCount.length === 1) {
+    document.querySelector('.slider__prev').classList.add('btn-hidden');
+    document.querySelector('.slider__next').classList.add('btn-hidden');
+  }
+
+  const catalogDetailSliderThumbs = new Swiper('.slider__thumbs .swiper-container', { // ищем слайдер превью по селектору
+    // задаем параметры
+    direction: 'vertical', // вертикальная прокрутка
+    slidesPerView: 3, // показывать по 3 превью
+    spaceBetween: 24, // расстояние между слайдами
+    navigation: { // задаем кнопки навигации
+      nextEl: '.slider__next', // кнопка Next
+      prevEl: '.slider__prev' // кнопка Prev
+    },
+    freeMode: true, // при перетаскивании превью ведет себя как при скролле
+    breakpoints: { // условия для разных размеров окна браузера
+      0: { // при 0px и выше
+        direction: 'horizontal', // горизонтальная прокрутка
+      },
+      768: { // при 768px и выше
+        direction: 'vertical', // вертикальная прокрутка
+      }
+    }
+  });
+// Инициализация слайдера изображений
+  const catalogDetailSliderImages = new Swiper('.slider__images .swiper-container', { // ищем слайдер превью по селектору
+    // задаем параметры
+    direction: 'vertical', // вертикальная прокрутка
+    slidesPerView: 1, // показывать по 1 изображению
+    spaceBetween: 32, // расстояние между слайдами
+    mousewheel: true, // можно прокручивать изображения колёсиком мыши
+    navigation: { // задаем кнопки навигации
+      nextEl: '.slider__next', // кнопка Next
+      prevEl: '.slider__prev' // кнопка Prev
+    },
+    grabCursor: true, // менять иконку курсора
+    thumbs: { // указываем на превью слайдер
+      swiper: catalogDetailSliderThumbs // указываем имя превью слайдера
+    },
+    breakpoints: { // условия для разных размеров окна браузера
+      0: { // при 0px и выше
+        direction: 'horizontal', // горизонтальная прокрутка
+      },
+      768: { // при 768px и выше
+        direction: 'vertical', // вертикальная прокрутка
+      }
+    }
+  });
+
+  /* CATALOG DETAIL SLIDER END*/
 })
 
-/* END CATALOG MENU*/
+
 
 
