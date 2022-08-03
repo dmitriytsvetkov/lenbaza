@@ -53,6 +53,7 @@
 
 .card-info__buttons-container {
   margin-bottom: 24px;
+  justify-content: space-between;
 }
 
 .card-info__description {
@@ -68,6 +69,10 @@
 
 .card-info__pickup-point {
   margin-bottom: 80px;
+}
+
+.card-info__quantity-block {
+  margin-right: 20px;
 }
 
 @include tablet {
@@ -90,9 +95,8 @@
   }
 
   .card-info__buttons-container {
-    margin-right: 40px;
     margin-bottom: 0;
-    width: 332px;
+    display: flex;
   }
 }
 
@@ -101,7 +105,4 @@
     margin: 0;
   }
 
-  .card-info__buttons-container {
-    width: 240px;
-  }
 }
