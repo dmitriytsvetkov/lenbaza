@@ -2,6 +2,10 @@
   padding: 24px 0 0;
 }
 
+.page-main__container {
+  margin: 0 16px 80px;
+}
+
 .page-main__slider-banner {
   margin: 0 15px 40px;
 }
@@ -67,6 +71,10 @@
     margin: 0 40px 80px;
   }
 
+  .page-main__container {
+    margin: 0 40px 80px;
+  }
+
   .page-main__articles {
     margin: 0 40px 80px;
   }
@@ -116,6 +124,11 @@
   }
 
   .page-main__categories {
+    margin: 0 auto 120px;
+    width: 1320px;
+  }
+
+  .page-main__container {
     margin: 0 auto 120px;
     width: 1320px;
   }
