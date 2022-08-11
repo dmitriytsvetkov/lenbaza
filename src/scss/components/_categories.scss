@@ -6,7 +6,6 @@
 }
 
 .categories__item {
-  position: relative;
   margin-bottom: 24px;
   border: 1px solid #dfdfdf;
   border-radius: 10px;
@@ -17,53 +16,9 @@
   margin-bottom: 0;
 }
 
-.categories__item::before {
-  content: "";
-  position: absolute;
-  left: 16px;
-  top: 16px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.categories__item--kinder-garden {
-  padding-top: 120px;
-}
-
-.categories__item--kinder-garden::before {
+.categories__img-wrapper {
   width: 100px;
-  height: 80px;
-  background-image: url("../../img/kinder-garden.png");
-}
-
-.categories__item--aids-equipment {
-  padding-top: 114px;
-}
-
-.categories__item--aids-equipment::before {
-  width: 99px;
-  height: 74px;
-  background-image: url("../../img/aids.png");
-}
-
-.categories__item--school {
-  padding-top: 177px;
-}
-
-.categories__item--school::before {
-  width: 99px;
-  height: 137px;
-  background-image: url("../../img/school.png");
-}
-
-.categories__item--related-products {
-  padding-top: 139px;
-}
-
-.categories__item--related-products::before {
-  width: 99px;
-  height: 99px;
-  background-image: url("../../img/related.png");
+  margin-bottom: 24px;
 }
 
 .categories__category-name {
@@ -99,12 +54,23 @@
   }
 
   .categories__item {
-    padding: 24px 36px 24px 179px;
+    padding: 24px;
+    display: flex;
   }
 
-  .categories__item::before {
-    left: 28px;
-    top: 24px;
+  .categories__img-wrapper {
+    width: 35%;
+    margin-bottom: 0;
+  }
+
+  .categories__img-wrapper img {
+    width: 150px;
+  }
+
+  .categories__content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
   }
 
   .categories__category-list {

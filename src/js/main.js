@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const bannerSlider = new Swiper('.banner--slider', {
     // Optional parameters
-    loop: true,
     slideClass: 'banner__item',
     wrapperClass: 'banner__wrapper',
     spaceBetween: 17,

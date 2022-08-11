@@ -5,6 +5,9 @@
   padding-right: 20px;
   text-decoration: none;
   color: var(--color-blue);
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
 }
 
 .show-all::after {
@@ -22,4 +25,10 @@
 
 .show-all--small {
   @include lb-16semi;
+}
+
+@include desktop {
+  .show-all {
+    display: flex;
+  }
 }
