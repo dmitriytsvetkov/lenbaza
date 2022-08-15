@@ -104,6 +104,12 @@
   }
 }
 
+@include tablet {
+  .mobile-menu__toggle {
+    display: none;
+  }
+}
+
 @include desktop {
   .mobile-menu {
     position: relative;
@@ -112,9 +118,7 @@
     width: 1320px;
   }
 
-  .mobile-menu__toggle {
-    display: none;
-  }
+
 
   .mobile-menu__btn-wrapper {
     margin-right: 24px;

@@ -145,18 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 25,
       },
       1024: {
-        slidesPerView: 3.2,
+        slidesPerView: 3,
         slidesPerColumn: 1,
-        spaceBetween: 25,
-      },
-      1460: {
-        slidesPerView: 4,
-        slidesPerColumn: 1,
-        spaceBetween: 25,
+        spaceBetween: 24,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         }
+      },
+      1460: {
+        slidesPerView: 4,
+        slidesPerColumn: 1,
       }
     }
   })

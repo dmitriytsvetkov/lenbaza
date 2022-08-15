@@ -108,24 +108,38 @@
   }
 }
 
+@include desktop-1024 {
+  .page-main {
+    width: 936px;
+    margin: 0 auto;
+  }
+
+  .page-main__viewed,
+  .page-main__articles,
+  .page-main__promo,
+  .page-main__categories,
+  .page-main__new-offers,
+  .page-main__slider-banner, {
+    margin: 0 0 80px 0;
+  }
+}
+
 @include desktop {
   .page-main {
     padding-top: 24px;
+    width: 1320px;
   }
 
   .page-main__slider-banner {
     margin: 0 auto 80px;
-    width: 1320px;
   }
 
   .page-main__new-offers {
     margin: 0 auto 90px;
-    width: 1320px;
   }
 
   .page-main__categories {
     margin: 0 auto 120px;
-    width: 1320px;
   }
 
   .page-main__container {
@@ -135,17 +149,14 @@
 
   .page-main__promo {
     margin: 0 auto 120px;
-    width: 1320px;
   }
 
   .page-main__articles {
     margin: 0 auto 80px;
-    width: 1320px;
   }
 
   .page-main__viewed {
     margin: 0 auto 120px;
-    width: 1320px;
   }
 
   .page-main__breadcrumbs {
