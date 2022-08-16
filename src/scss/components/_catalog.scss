@@ -118,6 +118,8 @@
 }
 
 .catalog__item-button-container {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
 }

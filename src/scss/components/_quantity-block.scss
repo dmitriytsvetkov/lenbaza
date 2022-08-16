@@ -154,8 +154,9 @@
 }
 
 .product-item-quantity-container {
-  width: 120px;
-  margin-bottom: 0;
+  order: -1;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 .bx-retina .product-item-amount-field-btn-plus,
@@ -225,4 +226,12 @@
   margin: 0;
   -webkit-appearance: none;
   appearance: none
+}
+
+@include tablet {
+  .product-item-quantity-container {
+    width: 120px;
+    margin-bottom: 0;
+    order: unset;
+  }
 }

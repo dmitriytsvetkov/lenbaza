@@ -50,6 +50,10 @@
   margin: 0 16px;
 }
 
+.page-header__catalog-menu {
+  width: 100%;
+}
+
 @include tablet {
   .page-main {
     padding-top: 80px;
@@ -156,7 +160,7 @@
   }
 
   .page-main__viewed {
-    margin: 0 auto 120px;
+    width: 1320px;
   }
 
   .page-main__breadcrumbs {

@@ -1,6 +1,6 @@
 .catalog-menu-new {
+  width: 100%;
   display: none;
-  border-bottom: 1px solid var(--color-alto);
 }
 
 .catalog-menu-new--active {
@@ -8,11 +8,21 @@
 }
 
 .catalog-menu-new__container {
+  padding: 0 16px;
   display: flex;
   margin: 0 auto;
-  padding: 0 40px;
-  border-top: 1px solid var(--color-alto);
   width: 100%;
+}
+
+.catalog-menu-new-main-list__item {
+  position: relative;
+}
+
+.catalog-menu-new__arrow-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
 
 .catalog-menu-new-main-list__item--active {
@@ -26,14 +36,13 @@
 }
 
 .catalog-menu-new__left-area {
-  border-right: 1px solid var(--color-alto);
   padding: 12px 0;
-  min-width: 400px;
+  width: 100%;
 }
 
 .catalog-menu-new__right-area {
   width: 100%;
-  padding: 24px;
+  padding: 12px 0;
 }
 
 .catalog-menu-new-main-list__button {
@@ -48,10 +57,39 @@
   background-size: 25px;
   background-color: var(--color-white);
   cursor: pointer;
+  text-align: left;
 }
 
 .catalog-menu-new-main-list__button:focus {
   outline: none;
+}
+
+.catalog-menu-new-submenu__item-extra {
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.catalog-menu-new-submenu__back {
+  @include lb-16med;
+
+  color: var(--color-mid-grey);
+}
+
+.catalog-menu-new__arrow-icon-back {
+  margin-right: 8px;
+}
+
+.catalog-menu-new-submenu__title {
+  padding: 0;
+  margin: 0;
+
+  @include lb-16med;
+
+  display: block;
+  color: var(--color-black);
+  font-weight: bold;
 }
 
 .catalog-menu-new-submenu {
@@ -66,17 +104,59 @@
 
 .catalog-menu-new-submenu__item--active {
   display: block;
-  width: 50%;
+  width: 100%;
+  padding-left: 16px;
 }
 
 .catalog-menu-new-submenu__link {
   @include lb-16med;
 
   display: block;
-  color: var(--color-black);
+  color: var(--color-dark-grey);
+}
+
+@include tablet {
+  .catalog-menu-new {
+    border-bottom: 1px solid var(--color-alto);
+  }
+
+  .catalog-menu-new__container {
+    border-top: 1px solid var(--color-alto);
+  }
+
+  .catalog-menu-new__left-area {
+    border-right: 1px solid var(--color-alto);
+    width: 50%;
+  }
+
+  .catalog-menu-new__right-area {
+    width: 50%;
+    padding: 24px;
+  }
+
+  .catalog-menu-new__arrow-icon {
+    display: none;
+  }
+
+  .catalog-menu-new-submenu__item--active {
+    width: 50%;
+    padding: 0;
+  }
+
+  .catalog-menu-new-submenu__link {
+    color: var(--color-black);
+  }
+
+  .catalog-menu-new-submenu__item-extra {
+    display: none;
+  }
 }
 
 @include desktop-1024 {
+  .catalog-menu-new__container {
+    padding: 0 40px;
+  }
+
   .catalog-menu-new-submenu__item--active {
     width: 33.33%;
   }

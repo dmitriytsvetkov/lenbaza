@@ -4,14 +4,8 @@
 import Swiper from './vendor/swiper-bundle.min.js';
 import './_vars';
 
-/*const mobileMenu = document.querySelector('.mobile-menu');
-const menuToggle = document.querySelector('.mobile-menu__toggle');
-const catalogMenu = document.querySelector('.catalog-menu');
-const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
-const mainNav = document.querySelector('.main-nav');
-const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');*/
-/*const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
-const windowWidth = window.innerWidth - getScrollbarWidth();*/
+
+
 
 
 /*
@@ -91,10 +85,19 @@ if (catalogMenuToggle) {
   })
 }*/
 document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = document.querySelector('.page-header__catalog-btn');
+  const catalogMenu = document.querySelector('.catalog-menu-new');
+  const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
+  const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');
+  const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+  const windowWidth = window.innerWidth - getScrollbarWidth();
 
   const promoSlider = document.querySelector('.promo__slider-container');
   const controlButtons = document.querySelectorAll('.catalog__control-btn');
   const modals = document.querySelectorAll('.modal');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const menuToggle = document.querySelector('.mobile-menu__toggle');
+  const mainNav = document.querySelector('.main-nav');
 
   let mySwiper;
 
@@ -102,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Optional parameters
     slideClass: 'banner__item',
     wrapperClass: 'banner__wrapper',
+    lazy: true,
     spaceBetween: 17,
     // If we need pagination
     pagination: {
@@ -126,6 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /*loop: true,*/
     slidesPerView: 2,
     slidesPerColumn: 2,
+    watchSlidesProgress: true,
+    lazy: true,
     spaceBetween: 0,
     slideClass: 'multiple-slider__item',
     wrapperClass: 'multiple-slider__wrapper',
@@ -156,6 +162,11 @@ document.addEventListener('DOMContentLoaded', () => {
       1460: {
         slidesPerView: 4,
         slidesPerColumn: 1,
+        spaceBetween: 24,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
       }
     }
   })
@@ -259,63 +270,152 @@ document.addEventListener('DOMContentLoaded', () => {
   /* CATALOG MENU */
 
 
-  const menuButton = document.querySelector('.page-header__catalog-btn');
-  const catalogMenu = document.querySelector('.catalog-menu-new');
+
+
 
   menuButton.addEventListener('click', (e) => {
     const subMenuItems = catalogMenu.querySelectorAll('.catalog-menu-new-submenu__item');
     const menuItems = catalogMenu.querySelectorAll('.catalog-menu-new-main-list__item');
-
-    menuItems.forEach((el) => {
-      el.classList.remove('catalog-menu-new-main-list__item--active');
-    })
-
-    menuItems[0].classList.add('catalog-menu-new-main-list__item--active');
-
-    subMenuItems.forEach((el) => {
-      if (el.dataset.index === menuItems[0].dataset.index) {
-        el.classList.add('catalog-menu-new-submenu__item--active');
-      } else {
-        el.classList.remove('catalog-menu-new-submenu__item--active')
-      }
-    })
+    const leftArea = catalogMenu.querySelector('.catalog-menu-new__left-area');
+    const rightArea = catalogMenu.querySelector('.catalog-menu-new__right-area');
+    const menuBackBtn = catalogMenu.querySelector('.catalog-menu-new-submenu__back');
+    const subMenuTitle = catalogMenu.querySelector('.catalog-menu-new-submenu__title');
 
     catalogMenu.classList.toggle('catalog-menu-new--active');
 
-    const catalogMenuButtons = catalogMenu.querySelectorAll('.catalog-menu-new-main-list__item');
+    const resetCatalogMenu = () => {
+      leftArea.style.display = 'block';
+      rightArea.style.display = 'none';
 
-    catalogMenuButtons.forEach((el, index) => {
-
-      el.addEventListener('click', (e) => {
-        const currentButton = e.currentTarget;
-
-        catalogMenuButtons.forEach((el) => {
-          if (el !== currentButton) {
-            el.classList.remove('catalog-menu-new-main-list__item--active');
-          }
-        })
-
-        currentButton.classList.add('catalog-menu-new-main-list__item--active');
-
-        subMenuItems.forEach((el) => {
-          if (el.dataset.index === currentButton.dataset.index) {
-            el.classList.add('catalog-menu-new-submenu__item--active');
-          } else {
-            el.classList.remove('catalog-menu-new-submenu__item--active')
-          }
-        })
-
+      subMenuItems.forEach((el) => {
+        if (el.classList.contains('catalog-menu-new-submenu__item--active')) {
+          el.classList.remove('catalog-menu-new-submenu__item--active')
+        }
       })
-    })
+    }
+
+    if (windowWidth < 768) {
+      resetCatalogMenu();
+
+      rightArea.style.display = 'none'
+      menuItems.forEach((el) => {
+        el.addEventListener('click', (e) => {
+          const currentButton = e.currentTarget;
+          const currentIndex = currentButton.dataset.index;
+          leftArea.style.display = 'none';
+          rightArea.style.display = 'block';
+
+          if (subMenuTitle) {
+            subMenuTitle.textContent = currentButton.textContent;
+          }
+
+          subMenuItems.forEach((el) => {
+            if (el.dataset.index === currentIndex) {
+              el.classList.add('catalog-menu-new-submenu__item--active');
+            } else {
+              el.classList.remove('catalog-menu-new-submenu__item--active')
+            }
+          })
+
+          if (menuBackBtn) {
+            menuBackBtn.addEventListener('click', (e) => {
+              e.preventDefault();
+              resetCatalogMenu();
+            })
+          }
+        })
+      })
+    } else {
+      menuItems.forEach((el) => {
+        el.classList.remove('catalog-menu-new-main-list__item--active');
+      })
+
+      menuItems[0].classList.add('catalog-menu-new-main-list__item--active');
+
+      subMenuItems.forEach((el) => {
+        if (el.dataset.index === menuItems[0].dataset.index) {
+          el.classList.add('catalog-menu-new-submenu__item--active');
+        } else {
+          el.classList.remove('catalog-menu-new-submenu__item--active')
+        }
+      })
+
+      const catalogMenuButtons = catalogMenu.querySelectorAll('.catalog-menu-new-main-list__item');
+
+      catalogMenuButtons.forEach((el, index) => {
+
+        el.addEventListener('click', (e) => {
+          const currentButton = e.currentTarget;
+
+          catalogMenuButtons.forEach((el) => {
+            if (el !== currentButton) {
+              el.classList.remove('catalog-menu-new-main-list__item--active');
+            }
+          })
+
+          currentButton.classList.add('catalog-menu-new-main-list__item--active');
+
+          subMenuItems.forEach((el) => {
+            if (el.dataset.index === currentButton.dataset.index) {
+              el.classList.add('catalog-menu-new-submenu__item--active');
+            } else {
+              el.classList.remove('catalog-menu-new-submenu__item--active')
+            }
+          })
+
+        })
+      })
+    }
+
   })
 
-  document.addEventListener('click', (e) => {
-    if (e.target !== menuButton && e.target.closest('.catalog-menu-new') === null) {
-      catalogMenu.classList.remove('catalog-menu-new--active');
-    }
-  })
+  if (windowWidth > 768) {
+    document.addEventListener('click', (e) => {
+      if (e.target !== menuButton && e.target.closest('.catalog-menu-new') === null) {
+        catalogMenu.classList.remove('catalog-menu-new--active');
+      }
+    })
+  }
+
 
   /* END CATALOG MENU*/
+
+  /* MOBILE MENU */
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function () {
+      if (mobileMenu.classList.contains('mobile-menu--opened')) {
+        mobileMenu.classList.remove('mobile-menu--opened');
+        mobileMenu.classList.add('mobile-menu--closed');
+        catalogMenu.classList.remove('catalog-menu--opened');
+        catalogMenu.classList.remove('catalog-menu-new--active');
+        catalogMenu.classList.add('catalog-menu--closed');
+
+      } else {
+        mobileMenu.classList.remove('mobile-menu--closed');
+        mobileMenu.classList.add('mobile-menu--opened');
+        mainNav.classList.remove('main-nav--closed');
+      }
+    })
+
+    if (catalogMenuToggle) {
+      catalogMenuToggle.addEventListener('click', function () {
+        if (catalogMenu.classList.contains('catalog-menu--opened')) {
+          catalogMenu.classList.remove('catalog-menu--opened');
+          catalogMenu.classList.add('catalog-menu--closed');
+          mainNav.classList.remove('main-nav--closed');
+          mainNav.classList.add('main-nav--opened');
+        } else {
+          catalogMenu.classList.remove('catalog-menu--closed');
+          catalogMenu.classList.add('catalog-menu--opened');
+          mainNav.classList.remove('main-nav--opened');
+          mainNav.classList.add('main-nav--closed');
+        }
+      })
+    }
+  }
+
+  /* MOBILE MENU ENDS */
 
   /* CATALOG DETAIL SLIDER */
 
