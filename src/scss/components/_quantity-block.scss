@@ -3,6 +3,7 @@
   align-items: center;
   position: relative;
   margin: 0;
+  width: 100%;
 }
 
 .quantity-block--detail .product-item-amount-field-btn-plus,
@@ -27,8 +28,6 @@
 
 .product-item-amount-field-block {
   width: 60px;
-  border-top: 1px solid var(--color-super-light-grey);
-  border-bottom: 1px solid var(--color-super-light-grey);
 }
 
 .quantity-block--detail .product-item-amount-field {
@@ -121,6 +120,7 @@
 
 /*Amount*/
 .product-item-amount {
+  width: 100%;
   padding: 0;
   text-align: center;
 }
@@ -133,7 +133,7 @@
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  border: 1px solid var(--color-super-light-grey);
+  border: 1px solid var(--super-light-grey);
   margin: 0;
 }
 

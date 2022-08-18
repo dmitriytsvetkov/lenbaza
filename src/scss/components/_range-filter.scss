@@ -25,7 +25,7 @@
   top: 50%;
   width: 16px;
   height: 1px;
-  background-color: var(--color-black);
+  background-color: var(--black);
   transform: translate(-50%, -50%);
 }
 
@@ -34,7 +34,7 @@
   position: absolute;
   left: 5px;
   top: 50%;
-  color: var(--color-mid-grey);
+  color: var(--mid-grey);
   transform: translateY(-50%);
 }
 
@@ -48,6 +48,6 @@
   padding: 11px 25px;
   width: 100%;
   text-align: center;
-  color: var(--color-dark-grey);
-  background-color: var(--color-super-light-grey);
+  color: var(--dark-grey);
+  background-color: var(--super-light-grey);
 }

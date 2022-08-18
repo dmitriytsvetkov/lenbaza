@@ -11,18 +11,18 @@
 .methods__mobile-btn {
   @include lb-16med;
 
-  border: 1px solid var(--color-grey);
+  border: 1px solid var(--grey);
   border-radius: 5px;
   padding: 11px 0;
   width: 100%;
-  color: var(--color-dark-grey);
-  background-color: var(--color-white);
+  color: var(--dark-grey);
+  background-color: var(--white);
 }
 
 .methods__mobile-btn--active {
-  border-color: var(--color-blue);
-  color: var(--color-white);
-  background-color: var(--color-blue);
+  border-color: var(--blue);
+  color: var(--white);
+  background-color: var(--blue);
 }
 
 .methods__item {
@@ -43,7 +43,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 24px;
-  color: var(--color-blue);
+  color: var(--blue);
 }
 
 .methods__requisites-text {
@@ -66,7 +66,7 @@
   top: 50%;
   width: 1.5px;
   height: 13px;
-  background-color: var(--color-blue);
+  background-color: var(--blue);
   transform: translateY(-50%);
 }
 
@@ -74,7 +74,7 @@
   @include lb-16semi;
 
   margin: 0 0 16px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .methods__text {
@@ -83,7 +83,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 24px;
-  color: var(--color-dark-grey);
+  color: var(--dark-grey);
 }
 
 .methods__text--last {
@@ -97,14 +97,14 @@
 .methods__line {
   margin-bottom: 24px;
   height: 1px;
-  background-color: var(--color-grey);
+  background-color: var(--grey);
 }
 
 .methods__list {
   @include lb-16med;
 
   margin-bottom: 24px;
-  color: var(--color-dark-grey);
+  color: var(--dark-grey);
 }
 
 .methods__list-item:not(:last-child) {
@@ -117,8 +117,8 @@
   display: inline-flex;
   border-radius: 5px;
   padding: 10px 24px;
-  color: var(--color-white);
-  background-color: var(--color-blue);
+  color: var(--white);
+  background-color: var(--blue);
 }
 
 @include tablet {
@@ -128,7 +128,7 @@
 
   .methods__item {
     display: block;
-    border: 1px solid var(--color-alto);
+    border: 1px solid var(--alto);
     border-radius: 10px;
     padding: 24px;
   }
@@ -153,7 +153,7 @@
 
     display: block;
     margin: 0;
-    color: var(--color-black);
+    color: var(--black);
   }
 }
 

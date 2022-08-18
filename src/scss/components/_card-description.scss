@@ -6,7 +6,7 @@
   @include lb-18bold;
 
   margin: 0 0 16px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .card-description--full .card-description__title {
@@ -16,11 +16,11 @@
 .card-description__text {
   @include lb-16med-wide;
 
-  color: var(--color-mid-grey);
+  color: var(--mid-grey);
 }
 
 .card-description__anchor {
   @include lb-14strike;
 
-  color: var(--color-blue);
+  color: var(--blue);
 }

@@ -15,16 +15,16 @@
   border: none;
   padding: 13.5px 15px;
   text-decoration: none;
-  color: var(--color-mid-grey);
+  color: var(--mid-grey);
 }
 
 .sorting-list__link--active {
-  color: var(--color-white);
-  background-color: var(--color-orange);
+  color: var(--white);
+  background-color: var(--orange);
 }
 
 .sorting-list__link--active .sorting-list__icon path {
-  stroke: var(--color-white);
+  stroke: var(--white);
 }
 
 .sorting-list__icon {
@@ -76,7 +76,7 @@
   }
 
   .sorting-list__link--active {
-    border-color: var(--color-orange);
+    border-color: var(--orange);
   }
 
   .sorting-list__icon--asc,

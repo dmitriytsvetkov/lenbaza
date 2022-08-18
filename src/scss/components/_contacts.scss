@@ -2,7 +2,7 @@
   margin-bottom: 24px;
   width: 100%;
   height: 360px;
-  background-color: var(--color-super-light-grey);
+  background-color: var(--super-light-grey);
 }
 
 .contacts__list {
@@ -18,14 +18,14 @@
   @include lb-18bold;
 
   margin: 0 0 16px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .contacts__list-item-text {
   @include lb-16med;
 
   margin: 0 0 24px;
-  color: var(--color-dark-grey);
+  color: var(--dark-grey);
 }
 
 .contacts__list-item-text span {

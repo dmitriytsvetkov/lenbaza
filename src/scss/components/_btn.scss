@@ -1,12 +1,22 @@
 .btn--to-basket {
-  width: 260px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 18px 0;
-  color: var(--color-white);
-  background-color: var(--color-blue);
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.btn--to-basket:hover,
+.btn--to-basket:focus {
+  background-color: var(--blue-button-hover);
+  color: var(--white);
+}
+
+.btn--to-basket:active {
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .btn__logo {
@@ -14,7 +24,7 @@
 }
 
 .btn__logo path {
-  fill: var(--color-white);
+  fill: var(--white);
 }
 
 .btn__text--full-width {
@@ -27,8 +37,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--color-blue);
+  border: 2px solid var(--blue);
   border-radius: 5px;
   padding: 7px 24px;
-  color: var(--color-blue);
+  color: var(--blue);
+}
+
+@include tablet {
+  .btn--to-basket {
+    width: 260px;
+  }
+}
+
+@include desktop-1024 {
+  .btn--to-basket {
+    width: 240px;
+  }
 }

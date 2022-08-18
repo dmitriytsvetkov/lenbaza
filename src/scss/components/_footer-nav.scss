@@ -51,7 +51,7 @@
 .footer-nav__text {
   @include lb-16med;
 
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .footer-nav__bold-text {
@@ -59,7 +59,7 @@
 
   margin: 0;
   padding: 0;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .footer-nav__text--address,
@@ -75,7 +75,7 @@
 .footer-bottom__item {
   @include lb-16med;
 
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .footer-bottom__item--terms {

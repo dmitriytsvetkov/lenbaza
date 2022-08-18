@@ -17,7 +17,7 @@
   @include lb-16semi;
 
   margin: 0;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .item-options__text {
@@ -25,7 +25,7 @@
 
   margin: 0;
   width: 100%;
-  color: var(--color-dark-grey);
+  color: var(--dark-grey);
 }
 
 @include tablet {

@@ -1,5 +1,5 @@
 .page-header {
-  background-color: var(--color-white);
+  background-color: var(--white);
 }
 
 .page-header__wrapper {
@@ -20,7 +20,7 @@
 .page-header__search-wrapper {
   margin: 0 auto;
   width: 100%;
-  background-color: var(--color-grey);
+  background-color: var(--grey);
 }
 
 .page-header__search-form {
@@ -45,9 +45,19 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 125%;
-  color: var(--color-white);
-  background-color: var(--color-orange);
+  color: var(--white);
+  background-color: var(--orange);
   cursor: pointer;
+}
+
+.page-header__catalog-btn:active {
+  background-color: var(--orange);
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.page-header__catalog-btn:hover,
+.page-header__catalog-btn:focus {
+  background-color: var(--dark-orange);
 }
 
 .page-header__catalog-btn::before {
@@ -124,7 +134,7 @@
     z-index: 999;
     margin-left: -50vw;
     width: 100vw;
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 }
 

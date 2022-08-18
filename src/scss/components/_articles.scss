@@ -2,7 +2,7 @@
   @include lb-h2;
 
   margin: 0 0 24px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .articles__list {
@@ -27,7 +27,7 @@
   @include lb-h3;
 
   margin: 0 0 24px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .articles__description {
@@ -35,7 +35,7 @@
 
   margin: 0 0 40px;
   padding: 0;
-  color: var(--color-dark-grey);
+  color: var(--dark-grey);
   opacity: 0.8;
 }
 
@@ -46,7 +46,7 @@
   border-radius: 5px;
   padding: 10px 24px;
   text-decoration: none;
-  color: var(--color-blue);
+  color: var(--blue);
   background-color: rgba(52, 46, 173, 0.2);
 }
 

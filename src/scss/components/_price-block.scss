@@ -1,6 +1,7 @@
 .price-block {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .price-block--card {
@@ -17,7 +18,7 @@
   @include lb-16semi;
 
   margin-right: 8px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .price-block--bold .price-block__actual-price {
@@ -34,7 +35,7 @@
   @include lb-12strike;
 
   text-decoration: line-through;
-  color: var(--color-mid-grey);
+  color: var(--mid-grey);
 }
 
 .price-block--bold .price-block__old-price {
@@ -46,6 +47,10 @@
 }
 
 @include tablet {
+  .price-block {
+    justify-content: flex-start;
+  }
+
   .price-block--card {
     margin-bottom: 0;
   }

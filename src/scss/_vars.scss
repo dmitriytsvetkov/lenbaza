@@ -8,18 +8,20 @@
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   // colors
-  --color-white: #fff;
-  --color-black: #0b0b0b;
-  --color-super-light-grey: #f7f7f7;
-  --color-dark-grey: #686868;
-  --color-mid-grey: #9b9b9b;
-  --color-blue: #342ead;
-  --color-orange: #ea6227;
-  --color-yellow: #f2a51a;
-  --color-green: #6ead2e;
-  --color-grey: #f4f4f4;
-  --color-alto: #dfdfdf;
-  --color-red: #c12035;
-  --color-primary-hover: #0050e0;
-  --color-pale: #ebf7ff;
+  --white: #fff;
+  --black: #0b0b0b;
+  --super-light-grey: #f7f7f7;
+  --dark-grey: #686868;
+  --mid-grey: #9b9b9b;
+  --blue: #342ead;
+  --orange: #ea6227;
+  --dark-orange: #DC4F12;
+  --yellow: #f2a51a;
+  --green: #6ead2e;
+  --grey: #f4f4f4;
+  --alto: #dfdfdf;
+  --red: #c12035;
+  --primary-hover: #0050e0;
+  --pale: #ebf7ff;
+  --blue-button-hover: #1B1595;
 }

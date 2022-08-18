@@ -26,13 +26,13 @@
 }
 
 .catalog-menu-new-main-list__item--active {
-  background-color: var(--color-super-light-grey);
+  background-color: var(--super-light-grey);
 }
 
 .catalog-menu-new-main-list__item--active .catalog-menu-new-main-list__button {
   padding: 12px 48px;
   background-position: 16px center;
-  background-color: var(--color-super-light-grey);
+  background-color: var(--super-light-grey);
 }
 
 .catalog-menu-new__left-area {
@@ -51,11 +51,11 @@
   display: block;
   border: none;
   padding: 12px 33px;
-  color: var(--color-black);
+  color: var(--black);
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 25px;
-  background-color: var(--color-white);
+  background-color: var(--white);
   cursor: pointer;
   text-align: left;
 }
@@ -74,7 +74,7 @@
 .catalog-menu-new-submenu__back {
   @include lb-16med;
 
-  color: var(--color-mid-grey);
+  color: var(--mid-grey);
 }
 
 .catalog-menu-new__arrow-icon-back {
@@ -88,7 +88,7 @@
   @include lb-16med;
 
   display: block;
-  color: var(--color-black);
+  color: var(--black);
   font-weight: bold;
 }
 
@@ -112,20 +112,20 @@
   @include lb-16med;
 
   display: block;
-  color: var(--color-dark-grey);
+  color: var(--dark-grey);
 }
 
 @include tablet {
   .catalog-menu-new {
-    border-bottom: 1px solid var(--color-alto);
+    border-bottom: 1px solid var(--alto);
   }
 
   .catalog-menu-new__container {
-    border-top: 1px solid var(--color-alto);
+    border-top: 1px solid var(--alto);
   }
 
   .catalog-menu-new__left-area {
-    border-right: 1px solid var(--color-alto);
+    border-right: 1px solid var(--alto);
     width: 50%;
   }
 
@@ -144,7 +144,7 @@
   }
 
   .catalog-menu-new-submenu__link {
-    color: var(--color-black);
+    color: var(--black);
   }
 
   .catalog-menu-new-submenu__item-extra {

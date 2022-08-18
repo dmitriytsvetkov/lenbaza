@@ -1,19 +1,20 @@
 .card-info__container {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 16px;
+  margin: 0;
 }
 
 .card-info__title {
   @include lb-h2;
 
   margin: 0 0 16px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .card-info__header {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
@@ -32,19 +33,24 @@
 .card-info__to-fav-text {
   @include lb-18med;
 
-  color: var(--color-mid-grey);
+  color: var(--mid-grey);
 }
 
 .card-info__remaining {
   @include lb-18med;
 
+  width: 100%;
   padding: 0;
-  margin: 0;
-  color: var(--color-black);
+  margin: 0 0 16px 0;
+  color: var(--black);
+}
+
+.card-info__remaining:last-child {
+  margin-bottom: 0;
 }
 
 .card-info__remaining span {
-  color: var(--color-mid-grey);
+  color: var(--mid-grey);
 }
 
 .card-info__wrapper {
@@ -52,14 +58,16 @@
 }
 
 .card-info__buttons-container {
-  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 24px;
 }
 
 .card-info__description {
   margin-bottom: 24px;
-  border-top: 1px solid var(--color-grey);
-  border-bottom: 1px solid var(--color-grey);
+  border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
   width: 100%;
 }
 
@@ -72,14 +80,22 @@
 }
 
 .card-info__quantity-block {
-  margin-right: 20px;
+  width: 100%;
+  margin-bottom: 24px;
+  order: -1;
+}
+
+.main-button-container {
+  width: 100%;
+}
+
+.card-info__description {
+  @include lb-16med;
+
+  color: var(--dark-grey);
 }
 
 @include tablet {
-  .card-info__container {
-    margin: 0 40px;
-  }
-
   .card-info__title {
     margin-bottom: 24px;
     width: 450px;
@@ -96,13 +112,25 @@
 
   .card-info__buttons-container {
     margin-bottom: 0;
-    display: flex;
   }
-}
 
-@include desktop {
-  .card-info__container {
+  .main-button-container {
+    width: auto;
+  }
+
+  .card-info__remaining {
+    width: auto;
     margin: 0;
   }
 
+  .card-info__quantity-block {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+@include desktop-1024 {
+  .card-info {
+    width: 436px;
+  }
 }

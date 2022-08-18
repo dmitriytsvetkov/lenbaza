@@ -7,7 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-top: 1px solid var(--color-mid-grey);
+    border-top: 1px solid var(--mid-grey);
     padding-top: 15px;
     width: 1320px;
   }
@@ -16,12 +16,12 @@
     @include lb-16med;
 
     text-decoration: none;
-    color: var(--color-dark-grey);
+    color: var(--dark-grey);
   }
 
   .popular-list__link--black {
     @include lb-16semi;
 
-    color: var(--color-black);
+    color: var(--black);
   }
 }

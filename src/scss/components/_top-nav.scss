@@ -1,6 +1,6 @@
 @include tablet {
   .top-nav {
-    background-color: var(--color-super-light-grey);
+    background-color: var(--super-light-grey);
   }
 
   .top-nav__wrapper {
@@ -31,17 +31,17 @@
     display: block;
     padding: 8px 0 11px;
     text-decoration: none;
-    color: var(--color-mid-grey);
+    color: var(--mid-grey);
   }
 
   .top-nav__link--medium-black {
-    color: var(--color-black);
+    color: var(--black);
   }
 
   .top-nav__link--semibold {
     @include lb-16semi;
 
-    color: var(--color-black);
+    color: var(--black);
   }
 }
 

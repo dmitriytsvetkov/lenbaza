@@ -39,7 +39,7 @@
   @include lb-h2;
 
   margin: 0 16px 24px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .page-main__auth-modal {
@@ -125,6 +125,10 @@
   .page-main__new-offers,
   .page-main__slider-banner, {
     margin: 0 0 80px 0;
+  }
+
+  .page-main__container {
+    margin: 0 0 80px;
   }
 }
 

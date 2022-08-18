@@ -20,12 +20,12 @@
 
 .about-slider.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 8px;
-  background-color: var(--color-white);
+  background-color: var(--white);
   opacity: 1;
 }
 
 .about-slider.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet-active {
-  background-color: var(--color-blue);
+  background-color: var(--blue);
 }
 
 .about-slider .swiper-button-prev,
@@ -46,7 +46,7 @@
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    background-color: var(--color-white);
+    background-color: var(--white);
     opacity: 0.9;
   }
 
@@ -64,7 +64,7 @@
     left: 50%;
     top: 50%;
     font-size: 15px;
-    color: var(--color-dark-grey);
+    color: var(--dark-grey);
     transform: translate(-50%, -50%);
   }
 

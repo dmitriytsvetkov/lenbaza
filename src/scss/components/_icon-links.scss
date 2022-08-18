@@ -11,7 +11,7 @@
 .icon-links__item {
   display: flex;
   justify-content: center;
-  width: 70px;
+  width: 60px;
   height: 72px;
 }
 
@@ -22,20 +22,20 @@
   border: none;
   width: 100%;
   font-size: 0;
-  background-color: var(--color-white);
+  background-color: var(--white);
   cursor: pointer;
 }
 
 .icon-links__icon {
   position: absolute;
-  right: 24px;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .icon-links__counter {
   position: absolute;
-  right: 17px;
+  right: 8px;
   top: 16px;
   border-radius: 50%;
   width: 16px;
@@ -43,8 +43,8 @@
   font-size: 12px;
   line-height: 15px;
   text-align: center;
-  color: var(--color-white);
-  background-color: var(--color-orange);
+  color: var(--white);
+  background-color: var(--orange);
 }
 
 @include tablet {
@@ -68,10 +68,11 @@
 
     padding: 16px 16px 16px 45px;
     text-decoration: none;
-    color: var(--color-mid-grey);
+    color: var(--mid-grey);
   }
 
   .icon-links__icon {
+    transform: translateY(-50%);
     left: 10px;
     right: auto;
   }

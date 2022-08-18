@@ -1,8 +1,8 @@
 .pickup-point {
   @include lb-16med;
 
-  color: var(--color-black);
-  background-color: var(--color-white);
+  color: var(--black);
+  background-color: var(--white);
 }
 
 .pickup-point__item {
@@ -15,7 +15,7 @@
 
 .pickup-point__header {
   margin-bottom: 24px;
-  border-bottom: 1px solid var(--color-grey);
+  border-bottom: 1px solid var(--grey);
   padding-bottom: 24px;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .pickup-point__time-day {
-  color: var(--color-blue);
+  color: var(--blue);
 }
 
 .pickup-point__timetable {
@@ -64,7 +64,7 @@
 }
 
 .pickup-point__work-time {
-  color: var(--color-dark-grey);
+  color: var(--dark-grey);
 }
 
 @include tablet {

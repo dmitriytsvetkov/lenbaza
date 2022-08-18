@@ -129,7 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Optional parameters
     /*loop: true,*/
     slidesPerView: 2,
-    slidesPerColumn: 2,
+    grid: {
+      rows: 2,
+    },
     watchSlidesProgress: true,
     lazy: true,
     spaceBetween: 0,
@@ -147,12 +149,16 @@ document.addEventListener('DOMContentLoaded', () => {
     breakpoints: {
       768: {
         slidesPerView: 2.2,
-        slidesPerColumn: 1,
+        grid: {
+          rows: 1,
+        },
         spaceBetween: 25,
       },
       1024: {
         slidesPerView: 3,
-        slidesPerColumn: 1,
+        grid: {
+          rows: 1,
+        },
         spaceBetween: 24,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -161,7 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       1460: {
         slidesPerView: 4,
-        slidesPerColumn: 1,
+        grid: {
+          rows: 1,
+        },
         spaceBetween: 24,
         navigation: {
           nextEl: '.swiper-button-next',

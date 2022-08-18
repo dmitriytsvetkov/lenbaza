@@ -2,7 +2,7 @@
   @include lb-h2;
 
   margin: 0 0 24px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .categories__item {
@@ -25,7 +25,7 @@
   @include lb-h3;
 
   margin: 0 0 24px;
-  color: var(--color-black);
+  color: var(--black);
 }
 
 .categories__category-list {
@@ -45,7 +45,7 @@
 
   display: block;
   text-decoration: none;
-  color: var(--color-mid-grey);
+  color: var(--mid-grey);
 }
 
 @include tablet {
