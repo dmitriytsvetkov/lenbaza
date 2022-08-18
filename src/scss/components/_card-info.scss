@@ -7,6 +7,7 @@
 .card-info__title {
   @include lb-h2;
 
+  text-align: center;
   margin: 0 0 16px;
   color: var(--black);
 }
@@ -66,13 +67,11 @@
 
 .card-info__description {
   margin-bottom: 24px;
-  border-top: 1px solid var(--grey);
-  border-bottom: 1px solid var(--grey);
   width: 100%;
 }
 
 .card-info__options {
-  margin-bottom: 80px;
+  margin-bottom: 48px;
 }
 
 .card-info__pickup-point {
@@ -102,7 +101,7 @@
   }
 
   .card-info__wrapper {
-    margin-bottom: 24px;
+    margin-bottom: 48px;
     width: 100%;
   }
 
@@ -127,10 +126,18 @@
     width: auto;
     margin-bottom: 0;
   }
+
+  .card-info__title {
+    text-align: left;
+  }
 }
 
 @include desktop-1024 {
   .card-info {
-    width: 436px;
+    width: 400px;
+  }
+
+  .card-info__options {
+    margin-bottom: 80px;
   }
 }

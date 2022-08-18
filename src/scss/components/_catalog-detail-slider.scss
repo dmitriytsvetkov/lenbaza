@@ -163,8 +163,8 @@
 }
 
 @include tablet {
-  .catalog-detail-slider {
-    margin-bottom: 24px;
+  .slider__images {
+    margin-left: 24px;
   }
 }
 
@@ -176,6 +176,6 @@
 
 @include desktop {
   .catalog-detail-slider {
-    width: 600px;
+    width: 700px;
   }
 }

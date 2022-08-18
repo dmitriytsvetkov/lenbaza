@@ -24,6 +24,11 @@
   .page-footer__features-list {
     padding: 80px 40px 110px;
   }
+
+  .page-footer__bottom {
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 @include desktop {

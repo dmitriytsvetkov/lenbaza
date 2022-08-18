@@ -3,9 +3,9 @@
 }
 
 .card-description__title {
-  @include lb-18bold;
+  @include lb-h3;
 
-  margin: 0 0 16px;
+  margin: 0;
   color: var(--black);
 }
 

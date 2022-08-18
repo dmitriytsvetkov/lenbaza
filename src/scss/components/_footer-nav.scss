@@ -57,6 +57,7 @@
 .footer-nav__bold-text {
   @include lb-18semi;
 
+  font-size: 20px;
   margin: 0;
   padding: 0;
   color: var(--black);
@@ -92,6 +93,26 @@
   display: none;
 }
 
+.footer-bottom__item--ozon-logo {
+  position: relative;
+  display: block;
+  width: 114px;
+  height: 40px;
+  font-size: 0;
+  margin-bottom: 24px;
+}
+
+.footer-bottom__item--ozon-logo::before {
+  content: "";
+  position: absolute;
+  width: 114px;
+  height: 40px;
+  background-image: url("../../img/ozon-logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
 @include tablet {
   .footer-nav {
     display: flex;
@@ -112,7 +133,13 @@
   }
 
   .footer-bottom__item {
-    width: 50%;
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .footer-bottom__item--ozon-logo {
+    width: 114px;
+    height: 40px;
   }
 }
 
@@ -150,38 +177,8 @@
     color: rgba(11, 11, 11, 0.8);
   }
 
-  .footer-bottom__item--ymarket-logo {
-    position: relative;
-    display: block;
-    width: 114px;
-    height: 40px;
-    font-size: 0;
-  }
-
-  .footer-bottom__item--ymarket-logo::before {
-    content: "";
-    position: absolute;
-    width: 114px;
-    height: 40px;
-    background-image: url("../../img/ymarket-logo.svg");
-  }
-
   .footer-bottom__item--ozon-logo {
-    position: relative;
-    display: block;
     width: 114px;
     height: 40px;
-    font-size: 0;
-  }
-
-  .footer-bottom__item--ozon-logo::before {
-    content: "";
-    position: absolute;
-    width: 114px;
-    height: 40px;
-    background-image: url("../../img/ozon-logo.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
   }
 }
