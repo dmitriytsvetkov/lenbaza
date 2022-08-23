@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+@include('partials/head.html')
+<body>
+<div class="site-container">
+    @include('partials/header.html')
+    <main class="page-main">
+        @include('partials/breadcrumbs.html')
+        <h1 class="page-main__title">Новости</h1>
+        <section class="news">
+            <div class="news-container">
+                <div class="news__list">
+                    @include('partials/news-list-item.html')
+                    @include('partials/news-list-item.html')
+                    @include('partials/news-list-item.html')
+                </div>
+            </div>
+        </section>
+    </main>
+    @include('partials/footer.html')
+</div>
+</body>
+</html>
