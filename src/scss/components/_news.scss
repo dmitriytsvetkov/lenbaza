@@ -1,8 +1,5 @@
-.news-container {
-  padding: 0 16px;
-}
-
 .news__list {
+  padding: 0 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -50,11 +47,8 @@
     margin: 0 40px;
   }
 
-  .news-container {
-    padding: 0;
-  }
-
   .news__list {
+    padding: 0;
     gap: 24px;
   }
 
