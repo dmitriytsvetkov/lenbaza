@@ -50,6 +50,10 @@
   background-color: rgba(52, 46, 173, 0.2);
 }
 
+.articles__show-all {
+  margin-top: 24px;
+}
+
 @include tablet {
   .articles {
     display: flex;
@@ -60,11 +64,12 @@
 
   .articles__title {
     order: -2;
-    margin-bottom: 0;
+    margin-bottom: 24px;
   }
 
   .articles__show-all {
     order: -1;
+    margin-top: 0;
   }
 
   .articles__list {
