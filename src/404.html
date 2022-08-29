@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+<div class="site-container">
+    @include('partials/header.html')
+    <main class="page-main">
+        <div class="page-main__container">
+            <div class="not-found">
+                <div class="not-found__img">
+                    <img src="./img/404-error.png" alt=""/>
+                </div>
+                <div class="not-found__text">
+                    <h1 class="not-found__title">Страница не найдена</h1>
+                    <p>Неправильно набран адрес, или такой страницы на сайте больше не существует.</p>
+                    <p>Вернитесь на <a href="#">главную</a> или воспользуйтесь картой сайта.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    @include('partials/footer.html')
+</div>
+</body>
+
+</html>
