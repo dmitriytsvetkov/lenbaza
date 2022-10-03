@@ -61,7 +61,7 @@
   }
 }
 
-@include desktop {
+@include desktop-1024 {
   .sorting-list__item {
     width: auto;
   }

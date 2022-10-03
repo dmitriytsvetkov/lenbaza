@@ -1,94 +1,13 @@
 "use strict";
 
-
 import Swiper from './vendor/swiper-bundle.min.js';
 import './_vars';
 
 
-
-
-
-/*
-const initialMenu = () => {
-  if (document.querySelector('.catalog-menu__link--opened')) {
-    document.querySelector('.catalog-menu__link--opened').classList.remove('catalog-menu__link--opened');
-  }
-  if (document.querySelector('.catalog-menu__item--opened')) {
-    document.querySelector('.catalog-menu__item--opened').classList.remove('catalog-menu__item--opened');
-  }
-  if (document.querySelector('.catalog-menu__list--active')) {
-    document.querySelector('.catalog-menu__list--active').classList.remove('catalog-menu__list--active');
-  }
-}
-
-if (mobileMenu) {
-  mobileMenu.classList.remove('mobile-menu--nojs');
-
-  if (mobileMenu.classList.contains('mobile-menu--opened')) {
-    mobileMenu.classList.remove('mobile-menu--opened');
-    mobileMenu.classList.add('mobile-menu--closed');
-  }
-}
-
-if (menuToggle) {
-  menuToggle.addEventListener('click', function () {
-    if (mobileMenu.classList.contains('mobile-menu--opened')) {
-      mobileMenu.classList.remove('mobile-menu--opened');
-      mobileMenu.classList.add('mobile-menu--closed');
-      catalogMenu.classList.remove('catalog-menu--opened');
-      catalogMenu.classList.add('catalog-menu--closed');
-    } else {
-      mobileMenu.classList.remove('mobile-menu--closed');
-      mobileMenu.classList.add('mobile-menu--opened');
-      mainNav.classList.remove('main-nav--closed');
-    }
-  })
-}
-
-if (catalogMenuToggle) {
-  catalogMenuToggle.addEventListener('click', function () {
-    if (catalogMenu.classList.contains('catalog-menu--opened')) {
-      catalogMenu.classList.remove('catalog-menu--opened');
-      catalogMenu.classList.add('catalog-menu--closed');
-      mainNav.classList.remove('main-nav--closed');
-      mainNav.classList.add('main-nav--opened');
-      initialMenu();
-    } else {
-      catalogMenu.classList.remove('catalog-menu--closed');
-      catalogMenu.classList.add('catalog-menu--opened');
-      mainNav.classList.remove('main-nav--opened');
-      mainNav.classList.add('main-nav--closed');
-      initialMenu();
-    }
-  })
-}*/
-
-/*if (catalogMenu) {
-  catalogMenu.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    if (e.target.classList.contains('catalog-menu__link--drop')) {
-      e.preventDefault();
-      initialMenu();
-      e.target.classList.add('catalog-menu__link--opened');
-      e.target.closest('.catalog-menu__item').classList.add('catalog-menu__item--opened');
-      e.target.closest('.catalog-menu__list').classList.add('catalog-menu__list--active');
-      // желательно сделать чтобы при клике по открытому элементу меню он закрывался в изначальное состояние
-    }
-
-    if (e.target.classList.contains('catalog__btn-back')) {
-      e.preventDefault();
-      document.querySelector('.catalog-menu__link--opened') ? document.querySelector('.catalog-menu__link--opened').classList.remove('catalog-menu__link--opened') : null;
-      document.querySelector('.catalog-menu__item--opened') ? document.querySelector('.catalog-menu__item--opened').classList.remove('catalog-menu__item--opened') : null;
-      document.querySelector('.catalog-menu__list--active') ? document.querySelector('.catalog-menu__list--active').classList.remove('catalog-menu__list--active') : null;
-    }
-  })
-}*/
 document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.page-header__catalog-btn');
   const catalogMenu = document.querySelector('.catalog-menu-new');
   const catalogMenuToggle = document.querySelector('.page-header__catalog-btn');
-  const catalogMenuItems = document.querySelectorAll('.catalog-menu__list .catalog-menu__item');
   const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
   const windowWidth = window.innerWidth - getScrollbarWidth();
 
@@ -277,11 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* CATALOG MENU */
 
-
-
-
-
   menuButton.addEventListener('click', (e) => {
+    console.log(123)
+    menuButton.classList.toggle('page-header__catalog-btn--active');
     const subMenuItems = catalogMenu.querySelectorAll('.catalog-menu-new-submenu__item');
     const menuItems = catalogMenu.querySelectorAll('.catalog-menu-new-main-list__item');
     const leftArea = catalogMenu.querySelector('.catalog-menu-new__left-area');
@@ -381,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
       if (e.target !== menuButton && e.target.closest('.catalog-menu-new') === null) {
         catalogMenu.classList.remove('catalog-menu-new--active');
+        menuButton.classList.remove('page-header__catalog-btn--active');
       }
     })
   }
@@ -393,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (menuToggle) {
     menuToggle.addEventListener('click', function () {
       if (mobileMenu.classList.contains('mobile-menu--opened')) {
+        menuButton.classList.remove('page-header__catalog-btn--active');
         mobileMenu.classList.remove('mobile-menu--opened');
         mobileMenu.classList.add('mobile-menu--closed');
         catalogMenu.classList.remove('catalog-menu--opened');

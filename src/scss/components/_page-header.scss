@@ -72,6 +72,10 @@
   background-repeat: no-repeat;
 }
 
+.page-header__catalog-btn--active::before {
+  background-image: url("../../img/btn-burger-opened.svg");
+}
+
 .page-header__links-wrapper {
   margin: 10px 16px 0;
 }

@@ -16,7 +16,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 16px 24px;
-  width: 100%;
 }
 
 .catalog__control-btn {
@@ -168,7 +167,6 @@
   margin: 0 16px;
   border-radius: 5px;
   padding: 15px 0;
-  width: 100%;
   text-decoration: none;
   color: var(--dark-grey);
   background-color: var(--super-light-grey);
@@ -177,20 +175,6 @@
 @include tablet {
   .catalog__title {
     margin: 0 40px 16px;
-  }
-
-  .catalog__catalog-list {
-    justify-content: space-between;
-    margin: 0 40px;
-    border: none;
-  }
-
-  .catalog__item {
-    margin-bottom: 24px;
-    border: none;
-    border-radius: 10px;
-    width: 49%;
-    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
   }
 
   .catalog__buttons-wrapper {
@@ -238,29 +222,36 @@
 }
 
 @include desktop-1024 {
-  .catalog__item {
-    width: 32%;
-  }
-
-  .catalog__buy-btn {
-    padding: 10px 12px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .catalog__item {
-    width: 24%;
-  }
-}
-
-@include desktop {
   .catalog {
     position: relative;
     justify-content: space-between;
   }
 
-  .catalog__title {
-    margin: 0 0 32px 335px;
+  .catalog__left-wrapper {
+    width: 296px;
+  }
+
+  .catalog__right-wrapper {
+    width: 616px;
+  }
+
+  .catalog__item {
+    width: 296px;
+  }
+
+  .catalog__item {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .catalog__catalog-list {
+    gap: 24px;
+    border: none;
+  }
+
+  .catalog__buy-btn {
+    padding: 10px 12px;
   }
 
   .catalog__buttons-wrapper {
@@ -272,16 +263,41 @@
     align-items: center;
     justify-content: space-between;
     margin: 0;
+    width: 616px;
+  }
+
+  .catalog__show-more {
+    margin: 0;
+  }
+}
+
+@include desktop {
+  .catalog__left-wrapper {
+    width: 310px;
+  }
+
+  .catalog__right-wrapper {
+    width: 984px;
+  }
+
+  .catalog__title {
+    margin: 0 0 32px 335px;
+  }
+
+  .catalog__sort-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
     width: 984px;
   }
 
   .catalog__catalog-list {
-    margin: 0 0 0 auto;
-    width: 985px;
+    width: 984px;
   }
 
   .catalog__item {
-    width: 310px;
+    width: 312px;
   }
 
   .catalog__img-wrapper {
