@@ -26,10 +26,6 @@
    background: #d3d3d3;
 }
 
-.product-item-amount-field-block {
-  width: 60px;
-}
-
 .quantity-block--detail .product-item-amount-field {
   display: block;
   padding: 0;
@@ -233,5 +229,11 @@
     width: 120px;
     margin-bottom: 0;
     order: unset;
+  }
+}
+
+@include desktop-1024 {
+  .quantity-block--detail .product-item-amount-field-block {
+    width: 60px;
   }
 }
