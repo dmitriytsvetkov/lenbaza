@@ -17,6 +17,27 @@
     margin-right: 24px;
   }
 
+  .top-nav__list-item--excel {
+    position: relative;
+    padding-left: 38px;
+  }
+
+  .top-nav__list-item--excel::before {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    content: "";
+    background-image: url("../../img/excel.svg");
+    background-size: contain;
+  }
+
+  .top-nav__list-item--excel .top-nav__link {
+    color: #4CAF50;
+  }
+
   .top-nav__list-item:last-child {
     margin-right: 0;
   }
@@ -29,7 +50,7 @@
     @include lb-16med;
 
     display: block;
-    padding: 8px 0 11px;
+    padding: 10px 0;
     text-decoration: none;
     color: var(--mid-grey);
   }
