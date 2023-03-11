@@ -237,6 +237,7 @@
 
 .modal__submit-section {
   display: flex;
+  flex-flow: row wrap;
 }
 
 .modal__btn {
@@ -338,11 +339,6 @@
     border-radius: 5px;
   }
 
-  .modal__btn--clear {
-    display: block;
-    width: 32%;
-  }
-
   .modal__btn--submit {
     width: 55%;
   }
@@ -414,6 +410,7 @@
   }
 
   .modal__btn--clear {
+    display: block;
     width: 100%;
   }
 

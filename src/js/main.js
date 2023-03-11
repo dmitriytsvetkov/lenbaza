@@ -25,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     slideClass: 'banner__item',
     wrapperClass: 'banner__wrapper',
     lazy: true,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: true,
+    },
     spaceBetween: 17,
     // If we need pagination
     pagination: {
