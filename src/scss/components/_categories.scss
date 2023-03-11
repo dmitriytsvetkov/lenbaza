@@ -29,15 +29,10 @@
 }
 
 .categories__category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin-bottom: 24px;
-}
-
-.categories__list-item {
-  margin-bottom: 16px;
-}
-
-.categories__list-item:last-child {
-  margin-bottom: 0;
 }
 
 .categories__list-item a {
@@ -46,6 +41,10 @@
   display: block;
   text-decoration: none;
   color: var(--mid-grey);
+}
+
+.categories__show-all {
+  margin-top: auto;
 }
 
 @include tablet {
@@ -74,7 +73,7 @@
   }
 
   .categories__category-list {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;

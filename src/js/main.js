@@ -385,6 +385,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nextEl: '.slider__next', // кнопка Next
       prevEl: '.slider__prev' // кнопка Prev
     },
+    zoom: {
+      maxRatio: 3,
+    },
     grabCursor: true, // менять иконку курсора
     thumbs: { // указываем на превью слайдер
       swiper: catalogDetailSliderThumbs // указываем имя превью слайдера
