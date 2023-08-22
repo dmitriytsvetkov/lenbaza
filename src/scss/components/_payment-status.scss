@@ -1,0 +1,38 @@
+.payment-status {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+
+    @include tablet {
+        margin-bottom: 80px;
+    }
+
+    &__icon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    &__title {
+        @include lb-h1;
+
+        padding: 0;
+        margin: 0 0 24px;
+    }
+
+    &__text {
+        @include lb-16med;
+
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+
+        @include tablet {
+            max-width: 50%;
+        }
+    }
+}
