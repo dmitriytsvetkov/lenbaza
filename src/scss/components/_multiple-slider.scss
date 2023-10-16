@@ -60,15 +60,16 @@
 .multiple-slider__name {
   @include lb-16med;
 
-  display: block;
   width: 100%;
   overflow: hidden;
-  margin: 0 0 16px;
+  margin: 0 0 4px;
   padding: 0;
-  text-overflow: ellipsis;
   color: var(--black);
   box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
 }
 
 .multiple-slider__buy {

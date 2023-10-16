@@ -99,14 +99,15 @@
 .catalog__name {
   @include lb-16med;
 
-  display: block;
   overflow: hidden;
-  margin: 0 0 16px;
+  margin: 0 0 4px;
   padding: 0;
   width: 100%;
   text-overflow: ellipsis;
   color: var(--black);
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
 }
 
 .catalog__item-buttons {

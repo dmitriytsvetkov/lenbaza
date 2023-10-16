@@ -1,0 +1,27 @@
+.rating-and-comment-block {
+  @include lb-14strike;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+  color: var(--dark-grey);
+
+  &__rating,
+  &__comments {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 4px;
+    }
+  }
+
+  &__rating {
+    margin-right: 8px;
+  }
+}
